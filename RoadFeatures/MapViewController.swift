@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  MapViewController.swift
 //  RoadFeatures
 //
 //  Created by Alex Gav on 26.03.2023.
@@ -7,13 +7,16 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    @IBOutlet weak var welcomeLabel: UILabel!
+class MapViewController: UIViewController {
+    @IBOutlet weak var welcomeLabel: UILabel! {
+        didSet {
+            welcomeLabel.text = "Hello, man !"
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Hello, man !"
     }
         // UserDefaults.standard.string(forKey: "username") ??
 

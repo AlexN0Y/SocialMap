@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF02BED029ECBFBE003C74A1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02BECF29ECBFBE003C74A1 /* SettingsViewController.swift */; };
+		DF02BED229ECBFF8003C74A1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02BED129ECBFF8003C74A1 /* FavoritesViewController.swift */; };
 		DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */; };
-		DF28191D29CFC09C0096E0AC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191C29CFC09C0096E0AC /* HomeViewController.swift */; };
+		DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191C29CFC09C0096E0AC /* MapViewController.swift */; };
 		DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */; };
 		DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */; };
 		DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */; };
@@ -18,8 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF02BECF29ECBFBE003C74A1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		DF02BED129ECBFF8003C74A1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
 		DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
-		DF28191C29CFC09C0096E0AC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DF28191C29CFC09C0096E0AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DFC9F6B429C9FF1700B8BCE6 /* RoadFeatures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadFeatures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,11 +64,13 @@
 		DFC9F6B629C9FF1700B8BCE6 /* RoadFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				DF02BED129ECBFF8003C74A1 /* FavoritesViewController.swift */,
+				DF02BECF29ECBFBE003C74A1 /* SettingsViewController.swift */,
 				DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */,
 				DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */,
 				DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */,
 				DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */,
-				DF28191C29CFC09C0096E0AC /* HomeViewController.swift */,
+				DF28191C29CFC09C0096E0AC /* MapViewController.swift */,
 				DFC9F6BD29C9FF1700B8BCE6 /* Main.storyboard */,
 				DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */,
 				DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */,
@@ -144,11 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF28191D29CFC09C0096E0AC /* HomeViewController.swift in Sources */,
+				DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */,
 				DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */,
+				DF02BED229ECBFF8003C74A1 /* FavoritesViewController.swift in Sources */,
 				DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */,
 				DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */,
 				DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */,
+				DF02BED029ECBFBE003C74A1 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

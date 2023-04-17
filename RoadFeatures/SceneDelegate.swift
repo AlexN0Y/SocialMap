@@ -13,20 +13,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
-//        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        let window = UIWindow(windowScene: windowScene)
-//        var rootVC: UIViewController
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        var rootVC: UIViewController
 //
 //        // Check if the app has been opened before
-//        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
 //
 //        if launchedBefore {
 //            // Check if user is logged in
 //            if UserDefaults.standard.bool(forKey: "loggedIn") {
 //                // Show screen with greeting and logout button
 //                let username = UserDefaults.standard.string(forKey: "username") ?? ""
-//                let homeVC = HomeViewController(username: username)
+//                let homeVC = MapViewController(username: username)
 //                rootVC = homeVC
 //            } else {
 //                // Show login screen
