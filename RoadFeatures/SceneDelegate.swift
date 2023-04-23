@@ -22,12 +22,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let favouritesStoryboard = UIStoryboard(name: "FavouritesViewController", bundle: nil)
 
         let mapViewController = mapStoryboard.instantiateViewController(withIdentifier: "mapViewController")
+        mapViewController.title = "Map"
+        mapViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history , tag: 0)
         let settingsViewController = settingsStoryboard.instantiateViewController(withIdentifier: "settingsViewController")
+        settingsViewController.title = "Settings"
+        settingsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more , tag: 1)
         let favouritesViewController = favouritesStoryboard.instantiateViewController(withIdentifier: "favouritesViewController")
+        favouritesViewController.title = "Favourites"
+        favouritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
         
         let tabBarViewController = UITabBarController()
         tabBarViewController.viewControllers = [favouritesViewController, mapViewController, settingsViewController]
-        
+            
         window.rootViewController = tabBarViewController
         
         self.window = window
