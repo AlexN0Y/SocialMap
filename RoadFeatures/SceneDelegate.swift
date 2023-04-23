@@ -17,16 +17,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let MapStoryboard = UIStoryboard(name: "MapViewController", bundle: nil)
+        let mapStoryboard = UIStoryboard(name: "MapViewController", bundle: nil)
+        let settingsStoryboard = UIStoryboard(name: "SettingsViewController", bundle: nil)
+        let favouritesStoryboard = UIStoryboard(name: "FavouritesViewController", bundle: nil)
 
-        let initialVC = MapStoryboard.instantiateInitialViewController()
+        let mapViewController = mapStoryboard.instantiateViewController(withIdentifier: "mapViewController")
+        let settingsViewController = settingsStoryboard.instantiateViewController(withIdentifier: "settingsViewController")
+        let favouritesViewController = favouritesStoryboard.instantiateViewController(withIdentifier: "favouritesViewController")
         
-        //let tabBarController = UITabBarController()
+        let tabBarViewController = UITabBarController()
+        tabBarViewController.viewControllers = [favouritesViewController, mapViewController, settingsViewController]
         
-        let navigationController = UINavigationController(rootViewController: initialVC!)
+        window.rootViewController = tabBarViewController
         
-        window.rootViewController = navigationController
         self.window = window
+        
         window.makeKeyAndVisible()
 
     }

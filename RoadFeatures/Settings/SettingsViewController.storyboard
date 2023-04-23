@@ -12,21 +12,11 @@
         <!--Settings-->
         <scene sceneID="33S-oM-0n8">
             <objects>
-                <viewController id="fkp-1L-dlc" customClass="SettingsViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsViewController" id="fkp-1L-dlc" customClass="SettingsViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r9e-L1-dYZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jk3-nV-kQu">
-                                <rect key="frame" x="-2" y="766" width="393" height="50"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="VdM-oR-7ha"/>
-                                    <tabBarItem title="Map" image="map" catalog="system" id="rRV-Ds-E6C"/>
-                                    <tabBarItem enabled="NO" title="Settings" image="gear" catalog="system" id="lNx-7s-mmT"/>
-                                </items>
-                            </tabBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76m-IM-ACf">
                                 <rect key="frame" x="163.66666666666666" y="408.66666666666669" width="66" height="35"/>
                                 <state key="normal" title="Button"/>
@@ -51,8 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

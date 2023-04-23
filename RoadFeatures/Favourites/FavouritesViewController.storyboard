@@ -12,22 +12,10 @@
         <!--Favorites-->
         <scene sceneID="cC1-Zg-dga">
             <objects>
-                <viewController id="l1A-tb-RrU" customClass="FavoritesViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="favouritesViewController" id="l1A-tb-RrU" customClass="FavoritesViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JbD-Yu-VgW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFF-Sj-2UJ">
-                                <rect key="frame" x="-1" y="768" width="393" height="48"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem enabled="NO" systemItem="favorites" id="rcT-vI-Spi"/>
-                                    <tabBarItem title="Map" image="map" catalog="system" id="xSY-mA-Qov"/>
-                                    <tabBarItem title="Settings" image="gear" catalog="system" id="qQ0-nI-bbH"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OxY-LT-TpQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -39,8 +27,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

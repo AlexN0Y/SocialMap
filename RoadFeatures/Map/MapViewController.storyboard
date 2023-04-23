@@ -12,7 +12,7 @@
         <!--Map-->
         <scene sceneID="YGx-eH-4EO">
             <objects>
-                <viewController id="nx2-bP-lse" customClass="MapViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapViewController" id="nx2-bP-lse" customClass="MapViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5S3-HN-zTq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,22 +24,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ov-Rx-GhN">
-                                <rect key="frame" x="158" y="507" width="82" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Log out"/>
-                            </button>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="MapTabBar" translatesAutoresizingMaskIntoConstraints="NO" id="eFe-Ke-Tsu">
-                                <rect key="frame" x="-5" y="768" width="395" height="48"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="RvW-Cg-oXL"/>
-                                    <tabBarItem enabled="NO" title="Map" image="map" catalog="system" id="oRA-3u-njy"/>
-                                    <tabBarItem title="Settings" image="gear" catalog="system" id="Khg-iQ-a5w"/>
-                                </items>
-                            </tabBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YYd-7M-Hzl"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
@@ -55,8 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
