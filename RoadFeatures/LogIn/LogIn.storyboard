@@ -12,20 +12,21 @@
         <!--Login View Controller-->
         <scene sceneID="GZI-AL-UdC">
             <objects>
-                <viewController id="qgS-My-64z" customClass="LoginViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qgS-My-64z" customClass="LoginViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s1M-RR-Xk5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UZ-Eg-A9V">
-                                <rect key="frame" x="154.66666666666666" y="741.66666666666663" width="84" height="34.333333333333371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UZ-Eg-A9V">
+                                <rect key="frame" x="154.66666666666666" y="743.66666666666663" width="84" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpTapped" destination="qgS-My-64z" eventType="touchUpInside" id="cGC-vE-PAQ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbB-4X-54A">
-                                <rect key="frame" x="161" y="698.66666666666663" width="71" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbB-4X-54A">
+                                <rect key="frame" x="161.33333333333334" y="699.33333333333337" width="70.333333333333343" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                 <connections>
@@ -63,9 +64,13 @@
                         <viewLayoutGuide key="safeArea" id="OV2-pK-Vg4"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3UZ-Eg-A9V" firstAttribute="centerX" secondItem="dbB-4X-54A" secondAttribute="centerX" id="TqU-U8-bf7"/>
                             <constraint firstItem="OV2-pK-Vg4" firstAttribute="trailing" secondItem="UBs-K7-ZJo" secondAttribute="trailing" constant="60" id="TrG-W1-Bki"/>
                             <constraint firstItem="UBs-K7-ZJo" firstAttribute="top" secondItem="OV2-pK-Vg4" secondAttribute="top" constant="40" id="atr-tU-sCr"/>
+                            <constraint firstItem="3UZ-Eg-A9V" firstAttribute="top" secondItem="dbB-4X-54A" secondAttribute="bottom" constant="10" id="ayK-MS-d1j"/>
+                            <constraint firstItem="3UZ-Eg-A9V" firstAttribute="centerX" secondItem="UBs-K7-ZJo" secondAttribute="centerX" id="d8r-6F-OMy"/>
                             <constraint firstItem="UBs-K7-ZJo" firstAttribute="leading" secondItem="OV2-pK-Vg4" secondAttribute="leading" constant="60" id="hfL-qm-G2I"/>
+                            <constraint firstItem="OV2-pK-Vg4" firstAttribute="bottom" secondItem="3UZ-Eg-A9V" secondAttribute="bottom" constant="40" id="wcR-wG-ebc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8jY-Ro-G0O">

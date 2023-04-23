@@ -22,5 +22,10 @@ class LoginViewController: UIViewController {
     @IBAction func logInAction() {
     }
     
+    @IBAction func signUpTapped() {
+        let registrationStoryboard = UIStoryboard(name: "Registration", bundle: nil)
+        let registrationViewController = registrationStoryboard.instantiateViewController(withIdentifier: "registrationViewController") as! RegistrationViewController
+        self.navigationController?.pushViewController(registrationViewController, animated: true)
+    }
 }
 

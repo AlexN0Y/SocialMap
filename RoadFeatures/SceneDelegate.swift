@@ -17,22 +17,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
+        let favouritesStoryboard = UIStoryboard(name: "FavouritesViewController", bundle: nil)
         let mapStoryboard = UIStoryboard(name: "MapViewController", bundle: nil)
         let settingsStoryboard = UIStoryboard(name: "SettingsViewController", bundle: nil)
-        let favouritesStoryboard = UIStoryboard(name: "FavouritesViewController", bundle: nil)
 
-        let mapViewController = mapStoryboard.instantiateViewController(withIdentifier: "mapViewController")
-        mapViewController.title = "Map"
-        mapViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history , tag: 0)
-        let settingsViewController = settingsStoryboard.instantiateViewController(withIdentifier: "settingsViewController")
-        settingsViewController.title = "Settings"
-        settingsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more , tag: 1)
         let favouritesViewController = favouritesStoryboard.instantiateViewController(withIdentifier: "favouritesViewController")
+        let favouritesNavigationController = UINavigationController(rootViewController: favouritesViewController)
         favouritesViewController.title = "Favourites"
-        favouritesViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
+        favouritesViewController.tabBarItem = UITabBarItem(title: "Favourites", image: UIImage(systemName: "star.fill"), tag: 0)
+        
+        let mapViewController = mapStoryboard.instantiateViewController(withIdentifier: "mapViewController")
+        let mapNavigationController = UINavigationController(rootViewController: mapViewController)
+        mapViewController.title = "Map"
+        mapViewController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map"), tag: 1)
+        
+        let settingsViewController = settingsStoryboard.instantiateViewController(withIdentifier: "settingsViewController")
+        let settingsNavigationController = UINavigationController(rootViewController: settingsViewController)
+        settingsViewController.title = "Settings"
+        settingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
+
         
         let tabBarViewController = UITabBarController()
-        tabBarViewController.viewControllers = [favouritesViewController, mapViewController, settingsViewController]
+        tabBarViewController.viewControllers = [favouritesNavigationController, mapNavigationController, settingsNavigationController]
+        
+
             
         window.rootViewController = tabBarViewController
         
