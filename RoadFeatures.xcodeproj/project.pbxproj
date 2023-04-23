@@ -7,28 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF02BED029ECBFBE003C74A1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02BECF29ECBFBE003C74A1 /* SettingsViewController.swift */; };
-		DF02BED229ECBFF8003C74A1 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02BED129ECBFF8003C74A1 /* FavoritesViewController.swift */; };
 		DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */; };
 		DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191C29CFC09C0096E0AC /* MapViewController.swift */; };
+		DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */; };
+		DF3C5BF929F299050079D1DC /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C5BF829F299050079D1DC /* FavoritesViewController.swift */; };
+		DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3C5BFB29F29A780079D1DC /* FavouritesViewController.storyboard */; };
+		DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3C5BFE29F425F20079D1DC /* SettingsViewController.storyboard */; };
+		DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */; };
+		DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */; };
+		DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */; };
 		DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */; };
 		DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */; };
 		DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */; };
-		DFC9F6BF29C9FF1700B8BCE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC9F6BD29C9FF1700B8BCE6 /* Main.storyboard */; };
 		DFC9F6C129C9FF1800B8BCE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */; };
 		DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DF02BECF29ECBFBE003C74A1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
-		DF02BED129ECBFF8003C74A1 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
 		DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DF28191C29CFC09C0096E0AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DF3C5BF829F299050079D1DC /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		DF3C5BFB29F29A780079D1DC /* FavouritesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesViewController.storyboard; sourceTree = "<group>"; };
+		DF3C5BFE29F425F20079D1DC /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
+		DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		DFC9F6B429C9FF1700B8BCE6 /* RoadFeatures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadFeatures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DFC9F6BE29C9FF1700B8BCE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFC9F6C329C9FF1800B8BCE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFC9F6C529C9FF1800B8BCE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,6 +53,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF3C5BFA29F299820079D1DC /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				DF3C5BF829F299050079D1DC /* FavoritesViewController.swift */,
+				DF3C5BFB29F29A780079D1DC /* FavouritesViewController.storyboard */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		DF3C5BFD29F425C30079D1DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */,
+				DF3C5BFE29F425F20079D1DC /* SettingsViewController.storyboard */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DF3C5C0029F49CAE0079D1DC /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */,
+				DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		DF3C5C0129F49CC10079D1DC /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */,
+				DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		DF3C5C0229F49DA50079D1DC /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				DF28191C29CFC09C0096E0AC /* MapViewController.swift */,
+				DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		DFC9F6AB29C9FF1700B8BCE6 = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +117,13 @@
 		DFC9F6B629C9FF1700B8BCE6 /* RoadFeatures */ = {
 			isa = PBXGroup;
 			children = (
-				DF02BED129ECBFF8003C74A1 /* FavoritesViewController.swift */,
-				DF02BECF29ECBFBE003C74A1 /* SettingsViewController.swift */,
+				DF3C5C0229F49DA50079D1DC /* Map */,
+				DF3C5C0129F49CC10079D1DC /* Registration */,
+				DF3C5C0029F49CAE0079D1DC /* LogIn */,
+				DF3C5BFD29F425C30079D1DC /* Settings */,
+				DF3C5BFA29F299820079D1DC /* Favourites */,
 				DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */,
 				DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */,
-				DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */,
-				DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */,
-				DF28191C29CFC09C0096E0AC /* MapViewController.swift */,
-				DFC9F6BD29C9FF1700B8BCE6 /* Main.storyboard */,
 				DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */,
 				DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */,
 				DFC9F6C529C9FF1800B8BCE6 /* Info.plist */,
@@ -137,9 +189,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */,
 				DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */,
+				DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */,
+				DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */,
+				DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */,
+				DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */,
 				DFC9F6C129C9FF1800B8BCE6 /* Assets.xcassets in Resources */,
-				DFC9F6BF29C9FF1700B8BCE6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,25 +208,17 @@
 			files = (
 				DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */,
 				DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */,
-				DF02BED229ECBFF8003C74A1 /* FavoritesViewController.swift in Sources */,
+				DF3C5BF929F299050079D1DC /* FavoritesViewController.swift in Sources */,
 				DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */,
 				DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */,
 				DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */,
-				DF02BED029ECBFBE003C74A1 /* SettingsViewController.swift in Sources */,
+				DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DFC9F6BD29C9FF1700B8BCE6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DFC9F6BE29C9FF1700B8BCE6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -308,7 +356,7 @@
 				INFOPLIST_FILE = RoadFeatures/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MapViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -339,7 +387,7 @@
 				INFOPLIST_FILE = RoadFeatures/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MapViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
