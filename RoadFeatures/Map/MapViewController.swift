@@ -14,10 +14,13 @@ class MapViewController: UIViewController {
         }
     }
     
+    private enum Constant {
+        static let title = "Map"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Constant.title
     }
-        // UserDefaults.standard.string(forKey: "username") ??
-
+    
 }
