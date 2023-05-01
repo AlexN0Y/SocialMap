@@ -16,6 +16,9 @@
 		DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */; };
 		DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */; };
 		DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */; };
+		DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB004E929FED03400B2943E /* FavouritesPostCell.swift */; };
+		DFB004EE29FF348A00B2943E /* PointDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB004ED29FF348A00B2943E /* PointDetailsViewController.storyboard */; };
+		DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */; };
 		DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */; };
 		DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */; };
 		DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */; };
@@ -35,6 +38,9 @@
 		DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
+		DFB004E929FED03400B2943E /* FavouritesPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesPostCell.swift; sourceTree = "<group>"; };
+		DFB004ED29FF348A00B2943E /* PointDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointDetailsViewController.storyboard; sourceTree = "<group>"; };
+		DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailsViewController.swift; sourceTree = "<group>"; };
 		DFC9F6B429C9FF1700B8BCE6 /* RoadFeatures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadFeatures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				DF3C5BF829F299050079D1DC /* FavouritesViewController.swift */,
+				DFB004E929FED03400B2943E /* FavouritesPostCell.swift */,
 				DF3C5BFB29F29A780079D1DC /* FavouritesViewController.storyboard */,
 			);
 			path = Favourites;
@@ -102,6 +109,15 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		DFB004EC29FF346300B2943E /* PointDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */,
+				DFB004ED29FF348A00B2943E /* PointDetailsViewController.storyboard */,
+			);
+			path = PointDetails;
+			sourceTree = "<group>";
+		};
 		DFC9F6AB29C9FF1700B8BCE6 = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +143,9 @@
 				DF3C5C0029F49CAE0079D1DC /* LogIn */,
 				DF3C5BFD29F425C30079D1DC /* Settings */,
 				DF3C5BFA29F299820079D1DC /* Favourites */,
-				DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */,
+				DFB004EC29FF346300B2943E /* PointDetails */,
 				DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */,
+				DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */,
 				DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */,
 				DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */,
 				DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */,
@@ -208,6 +225,7 @@
 				DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */,
 				DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */,
 				DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */,
+				DFB004EE29FF348A00B2943E /* PointDetailsViewController.storyboard in Resources */,
 				DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */,
 				DFC9F6C129C9FF1800B8BCE6 /* Assets.xcassets in Resources */,
 			);
@@ -228,7 +246,9 @@
 				DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */,
 				DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */,
 				DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */,
+				DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */,
 				DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */,
+				DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

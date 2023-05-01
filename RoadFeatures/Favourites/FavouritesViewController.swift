@@ -9,56 +9,68 @@ import UIKit
 
 struct Point {
     enum Kind: String {
-        case building = "Building"
-        case park = "Park"
+        case building = "BuildingImage"
+        case park = "ParkImage"
     }
     let name: String
-    let descriprion: String
-    let city: String
+    let description: String? // може не бути
+    let city: String? // може не бути
     let kind: Kind
     let point: (Int, Int)
 }
 
 class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet private weak var favouritesCollectionView: UICollectionView!
+    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
+        didSet {
+            collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+    }
+    
     private enum Constant {
         static let title = "Favourites"
+        static let pointDetailsStoryboard = "PointDetailsViewController"
     }
     
     let points: Array<Point> = [
-        Point(name: "Empire State Building", descriprion: "A famous skyscraper in New York City", city: "New York", kind: .building, point: (40, -73)),
-        Point(name: "Central Park", descriprion: "A large park in New York City", city: "New York", kind: .park, point: (40, -73)),
-        Point(name: "Big Ben", descriprion: "A famous clock tower in London", city: "London", kind: .building, point: (51, -0)),
-        Point(name: "Hyde Park", descriprion: "A large park in London", city: "London", kind: .park, point: (51, -0)),
-        Point(name: "Eiffel Tower", descriprion: "A famous tower in Paris", city: "Paris", kind: .building, point: (48, 2))
+        Point(name: "Empire State Building", description: "A famous skyscraper in New York City A famous skyscraper in New York City A famous skyscraper in New York City", city: "New York", kind: .building, point: (40, -73)),
+        Point(name: "Central Park", description: "A large park in New York City", city: "New York", kind: .park, point: (40, -73)),
+        Point(name: "Big Ben", description: "A famous clock tower in London", city: "London", kind: .building, point: (51, -0)),
+        Point(name: "Hyde Park", description: "A large park in London", city: "London", kind: .park, point: (51, -0)),
+        Point(name: "Eiffel Tower", description: "A famous tower in Paris", city: "Paris", kind: .building, point: (48, 2)),
+        Point(name: "Big Ben", description: "A famous clock tower in London", city: "London", kind: .building, point: (51, -0))
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constant.title
+        setSpaceBetweenCells()
     }
+    
+    private func setSpaceBetweenCells() {
+        let layout = favouritesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        layout?.minimumLineSpacing = 15
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return points.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! PostCell
-        cell.nameLabel.text = points[indexPath.row].name
-        cell.cityLabel.text = points[indexPath.row].city
-        cell.descriptionLabel.text = points[indexPath.row].descriprion
-        cell.kindLabel.text = points[indexPath.row].kind.rawValue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! FavouritesPostCell
+        cell.cellConfigurate(point: points[indexPath.row])
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pointDetailsStoryboard = UIStoryboard(name: Constant.pointDetailsStoryboard, bundle: nil)
+        let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as! PointDetailsViewController
+        pointDetailsViewController.selectedPoint(point: points[indexPath.row])
+        present(pointDetailsViewController, animated: true, completion: nil)
+    }
+
     
 }
 
-
-class PostCell: UICollectionViewCell {
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var kindLabel: UILabel!
-    
-}
