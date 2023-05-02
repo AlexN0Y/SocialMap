@@ -27,5 +27,9 @@ class SettingsViewController: UIViewController {
         self.navigationController?.pushViewController(logInViewController, animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }

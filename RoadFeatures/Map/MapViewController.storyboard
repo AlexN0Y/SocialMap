@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,17 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, {name} !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLg-RY-71S">
-                                <rect key="frame" x="141" y="415.66666666666669" width="111.33333333333331" height="21"/>
+                                <rect key="frame" x="141" y="74" width="111.33333333333331" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjP-Be-ncr">
+                                <rect key="frame" x="0.0" y="135" width="393" height="643"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YYd-7M-Hzl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="gLg-RY-71S" firstAttribute="top" secondItem="YYd-7M-Hzl" secondAttribute="top" constant="15" id="KW9-QG-0Mo"/>
                             <constraint firstItem="gLg-RY-71S" firstAttribute="centerX" secondItem="5S3-HN-zTq" secondAttribute="centerX" id="Kgd-Ri-nQo"/>
-                            <constraint firstItem="gLg-RY-71S" firstAttribute="centerY" secondItem="5S3-HN-zTq" secondAttribute="centerY" id="chx-W4-Ack"/>
+                            <constraint firstItem="NjP-Be-ncr" firstAttribute="top" secondItem="gLg-RY-71S" secondAttribute="bottom" constant="40" id="TgV-rb-7qH"/>
+                            <constraint firstItem="YYd-7M-Hzl" firstAttribute="bottom" secondItem="NjP-Be-ncr" secondAttribute="bottom" constant="40" id="fNg-Tf-XSN"/>
+                            <constraint firstItem="NjP-Be-ncr" firstAttribute="trailing" secondItem="YYd-7M-Hzl" secondAttribute="trailing" id="qYH-6J-v9U"/>
+                            <constraint firstItem="NjP-Be-ncr" firstAttribute="leading" secondItem="YYd-7M-Hzl" secondAttribute="leading" id="zEz-YC-Haw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="0bz-hz-qXy"/>
@@ -38,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qQ-Ao-x4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="-14"/>
+            <point key="canvasLocation" x="119.84732824427481" y="-14.084507042253522"/>
         </scene>
     </scenes>
     <resources>

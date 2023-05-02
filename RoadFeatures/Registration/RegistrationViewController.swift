@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
@@ -16,6 +16,9 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameField.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     @IBAction func createUserName() {
@@ -25,5 +28,10 @@ class RegistrationViewController: UIViewController {
         //        UserDefaults.standard.set(name, forKey: "userName")
         //        UserDefaults.standard.set(email, forKey: "userEmail")
         //        UserDefaults.standard.set(password, forKey: "userPassword")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
