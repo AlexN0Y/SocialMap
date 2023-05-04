@@ -7,10 +7,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
     
     private enum Constant {
         static let registrationStoryboardName = "Registration"
@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     @IBAction func logInAction() {
@@ -29,6 +31,11 @@ class LoginViewController: UIViewController {
         let registrationStoryboard = UIStoryboard(name: Constant.registrationStoryboardName, bundle: nil)
         let registrationViewController = registrationStoryboard.instantiateViewController(withIdentifier: Constant.registrationViewControllerName) as! RegistrationViewController
         self.navigationController?.pushViewController(registrationViewController, animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

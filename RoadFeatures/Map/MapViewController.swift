@@ -8,9 +8,9 @@
 import UIKit
 
 class MapViewController: UIViewController {
-    @IBOutlet weak var welcomeLabel: UILabel! {
+    @IBOutlet private weak var welcomeLabel: UILabel! {
         didSet {
-            welcomeLabel.text = "Hello, man !"
+            welcomeLabel.text = "Hello, map will be soon !"
         }
     }
     

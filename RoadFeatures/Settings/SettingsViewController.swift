@@ -23,8 +23,13 @@ class SettingsViewController: UIViewController {
     @IBAction func logInTapped() {
         let logInStoryboard = UIStoryboard(name: Constant.logInStoryboardName, bundle: nil)
         let logInViewController = logInStoryboard.instantiateViewController(withIdentifier: Constant.logInViewControllerName) as! LoginViewController
+        logInViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(logInViewController, animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
