@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
+    
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet private weak var welcomeLabel: UILabel! {
         didSet {
-            welcomeLabel.text = "Hello, map will be soon !"
+            welcomeLabel.text = "Hello, map starts to bee here !"
         }
     }
     
@@ -23,4 +26,7 @@ class MapViewController: UIViewController {
         self.title = Constant.title
     }
     
+}
+
+extension MapViewController: MKMapViewDelegate {
 }

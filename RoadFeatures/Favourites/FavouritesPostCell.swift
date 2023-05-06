@@ -8,29 +8,28 @@
 import UIKit
 
 class FavouritesPostCell: UICollectionViewCell {
+    var point: Point?
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var cityLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var kindImage: UIImageView!
     
     func cellConfigurate(point: Point) {
+        self.point = point
         nameLabel.text = point.name
-        cityLabel.text = point.city ?? ""
-        descriptionLabel.text = point.description ?? ""
+        if let city = point.city {
+            cityLabel.isHidden = false
+            cityLabel.text = city
+        } else {
+            cityLabel.isHidden = true
+        }
+        if let description = point.description {
+            descriptionLabel.isHidden = false
+            descriptionLabel.text = description
+        } else {
+            descriptionLabel.isHidden = true
+        }
         kindImage.image = UIImage(named: point.kind.rawValue)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
         
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            contentView.leftAnchor.constraint(equalTo: leftAnchor),
-            contentView.rightAnchor.constraint(equalTo: rightAnchor),
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
-    }
-    
 }
