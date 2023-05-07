@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController, UITextFieldDelegate {
+class RegistrationViewController: UIViewController {
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
@@ -34,4 +34,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+}
+
+extension RegistrationViewController: UITextFieldDelegate {
 }

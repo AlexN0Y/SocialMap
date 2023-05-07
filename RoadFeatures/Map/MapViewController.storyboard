@@ -24,7 +24,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjP-Be-ncr">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NjP-Be-ncr">
                                 <rect key="frame" x="0.0" y="135" width="393" height="643"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
@@ -42,6 +42,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="0bz-hz-qXy"/>
                     <connections>
+                        <outlet property="mapView" destination="NjP-Be-ncr" id="8Yo-SH-Fvj"/>
                         <outlet property="welcomeLabel" destination="gLg-RY-71S" id="6ID-qA-fgI"/>
                     </connections>
                 </viewController>

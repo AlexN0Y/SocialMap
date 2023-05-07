@@ -13,15 +13,15 @@ struct Point {
         case park = "ParkImage"
     }
     let name: String
-    let description: String? // може не бути
-    let city: String? // може не бути
+    let description: String?
+    let city: String?
     let kind: Kind
     let point: (Int, Int)
 }
 
-class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FavouritesViewController: UIViewController {
     
-    @IBOutlet private weak var favouritesCollectionView: UICollectionView!
+    @IBOutlet private var collectionView: UICollectionView!
     @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
         didSet {
             collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -39,17 +39,19 @@ class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICo
         Point(name: "Big Ben", description: "A famous clock tower in London", city: "London", kind: .building, point: (51, -0)),
         Point(name: "Hyde Park", description: "A large park in London", city: "London", kind: .park, point: (51, -0)),
         Point(name: "Eiffel Tower", description: "A famous tower in Paris", city: "Paris", kind: .building, point: (48, 2)),
+        Point(name: "Feature point", description: nil, city: nil, kind: .park, point: (14, 88)),
         Point(name: "Big Ben", description: "A famous clock tower in London", city: "London", kind: .building, point: (51, -0))
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constant.title
+        configureHierarchy()
         setSpaceBetweenCells()
     }
     
     private func setSpaceBetweenCells() {
-        let layout = favouritesCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         layout?.minimumLineSpacing = 15
     }
     
@@ -59,18 +61,35 @@ class FavouritesViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as! FavouritesPostCell
-        cell.cellConfigurate(point: points[indexPath.row])
-        return cell
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? FavouritesPostCell {
+            cell.cellConfigurate(point: points[indexPath.row])
+            return cell
+        } else {
+            fatalError("Unable to dequeue FavouritesPostCell")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pointDetailsStoryboard = UIStoryboard(name: Constant.pointDetailsStoryboard, bundle: nil)
-        let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as! PointDetailsViewController
-        pointDetailsViewController.selectedPoint(point: points[indexPath.row])
-        present(pointDetailsViewController, animated: true, completion: nil)
+        if let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as? PointDetailsViewController {
+            pointDetailsViewController.selectedPoint(point: points[indexPath.row])
+            present(pointDetailsViewController, animated: true, completion: nil)
+        } else {
+            fatalError("Unable to present PointDetailsViewController")
+        }
     }
 
     
 }
 
+extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    private func createLayout() -> UICollectionViewLayout {
+        let config = UICollectionLayoutListConfiguration(appearance: .plain)
+        return UICollectionViewCompositionalLayout.list(using: config)
+    }
+    
+    private func configureHierarchy() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+}

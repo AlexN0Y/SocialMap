@@ -1,12 +1,10 @@
 {
   "images" : [
     {
-      "filename" : "park-svgrepo-com.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "park-svgrepo-com 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
