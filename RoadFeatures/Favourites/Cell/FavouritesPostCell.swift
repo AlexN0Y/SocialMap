@@ -8,14 +8,21 @@
 import UIKit
 
 class FavouritesPostCell: UICollectionViewCell {
-    var point: Point?
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var cityLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var kindImage: UIImageView!
+    @IBOutlet private  var nameLabel: UILabel!
+    @IBOutlet private  var cityLabel: UILabel!
+    @IBOutlet private  var descriptionLabel: UILabel!
+    @IBOutlet private  var kindImage: UIImageView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     
     func cellConfigurate(point: Point) {
-        self.point = point
+        //self.point = point
         nameLabel.text = point.name
         if let city = point.city {
             cityLabel.isHidden = false

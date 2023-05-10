@@ -21,12 +21,16 @@ struct Point {
 
 class FavouritesViewController: UIViewController {
     
-    @IBOutlet private var collectionView: UICollectionView!
-    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
+    @IBOutlet private var collectionView: UICollectionView! {
         didSet {
-            collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            collectionView.register(FavouritesPostCell.self, forCellWithReuseIdentifier: "FavouritesPostCell")
         }
     }
+//    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
+//        didSet {
+//            collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        }
+//    }
     
     private enum Constant {
         static let title = "Favourites"
@@ -55,13 +59,25 @@ class FavouritesViewController: UIViewController {
         layout?.minimumLineSpacing = 15
     }
     
+    private func createLayout() -> UICollectionViewLayout {
+        let config = UICollectionLayoutListConfiguration(appearance: .plain)
+        return UICollectionViewCompositionalLayout.list(using: config)
+    }
     
+    private func configureHierarchy() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+}
+
+extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return points.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? FavouritesPostCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavouritesPostCell", for: indexPath) as? FavouritesPostCell {
             cell.cellConfigurate(point: points[indexPath.row])
             return cell
         } else {
@@ -77,19 +93,5 @@ class FavouritesViewController: UIViewController {
         } else {
             fatalError("Unable to present PointDetailsViewController")
         }
-    }
-
-    
-}
-
-extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    private func createLayout() -> UICollectionViewLayout {
-        let config = UICollectionLayoutListConfiguration(appearance: .plain)
-        return UICollectionViewCompositionalLayout.list(using: config)
-    }
-    
-    private func configureHierarchy() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 }
