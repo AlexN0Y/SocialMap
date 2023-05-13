@@ -16,6 +16,7 @@
 		DF7CD22B2A08303F00FDC621 /* LabeledTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */; };
 		DF7CD22D2A08305200FDC621 /* LabeledTextfield.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */; };
 		DF7CD2342A0833D100FDC621 /* FavouritesPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7CD2322A0833D100FDC621 /* FavouritesPostCell.xib */; };
+		DF7CD2362A0FC96900FDC621 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD2352A0FC96900FDC621 /* UIView+Extensions.swift */; };
 		DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */; };
 		DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */; };
 		DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */; };
@@ -41,6 +42,7 @@
 		DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextfield.swift; sourceTree = "<group>"; };
 		DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabeledTextfield.xib; sourceTree = "<group>"; };
 		DF7CD2322A0833D100FDC621 /* FavouritesPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesPostCell.xib; sourceTree = "<group>"; };
+		DF7CD2352A0FC96900FDC621 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				DFCD9A3629F696BE00D7A3EF /* UIViewController+Extension.swift */,
+				DF7CD2352A0FC96900FDC621 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */,
 				DF3C5BF929F299050079D1DC /* FavouritesViewController.swift in Sources */,
 				DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */,
+				DF7CD2362A0FC96900FDC621 /* UIView+Extensions.swift in Sources */,
 				DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */,
 				DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */,
 				DF7CD22B2A08303F00FDC621 /* LabeledTextfield.swift in Sources */,

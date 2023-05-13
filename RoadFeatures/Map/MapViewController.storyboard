@@ -18,24 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, {name} !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLg-RY-71S">
-                                <rect key="frame" x="141" y="74" width="111.33333333333331" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NjP-Be-ncr">
-                                <rect key="frame" x="0.0" y="135" width="393" height="643"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YYd-7M-Hzl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gLg-RY-71S" firstAttribute="top" secondItem="YYd-7M-Hzl" secondAttribute="top" constant="15" id="KW9-QG-0Mo"/>
-                            <constraint firstItem="gLg-RY-71S" firstAttribute="centerX" secondItem="5S3-HN-zTq" secondAttribute="centerX" id="Kgd-Ri-nQo"/>
-                            <constraint firstItem="NjP-Be-ncr" firstAttribute="top" secondItem="gLg-RY-71S" secondAttribute="bottom" constant="40" id="TgV-rb-7qH"/>
-                            <constraint firstItem="YYd-7M-Hzl" firstAttribute="bottom" secondItem="NjP-Be-ncr" secondAttribute="bottom" constant="40" id="fNg-Tf-XSN"/>
+                            <constraint firstItem="NjP-Be-ncr" firstAttribute="top" secondItem="YYd-7M-Hzl" secondAttribute="top" id="8n6-bd-3gh"/>
+                            <constraint firstItem="YYd-7M-Hzl" firstAttribute="bottom" secondItem="NjP-Be-ncr" secondAttribute="bottom" id="fNg-Tf-XSN"/>
                             <constraint firstItem="NjP-Be-ncr" firstAttribute="trailing" secondItem="YYd-7M-Hzl" secondAttribute="trailing" id="qYH-6J-v9U"/>
                             <constraint firstItem="NjP-Be-ncr" firstAttribute="leading" secondItem="YYd-7M-Hzl" secondAttribute="leading" id="zEz-YC-Haw"/>
                         </constraints>
@@ -43,7 +35,6 @@
                     <navigationItem key="navigationItem" title="Map" id="0bz-hz-qXy"/>
                     <connections>
                         <outlet property="mapView" destination="NjP-Be-ncr" id="8Yo-SH-Fvj"/>
-                        <outlet property="welcomeLabel" destination="gLg-RY-71S" id="6ID-qA-fgI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qQ-Ao-x4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

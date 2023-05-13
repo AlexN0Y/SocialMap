@@ -23,14 +23,11 @@ class FavouritesViewController: UIViewController {
     
     @IBOutlet private var collectionView: UICollectionView! {
         didSet {
-            collectionView.register(FavouritesPostCell.self, forCellWithReuseIdentifier: "FavouritesPostCell")
+            let nib = UINib(nibName: "FavouritesPostCell", bundle: .main)
+            collectionView.register(nib, forCellWithReuseIdentifier: "FavouritesPostCell")
         }
     }
-//    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
-//        didSet {
-//            collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-//        }
-//    }
+
     
     private enum Constant {
         static let title = "Favourites"
@@ -51,13 +48,8 @@ class FavouritesViewController: UIViewController {
         super.viewDidLoad()
         self.title = Constant.title
         configureHierarchy()
-        setSpaceBetweenCells()
     }
-    
-    private func setSpaceBetweenCells() {
-        let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        layout?.minimumLineSpacing = 15
-    }
+
     
     private func createLayout() -> UICollectionViewLayout {
         let config = UICollectionLayoutListConfiguration(appearance: .plain)
@@ -65,8 +57,7 @@ class FavouritesViewController: UIViewController {
     }
     
     private func configureHierarchy() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout())
-        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.collectionViewLayout = createLayout()
     }
     
 }
