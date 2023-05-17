@@ -8,21 +8,29 @@
 import UIKit
 
 class FavouritesPostCell: UICollectionViewCell {
-    @IBOutlet private  var nameLabel: UILabel!
-    @IBOutlet private  var cityLabel: UILabel!
+    @IBOutlet private  var nameLabel: UILabel! {
+        didSet {
+            nameLabel.font = UIFont(name: "Helvetica-Bold", size: 19)
+        }
+    }
+    @IBOutlet private  var cityLabel: UILabel! {
+        didSet {
+            cityLabel.font = UIFont(name: "Helvetica", size: 18)
+        }
+    }
     @IBOutlet private  var descriptionLabel: UILabel!
     @IBOutlet private  var kindImage: UIImageView!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
     
     func cellConfigurate(point: Point) {
-        //self.point = point
+        descriptionLabel.backgroundColor = UIColor.white
         nameLabel.text = point.name
         if let city = point.city {
             cityLabel.isHidden = false

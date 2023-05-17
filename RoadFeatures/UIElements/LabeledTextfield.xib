@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LabeledTextfield" customModule="RoadFeatures" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LabeledTextfield" customModule="RoadFeatures" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="361" height="76"/>
@@ -33,6 +33,9 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="textFieldChanged" destination="iN0-l3-epB" eventType="editingChanged" id="DVy-NY-wNF"/>
+                            </connections>
                         </textField>
                     </subviews>
                 </stackView>
@@ -47,9 +50,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="titleLabel" destination="HcE-Tg-tA1" id="JTN-Sl-dBD"/>
+                <outlet property="textField" destination="E8b-9y-RIm" id="rBW-1x-hre"/>
+                <outlet property="titleLabel" destination="HcE-Tg-tA1" id="Wzo-Fo-Yzs"/>
             </connections>
-            <point key="canvasLocation" x="-179.38931297709922" y="-48.591549295774648"/>
+            <point key="canvasLocation" x="-286.25954198473283" y="-52.112676056338032"/>
         </view>
     </objects>
     <resources>
