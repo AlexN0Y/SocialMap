@@ -22,7 +22,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create"/>
                                 <connections>
-                                    <action selector="createUserName" destination="ih6-Vq-nw4" eventType="touchUpInside" id="Vh5-qK-S6q"/>
+                                    <action selector="createUser" destination="ih6-Vq-nw4" eventType="touchUpInside" id="Vh5-qK-S6q"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6x1-ca-bS7">

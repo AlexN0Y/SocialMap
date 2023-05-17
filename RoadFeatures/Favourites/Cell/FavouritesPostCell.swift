@@ -21,13 +21,6 @@ class FavouritesPostCell: UICollectionViewCell {
     @IBOutlet private  var descriptionLabel: UILabel!
     @IBOutlet private  var kindImage: UIImageView!
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
     
     func cellConfigurate(point: Point) {
         descriptionLabel.backgroundColor = UIColor.white
