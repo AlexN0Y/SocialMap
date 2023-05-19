@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let user = Auth.auth().currentUser {
+        if Auth.auth().currentUser != nil {
             signInOutButton.setTitle("LogOut", for: .normal)
         } else {
             signInOutButton.setTitle("LogIn", for: .normal)
