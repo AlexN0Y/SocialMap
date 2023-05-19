@@ -23,11 +23,12 @@ class LabeledTextfield: UIView, UITextFieldDelegate {
         }
     }
     
-    public func configureLabeledTextfield(labelText: String) {
+    public func configureLabeledTextfield(labelText: String, secureTextEntry: Bool = false) {
         titleLabel.text = labelText
         self.backgroundColor = UIColor.secondarySystemBackground
         titleLabel.backgroundColor = UIColor.secondarySystemBackground
         textField.backgroundColor = UIColor.white
+        textField.isSecureTextEntry = secureTextEntry
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

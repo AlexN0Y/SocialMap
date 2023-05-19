@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class RegistrationViewController: UIViewController {
     
@@ -26,7 +28,7 @@ class RegistrationViewController: UIViewController {
                 passwordView.topAnchor.constraint(equalTo: passwordPlaceholder.topAnchor),
                 passwordView.bottomAnchor.constraint(equalTo: passwordPlaceholder.bottomAnchor)
             ])
-            passwordView.configureLabeledTextfield(labelText: "Password")
+            passwordView.configureLabeledTextfield(labelText: "Password", secureTextEntry: true)
             passwordView.onSave = { [weak self] text in
                 self?.userPassword = text
             }
@@ -71,15 +73,46 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func createUserName() {
-        //        guard let name = nameField.text, let email = emailField.text, let password = passwordField.text else {
-        //            return
-        //        }
-        //        UserDefaults.standard.set(name, forKey: "userName")
-        //        UserDefaults.standard.set(email, forKey: "userEmail")
-        //        UserDefaults.standard.set(password, forKey: "userPassword")
+    private func showAlert() {
+        let alert = UIAlertController(title: "Alert", message: "Fill in all the fields", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
     
-
+    private func addUserToFirestore(userId: String, userName: String, userEmail: String) {
+        let db = Firestore.firestore()
+        let usersCollection = db.collection("users").document(userId)
+        let userData: [String: Any] = [
+            "name": userName,
+            "email": userEmail
+        ]
+        usersCollection.setData(userData) { (error) in
+            if let error = error {
+                print("Error adding user: \(error)")
+            } else {
+                print("User \(userId) added")
+            }
+        }
+        
+    }
+    
+    @IBAction func createUser() {
+        guard let name = userName, !name.isEmpty, let email = userLogin, !email.isEmpty, let password = userPassword, !password.isEmpty else {
+            showAlert()
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                print("Error creating user:", error.localizedDescription)
+            } else {
+                self.addUserToFirestore(userId: authResult?.user.uid ?? "", userName: name, userEmail: email)
+                print("User created successfully:", authResult?.user.uid ?? "")
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+        
+    }
+    
+    
 }
 

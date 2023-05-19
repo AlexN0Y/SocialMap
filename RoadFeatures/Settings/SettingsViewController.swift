@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var signInOutButton: UIButton!
     private enum Constant {
         static let title = "Settings"
         static let logInStoryboardName = "LogIn"
@@ -20,16 +22,32 @@ class SettingsViewController: UIViewController {
         self.title = Constant.title
     }
     
-    @IBAction func logInTapped() {
-        let logInStoryboard = UIStoryboard(name: Constant.logInStoryboardName, bundle: nil)
-        let logInViewController = logInStoryboard.instantiateViewController(withIdentifier: Constant.logInViewControllerName) as! LoginViewController
-        logInViewController.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(logInViewController, animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        if let user = Auth.auth().currentUser {
+            signInOutButton.setTitle("LogOut", for: .normal)
+        } else {
+            signInOutButton.setTitle("LogIn", for: .normal)
+        }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    @IBAction func logInTapped() {
+        switch(signInOutButton.titleLabel?.text) {
+        case "LogIn":
+            let logInStoryboard = UIStoryboard(name: Constant.logInStoryboardName, bundle: nil)
+            let logInViewController = logInStoryboard.instantiateViewController(withIdentifier: Constant.logInViewControllerName) as! LoginViewController
+            logInViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(logInViewController, animated: true)
+        case "LogOut":
+            do {
+                try Auth.auth().signOut()
+                signInOutButton.setTitle("LogIn", for: .normal)
+            } catch let signOutError as NSError {
+                print("Error signing out: \(signOutError.localizedDescription)")
+            }
+        default:
+            fatalError("Button doesn't have title")
+        }
     }
+    
     
 }
