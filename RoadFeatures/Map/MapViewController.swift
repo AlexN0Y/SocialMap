@@ -7,10 +7,9 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
 class MapViewController: UIViewController {
-    let locationManager = CLLocationManager()
+    let locationManager = LocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -21,9 +20,9 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constant.title
-        locationManager.delegate = self
         mapView.delegate = self
         mapView.showsUserLocation = true
+        locationManager.locationDelegate = self
         // plug
         let addLocationButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItems = [addLocationButton]
@@ -31,14 +30,7 @@ class MapViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        checkLocationAuthorization()
-        let authStatus = locationManager.authorizationStatus
-        if authStatus == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-            return
-        }
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
+        locationManager.checkLocationAuthorization()
     }
     
     func showLocationServicesAlert() {
@@ -65,49 +57,18 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
 }
 
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("didFailWithError \(error.localizedDescription)")
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
+extension MapViewController: LocationDelegate {
+    func locationDidUpdate(to location: CLLocation) {
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
         mapView.userTrackingMode = .follow
-        locationManager.stopUpdatingLocation()
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        if manager.authorizationStatus == .authorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-            mapView.showsUserLocation = true
-        } else {
-            locationManager.stopUpdatingLocation()
-            mapView.showsUserLocation = false
-        }
+    func locationDidFail(withError error: Error) {
+        print("didFailWithError \(error.localizedDescription)")
     }
     
-    func showLocationServicesDeniedAlert() {
-        let alert = UIAlertController(title: "Location Services Disabled", message: "Please enable location services for this app in Settings.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    
-    func checkLocationAuthorization() {
-        let locationManager = CLLocationManager()
-        
-        switch locationManager.authorizationStatus {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        case .restricted, .denied:
-            showLocationServicesAlert()
-        case .authorizedWhenInUse, .authorizedAlways:
-            break
-        @unknown default:
-            break
-        }
+    func locationServicesWereDenied() {
+        showLocationServicesAlert()
     }
 }
