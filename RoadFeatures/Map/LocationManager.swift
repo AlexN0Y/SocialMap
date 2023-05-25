@@ -16,9 +16,9 @@ protocol LocationDelegate: AnyObject {
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private let locationManager = CLLocationManager()
-    
+    private var currentLocation: CLLocation?
     weak var locationDelegate: LocationDelegate?
-
+    
     override init() {
         super.init()
         locationManager.delegate = self
@@ -44,6 +44,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        currentLocation = location
         locationDelegate?.locationDidUpdate(to: location)
         locationManager.stopUpdatingLocation()
     }
@@ -51,4 +52,9 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuthorization()
     }
+    
+    func getCurrentLocationCoordinate() -> CLLocationCoordinate2D? {
+        return currentLocation?.coordinate
+    }
+    
 }

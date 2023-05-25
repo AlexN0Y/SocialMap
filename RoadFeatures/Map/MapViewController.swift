@@ -10,11 +10,14 @@ import MapKit
 
 class MapViewController: UIViewController {
     let locationManager = LocationManager()
+    let pointManager = PointManager.shared
+    private var points: [Point]?
     
     @IBOutlet weak var mapView: MKMapView!
     
     private enum Constant {
         static let title = "Map"
+        static let addPointStoryboard = "AddPointViewController"
     }
     
     override func viewDidLoad() {
@@ -23,11 +26,33 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         mapView.showsUserLocation = true
         locationManager.locationDelegate = self
-        // plug
-        let addLocationButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
+        let addLocationButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addLocationTapped(_:)))
         navigationItem.rightBarButtonItems = [addLocationButton]
+        setAnnotations()
     }
     
+    private func setAnnotations() {
+        points = pointManager.getAll()
+        guard let points = points else {
+            return
+        }
+        var annotations = [MKPointAnnotation]()
+        for point in points {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
+            annotation.title = point.name
+            annotations.append(annotation)
+        }
+        mapView.addAnnotations(annotations)
+    }
+    
+    @objc func addLocationTapped(_ sender: UIBarButtonItem) {
+        let addPointStoryboard = UIStoryboard(name: Constant.addPointStoryboard, bundle: nil)
+        let addPointViewController = addPointStoryboard.instantiateViewController(withIdentifier: String(describing: AddPointViewController.self)) as! AddPointViewController
+        addPointViewController.hidesBottomBarWhenPushed = true
+        addPointViewController.delegate = self
+        self.navigationController?.pushViewController(addPointViewController, animated: true)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         locationManager.checkLocationAuthorization()
@@ -70,5 +95,18 @@ extension MapViewController: LocationDelegate {
     
     func locationServicesWereDenied() {
         showLocationServicesAlert()
+    }
+}
+
+extension MapViewController: AddPointViewControllerDelegate {
+    func pointWasAdded() {
+        let point = pointManager.getAll().last
+        guard let point = point else {
+            return
+        }
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
+        annotation.title = point.name
+        mapView.addAnnotation(annotation)
     }
 }
