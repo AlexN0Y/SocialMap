@@ -29,16 +29,27 @@
                                     <action selector="logInTapped" destination="fkp-1L-dlc" eventType="touchUpInside" id="6xn-ln-Owy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWQ-hf-HAa">
+                                <rect key="frame" x="30" y="79" width="333" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nPz-YT-EHr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JWQ-hf-HAa" firstAttribute="top" secondItem="nPz-YT-EHr" secondAttribute="top" constant="20" id="36c-e3-hJk"/>
+                            <constraint firstItem="JWQ-hf-HAa" firstAttribute="leading" secondItem="nPz-YT-EHr" secondAttribute="leading" constant="30" id="H5m-a9-ZlK"/>
+                            <constraint firstItem="JWQ-hf-HAa" firstAttribute="centerX" secondItem="r9e-L1-dYZ" secondAttribute="centerX" id="JnD-b3-8Be"/>
                             <constraint firstItem="76m-IM-ACf" firstAttribute="centerY" secondItem="r9e-L1-dYZ" secondAttribute="centerY" id="Z4C-i5-RQp"/>
+                            <constraint firstItem="nPz-YT-EHr" firstAttribute="trailing" secondItem="JWQ-hf-HAa" secondAttribute="trailing" constant="30" id="qMa-m2-ly3"/>
                             <constraint firstItem="76m-IM-ACf" firstAttribute="centerX" secondItem="r9e-L1-dYZ" secondAttribute="centerX" id="wiU-kl-Iwy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="uLI-tU-odU"/>
                     <connections>
+                        <outlet property="greetingLabel" destination="JWQ-hf-HAa" id="KUG-hS-alE"/>
                         <outlet property="signInOutButton" destination="76m-IM-ACf" id="le5-Sd-zHI"/>
                     </connections>
                 </viewController>

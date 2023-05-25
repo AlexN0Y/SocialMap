@@ -33,7 +33,7 @@ class PointDetailsViewController: UIViewController {
         nameLabel.text = point.name
         cityLabel.text = point.city ?? "None"
         descriptionLabel.text = point.description ?? "None"
-        pointLabel.text = "X: \(point.point.0), Y: \(point.point.1)"
+        pointLabel.text = "X: \(point.point.0) \n Y: \(point.point.1)"
         kindImage.image = UIImage(named: point.kind.rawValue)
     }
     

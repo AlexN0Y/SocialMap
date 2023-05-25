@@ -8,6 +8,7 @@
 import UIKit
 
 class FavouritesPostCell: UICollectionViewCell {
+    
     @IBOutlet private  var nameLabel: UILabel! {
         didSet {
             nameLabel.font = UIFont(name: "Helvetica-Bold", size: 19)
@@ -20,7 +21,6 @@ class FavouritesPostCell: UICollectionViewCell {
     }
     @IBOutlet private  var descriptionLabel: UILabel!
     @IBOutlet private  var kindImage: UIImageView!
-    
     
     func cellConfigurate(point: Point) {
         descriptionLabel.backgroundColor = UIColor.white
@@ -39,5 +39,5 @@ class FavouritesPostCell: UICollectionViewCell {
         }
         kindImage.image = UIImage(named: point.kind.rawValue)
     }
-        
+    
 }

@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class FavouritesViewController: UIViewController {
     
     @IBOutlet private var collectionView: UICollectionView! {
@@ -16,22 +15,24 @@ class FavouritesViewController: UIViewController {
             collectionView.register(nib, forCellWithReuseIdentifier: "FavouritesPostCell")
         }
     }
-    
-    
     private enum Constant {
         static let title = "Favourites"
         static let pointDetailsStoryboard = "PointDetailsViewController"
         static let addPointStoryboard = "AddPointViewController"
     }
-    
-    let pointManager = PointManager.shared
-    var points: Array<Point>?
+    private let pointManager = PointManager.shared
+    private var points: Array<Point>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constant.title
         configureHierarchy()
         points = pointManager.getAll()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        points = pointManager.getAll()
+        collectionView.reloadData()
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -51,18 +52,18 @@ extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavouritesPostCell", for: indexPath) as? FavouritesPostCell {
-            cell.cellConfigurate(point: points?[indexPath.row] ?? Point(index: 1, name: "lol", description: "lol", city: "lol", kind: Point.Kind.building, point: (0, 0)))
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavouritesPostCell", for: indexPath) as? FavouritesPostCell, let point = points?[indexPath.row] {
+            cell.cellConfigurate(point: point)
             return cell
         } else {
-            fatalError("Unable to dequeue FavouritesPostCell")
+            return UICollectionViewCell()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let pointDetailsStoryboard = UIStoryboard(name: Constant.pointDetailsStoryboard, bundle: nil)
-        if let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as? PointDetailsViewController {
-            pointDetailsViewController.selectedPoint(point: points?[indexPath.row] ?? Point(index: 1, name: "lol", description: "lol", city: "lol", kind: Point.Kind.building, point: (0, 0)))
+        if let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as? PointDetailsViewController, let point = points?[indexPath.row] {
+            pointDetailsViewController.selectedPoint(point: point)
             pointDetailsViewController.delegate = self
             present(pointDetailsViewController, animated: true, completion: nil)
         } else {

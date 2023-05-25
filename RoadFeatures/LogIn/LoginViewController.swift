@@ -48,12 +48,10 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
     private enum Constant {
         static let registrationStoryboardName = "Registration"
         static let registrationViewControllerName = "RegistrationViewController"
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

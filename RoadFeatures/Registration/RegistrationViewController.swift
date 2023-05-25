@@ -96,7 +96,7 @@ class RegistrationViewController: UIViewController {
         
     }
     
-    @IBAction func createUser() {
+    @IBAction private func createUser() {
         guard let name = userName, !name.isEmpty, let email = userLogin, !email.isEmpty, let password = userPassword, !password.isEmpty else {
             showAlert()
             return
@@ -112,7 +112,6 @@ class RegistrationViewController: UIViewController {
         }
         
     }
-    
     
 }
 

@@ -19,5 +19,4 @@ struct Point {
     let kind: Kind
     let point: (Double, Double)
     // owner, rating, image/s
-    
 }
