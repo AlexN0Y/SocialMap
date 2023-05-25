@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF06826D2A199A8B00BE72B5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06826C2A199A8B00BE72B5 /* LocationManager.swift */; };
 		DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */; };
 		DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191C29CFC09C0096E0AC /* MapViewController.swift */; };
 		DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF06826C2A199A8B00BE72B5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DF28191C29CFC09C0096E0AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				DF28191C29CFC09C0096E0AC /* MapViewController.swift */,
 				DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */,
+				DF06826C2A199A8B00BE72B5 /* LocationManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */,
 				DF7CD22B2A08303F00FDC621 /* LabeledTextfield.swift in Sources */,
 				DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */,
+				DF06826D2A199A8B00BE72B5 /* LocationManager.swift in Sources */,
 				DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */,
 				DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */,
 				DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */,
