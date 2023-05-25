@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol PointDetailsViewControllerDelegate: AnyObject {
+    func pointWasDeleted()
+}
+
 class PointDetailsViewController: UIViewController {
+    weak var delegate: PointDetailsViewControllerDelegate?
     private var point: Point?
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var cityLabel: UILabel!
@@ -35,5 +40,15 @@ class PointDetailsViewController: UIViewController {
     func selectedPoint(point: Point) {
         self.point = point
     }
-
+    
+    @IBAction private func deletePoint() {
+        guard let point = point else {
+            return
+        }
+        let pointManager = PointManager.shared
+        pointManager.remove(point: point)
+        delegate?.pointWasDeleted()
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

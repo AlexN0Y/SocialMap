@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DF06826D2A199A8B00BE72B5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06826C2A199A8B00BE72B5 /* LocationManager.swift */; };
+		DF0682702A1BF74000BE72B5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06826F2A1BF74000BE72B5 /* Point.swift */; };
+		DF0682742A1BFA1000BE72B5 /* AddPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0682722A1BFA1000BE72B5 /* AddPointViewController.swift */; };
+		DF0682772A1D562300BE72B5 /* AddPointViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */; };
+		DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0682782A1D825500BE72B5 /* PointManager.swift */; };
 		DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */; };
 		DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191C29CFC09C0096E0AC /* MapViewController.swift */; };
 		DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */; };
@@ -63,6 +67,10 @@
 
 /* Begin PBXFileReference section */
 		DF06826C2A199A8B00BE72B5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DF06826F2A1BF74000BE72B5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		DF0682722A1BFA1000BE72B5 /* AddPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPointViewController.swift; sourceTree = "<group>"; };
+		DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPointViewController.storyboard; sourceTree = "<group>"; };
+		DF0682782A1D825500BE72B5 /* PointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointManager.swift; sourceTree = "<group>"; };
 		DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DF28191C29CFC09C0096E0AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +137,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF06826E2A1BF72C00BE72B5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF06826F2A1BF74000BE72B5 /* Point.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DF0682712A1BF9EB00BE72B5 /* AddPoint */ = {
+			isa = PBXGroup;
+			children = (
+				DF0682722A1BFA1000BE72B5 /* AddPointViewController.swift */,
+				DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */,
+			);
+			path = AddPoint;
+			sourceTree = "<group>";
+		};
 		DF3C5BFA29F299820079D1DC /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +247,8 @@
 		DFC9F6B629C9FF1700B8BCE6 /* RoadFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				DF0682712A1BF9EB00BE72B5 /* AddPoint */,
+				DF06826E2A1BF72C00BE72B5 /* Models */,
 				DF7CD2292A082FDD00FDC621 /* UIElements */,
 				DFCD9A3529F6967200D7A3EF /* Extensions */,
 				DF3C5C0229F49DA50079D1DC /* Map */,
@@ -231,6 +258,7 @@
 				DF3C5BFA29F299820079D1DC /* Favourites */,
 				DFB004EC29FF346300B2943E /* PointDetails */,
 				DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */,
+				DF0682782A1D825500BE72B5 /* PointManager.swift */,
 				DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */,
 				DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */,
 				DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */,
@@ -346,6 +374,7 @@
 				DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */,
 				DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */,
 				DF7CD22D2A08305200FDC621 /* LabeledTextfield.xib in Resources */,
+				DF0682772A1D562300BE72B5 /* AddPointViewController.storyboard in Resources */,
 				DFB004EE29FF348A00B2943E /* PointDetailsViewController.storyboard in Resources */,
 				DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */,
 				DF5AC66C2A13E90100D1EBE6 /* GoogleService-Info.plist in Resources */,
@@ -370,9 +399,12 @@
 				DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */,
 				DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */,
 				DF7CD22B2A08303F00FDC621 /* LabeledTextfield.swift in Sources */,
+				DF0682742A1BFA1000BE72B5 /* AddPointViewController.swift in Sources */,
 				DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */,
 				DF06826D2A199A8B00BE72B5 /* LocationManager.swift in Sources */,
+				DF0682702A1BF74000BE72B5 /* Point.swift in Sources */,
 				DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */,
+				DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */,
 				DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */,
 				DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */,
 			);
@@ -511,11 +543,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KZ9J38TUDC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoadFeatures/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SocialMap;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MapViewController;
@@ -544,11 +578,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KZ9J38TUDC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoadFeatures/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SocialMap;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MapViewController;

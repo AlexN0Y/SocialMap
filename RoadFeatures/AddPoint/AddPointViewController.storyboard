@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Point View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddPointViewController" id="Y6W-OH-hqX" customClass="AddPointViewController" customModule="RoadFeatures" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ubT-m3-WhI">
+                                <rect key="frame" x="50" y="99" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-4r-U45">
+                                <rect key="frame" x="161.66666666666666" y="703" width="70" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="G4Z-ON-bNc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Tmq-o4-QyD"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-Mi-aiH">
+                                <rect key="frame" x="50" y="408" width="293" height="110"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="qZo-Ao-59B"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sl7-dG-Emr">
+                                <rect key="frame" x="50" y="212" width="293" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="P9U-7s-OV4"/>
+                                </constraints>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City(optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIm-Uu-edm">
+                                <rect key="frame" x="50" y="158" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a description to a place (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22J-cG-F6t">
+                                <rect key="frame" x="47" y="377" width="299" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Exn-Mi-aiH" firstAttribute="top" secondItem="22J-cG-F6t" secondAttribute="bottom" constant="10" id="Alz-El-srm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Sl7-dG-Emr" secondAttribute="trailing" constant="50" id="B0l-O6-fXc"/>
+                            <constraint firstItem="qIm-Uu-edm" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="E7U-NB-HiL"/>
+                            <constraint firstItem="Sl7-dG-Emr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="JZN-Av-jD2"/>
+                            <constraint firstItem="qIm-Uu-edm" firstAttribute="top" secondItem="ubT-m3-WhI" secondAttribute="bottom" constant="25" id="KIO-zL-fSI"/>
+                            <constraint firstItem="Exn-Mi-aiH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="ONb-xO-zXG"/>
+                            <constraint firstItem="Sl7-dG-Emr" firstAttribute="top" secondItem="qIm-Uu-edm" secondAttribute="bottom" constant="20" id="P7z-fG-EDf"/>
+                            <constraint firstItem="Exn-Mi-aiH" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="QAi-lX-ohT"/>
+                            <constraint firstItem="ubT-m3-WhI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="QKP-F6-Iib"/>
+                            <constraint firstItem="qIm-Uu-edm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="RbS-Tq-Ii1"/>
+                            <constraint firstItem="fR8-4r-U45" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="alf-Yx-bO1"/>
+                            <constraint firstItem="22J-cG-F6t" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="cse-u9-R3X"/>
+                            <constraint firstItem="ubT-m3-WhI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="d6M-jI-glE"/>
+                            <constraint firstItem="22J-cG-F6t" firstAttribute="top" secondItem="Sl7-dG-Emr" secondAttribute="bottom" constant="15" id="jUi-xc-ioc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qIm-Uu-edm" secondAttribute="trailing" constant="50" id="jwJ-ZL-GbU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fR8-4r-U45" secondAttribute="bottom" constant="80" id="k5Y-ZY-6LM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ubT-m3-WhI" secondAttribute="trailing" constant="50" id="lfS-JX-oQi"/>
+                            <constraint firstItem="ubT-m3-WhI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="pHk-yo-7pH"/>
+                            <constraint firstItem="Sl7-dG-Emr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="uAo-sh-hH9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Exn-Mi-aiH" secondAttribute="trailing" constant="50" id="yQW-iB-rsi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cityTextfield" destination="qIm-Uu-edm" id="Jud-ft-scq"/>
+                        <outlet property="descriptionTextView" destination="Exn-Mi-aiH" id="5M1-ex-eVh"/>
+                        <outlet property="kindPickerView" destination="Sl7-dG-Emr" id="dtF-2w-nNe"/>
+                        <outlet property="nameTextfield" destination="ubT-m3-WhI" id="Qag-6X-0aQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67.938931297709928" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
