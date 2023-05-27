@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
 class RegistrationViewController: UIViewController {
     
@@ -68,6 +66,7 @@ class RegistrationViewController: UIViewController {
             }
         }
     }
+    private let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,37 +78,19 @@ class RegistrationViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    private func addUserToFirestore(userId: String, userName: String, userEmail: String) {
-        let db = Firestore.firestore()
-        let usersCollection = db.collection("users").document(userId)
-        let userData: [String: Any] = [
-            "name": userName,
-            "email": userEmail
-        ]
-        usersCollection.setData(userData) { (error) in
-            if let error = error {
-                print("Error adding user: \(error)")
-            } else {
-                print("User \(userId) added")
-            }
-        }
-        
-    }
-    
     @IBAction private func createUser() {
         guard let name = userName, !name.isEmpty, let email = userLogin, !email.isEmpty, let password = userPassword, !password.isEmpty else {
             showAlert()
             return
         }
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                print("Error creating user:", error.localizedDescription)
-            } else {
-                self.addUserToFirestore(userId: authResult?.user.uid ?? "", userName: name, userEmail: email)
-                print("User created successfully:", authResult?.user.uid ?? "")
-                self.navigationController?.popToRootViewController(animated: true)
+        firebaseManager.createUser(withEmail: email, password: password, userName: name) { error in
+                if let error = error {
+                    print("Error creating user:", error.localizedDescription)
+                } else {
+                    print("User created successfully")
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             }
-        }
         
     }
     

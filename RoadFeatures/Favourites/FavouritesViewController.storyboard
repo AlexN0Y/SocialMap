@@ -18,7 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-z5-h6o">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bh-Mr-11d">
+                                <rect key="frame" x="159" y="415.66666666666669" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-z5-h6o">
                                 <rect key="frame" x="11" y="59" width="371" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uND-Pk-S20">
@@ -50,13 +56,16 @@
                         <constraints>
                             <constraint firstItem="OxY-LT-TpQ" firstAttribute="bottom" secondItem="n1t-z5-h6o" secondAttribute="bottom" id="C9t-2T-gsG"/>
                             <constraint firstItem="n1t-z5-h6o" firstAttribute="top" secondItem="OxY-LT-TpQ" secondAttribute="top" id="FtY-XW-O0j"/>
+                            <constraint firstItem="3bh-Mr-11d" firstAttribute="centerX" secondItem="JbD-Yu-VgW" secondAttribute="centerX" id="R0Z-er-h5h"/>
                             <constraint firstItem="n1t-z5-h6o" firstAttribute="leading" secondItem="OxY-LT-TpQ" secondAttribute="leading" constant="11" id="eLc-3R-0j6"/>
                             <constraint firstItem="OxY-LT-TpQ" firstAttribute="trailing" secondItem="n1t-z5-h6o" secondAttribute="trailing" constant="11" id="kR9-Pw-ijk"/>
+                            <constraint firstItem="3bh-Mr-11d" firstAttribute="centerY" secondItem="JbD-Yu-VgW" secondAttribute="centerY" id="n0e-hN-MLA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="1Xk-oe-o62"/>
                     <connections>
                         <outlet property="collectionView" destination="n1t-z5-h6o" id="TwF-1B-tt3"/>
+                        <outlet property="loadingLabel" destination="3bh-Mr-11d" id="5N9-FV-Yby"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHi-Qc-YvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

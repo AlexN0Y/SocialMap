@@ -9,6 +9,7 @@ import UIKit
 
 class FavouritesViewController: UIViewController {
     
+    @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet private var collectionView: UICollectionView! {
         didSet {
             let nib = UINib(nibName: "FavouritesPostCell", bundle: .main)
@@ -27,7 +28,19 @@ class FavouritesViewController: UIViewController {
         super.viewDidLoad()
         self.title = Constant.title
         configureHierarchy()
-        points = pointManager.getAll()
+        collectionView.isHidden = true
+        loadingLabel.isHidden = false
+        pointManager.getAllFromDatabase { (allPoints, error) in
+            if let error = error {
+                print("Failed to get points:", error)
+            } else if let allPoints = allPoints {
+                self.points = allPoints
+                self.loadingLabel.isHidden = true
+                self.collectionView.isHidden = false
+                self.collectionView.reloadData()
+            }
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
