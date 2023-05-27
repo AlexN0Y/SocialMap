@@ -9,8 +9,8 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
-    let locationManager = LocationManager()
-    let pointManager = PointManager.shared
+    private let locationManager = LocationManager()
+    private let pointManager = PointManager.shared
     private var points: [Point]?
     
     @IBOutlet weak var mapView: MKMapView!
@@ -46,7 +46,7 @@ class MapViewController: UIViewController {
         mapView.addAnnotations(annotations)
     }
     
-    @objc func addLocationTapped(_ sender: UIBarButtonItem) {
+    @objc private func addLocationTapped(_ sender: UIBarButtonItem) {
         let addPointStoryboard = UIStoryboard(name: Constant.addPointStoryboard, bundle: nil)
         let addPointViewController = addPointStoryboard.instantiateViewController(withIdentifier: String(describing: AddPointViewController.self)) as! AddPointViewController
         addPointViewController.hidesBottomBarWhenPushed = true
@@ -58,7 +58,7 @@ class MapViewController: UIViewController {
         locationManager.checkLocationAuthorization()
     }
     
-    func showLocationServicesAlert() {
+    private func showLocationServicesAlert() {
         let alert = UIAlertController(
             title: "Location Services Disabled",
             message: "Please enable location services to use this feature.",

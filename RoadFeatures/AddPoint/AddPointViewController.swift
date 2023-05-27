@@ -13,10 +13,10 @@ protocol AddPointViewControllerDelegate: AnyObject {
 
 class AddPointViewController: UIViewController {
     weak var delegate: AddPointViewControllerDelegate?
-    let locationManager = LocationManager()
-    let pointManager = PointManager.shared
-    var pickedImage: Point.Kind = Point.Kind.building
-    var placeName: String?
+    private let locationManager = LocationManager()
+    private let pointManager = PointManager.shared
+    private var pickedImage: Point.Kind = Point.Kind.building
+    private var placeName: String?
     
     @IBOutlet private weak var nameTextfield: UITextField! {
         didSet {
@@ -28,13 +28,21 @@ class AddPointViewController: UIViewController {
             cityTextfield.delegate = self
         }
     }
-    @IBOutlet private weak var kindPickerView: UIPickerView!
-    @IBOutlet private weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var kindPickerView: UIPickerView! {
+        didSet {
+            kindPickerView.delegate = self
+            kindPickerView.dataSource = self
+        }
+    }
+    @IBOutlet private weak var descriptionTextView: UITextView! {
+        didSet {
+            descriptionTextView.delegate = self
+            descriptionTextView.returnKeyType = .done
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        kindPickerView.delegate = self
-        kindPickerView.dataSource = self
     }
     
     private func showEmptyNameAlert() {
@@ -60,8 +68,10 @@ class AddPointViewController: UIViewController {
         }
         let city = isNilOrEmpty(string: cityTextfield.text)
         let description = descriptionTextView.text.isEmpty ? nil : descriptionTextView.text
+        // after switching on database add Point
         pointManager.add(name: name, description: description , city: city, kind: pickedImage, point: (location.latitude , location.longitude))
         delegate?.pointWasAdded()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     private func isNilOrEmpty(string: String?) -> String? {
@@ -95,6 +105,20 @@ extension AddPointViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension AddPointViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension AddPointViewController: UITextViewDelegate {
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" { // Recognizes enter key in keyboard
+            textView.resignFirstResponder()
+            return false
+        }
         return true
     }
 }

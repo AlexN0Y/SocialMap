@@ -78,11 +78,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PointLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2T-es-OhB">
-                                <rect key="frame" x="188" y="285" width="160" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PointLabel" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2T-es-OhB">
+                                <rect key="frame" x="168" y="285" width="180" height="20.333333333333314"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="TXi-l5-pKh"/>
-                                    <constraint firstAttribute="width" constant="160" id="Tgk-gP-adw"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="42" id="TXi-l5-pKh"/>
+                                    <constraint firstAttribute="width" constant="180" id="Tgk-gP-adw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

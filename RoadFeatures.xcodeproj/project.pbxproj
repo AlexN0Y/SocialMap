@@ -154,6 +154,14 @@
 			path = AddPoint;
 			sourceTree = "<group>";
 		};
+		DF06827A2A1FE50A00BE72B5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				DF0682782A1D825500BE72B5 /* PointManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		DF3C5BFA29F299820079D1DC /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +255,7 @@
 		DFC9F6B629C9FF1700B8BCE6 /* RoadFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				DF06827A2A1FE50A00BE72B5 /* Managers */,
 				DF0682712A1BF9EB00BE72B5 /* AddPoint */,
 				DF06826E2A1BF72C00BE72B5 /* Models */,
 				DF7CD2292A082FDD00FDC621 /* UIElements */,
@@ -258,7 +267,6 @@
 				DF3C5BFA29F299820079D1DC /* Favourites */,
 				DFB004EC29FF346300B2943E /* PointDetails */,
 				DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */,
-				DF0682782A1D825500BE72B5 /* PointManager.swift */,
 				DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */,
 				DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */,
 				DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */,
