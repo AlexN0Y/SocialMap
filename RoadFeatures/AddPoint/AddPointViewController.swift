@@ -34,15 +34,23 @@ class AddPointViewController: UIViewController {
             kindPickerView.dataSource = self
         }
     }
-    @IBOutlet private weak var descriptionTextView: UITextView! {
-        didSet {
-            descriptionTextView.delegate = self
-            descriptionTextView.returnKeyType = .done
-        }
+    @IBOutlet private weak var descriptionTextView: UITextView!
+    
+    private enum Constant {
+        static let title = "Add Place"
     }
+    
+    private let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Constant.title
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func handleTap() {
+        view.endEditing(true)
     }
     
     private func showEmptyNameAlert() {
@@ -57,19 +65,40 @@ class AddPointViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    private func showNotAuthorisedAlert() {
+        let alert = UIAlertController(title: "Alert", message: "Log in to add", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
     @IBAction private func addButtonTapped() {
+        guard let userId = firebaseManager.getCurrentUser()?.uid else {
+            showNotAuthorisedAlert()
+            return
+        }
+        
         guard let name = nameTextfield.text, !name.isEmpty else {
             showEmptyNameAlert()
             return
         }
+        
         guard let location = locationManager.getCurrentLocationCoordinate() else {
             showNoLocationAlert()
             return
         }
+
         let city = isNilOrEmpty(string: cityTextfield.text)
         let description = descriptionTextView.text.isEmpty ? nil : descriptionTextView.text
-        // after switching on database add Point
-        pointManager.add(name: name, description: description , city: city, kind: pickedImage, point: (location.latitude , location.longitude))
+
+        let point = Point(id: "Changable", name: name, description: description, city: city, kind: pickedImage, point: (location.latitude , location.longitude), owner: userId)
+        
+        pointManager.add(point: point) { error in
+            if let error = error {
+                print("Failed to add point:", error)
+            } else {
+                print("Point added successfully")
+            }
+        }
         delegate?.pointWasAdded()
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -109,16 +138,3 @@ extension AddPointViewController: UITextFieldDelegate {
     }
 }
 
-extension AddPointViewController: UITextViewDelegate {
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        return true
-    }
-    
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" { // Recognizes enter key in keyboard
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
-    }
-}

@@ -53,6 +53,8 @@ class LoginViewController: UIViewController {
         static let registrationViewControllerName = "RegistrationViewController"
     }
     
+    private let firebaseManager = FirebaseManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -74,16 +76,15 @@ class LoginViewController: UIViewController {
             showEmptyFieldsAlert()
             return
         }
-        Auth.auth().signIn(withEmail: userLogin, password: userPassword) { authResult, error in
+        firebaseManager.logIn(withEmail: userLogin, password: userPassword) { authResult, error in
             if let error = error {
                 self.showUserDoesNotExistsAlert()
                 print("Login failed: \(error.localizedDescription)")
-                return
+            } else {
+                print("Login successful for user: \(authResult?.user.email ?? "")")
+                self.navigationController?.popToRootViewController(animated: true)
             }
-            print("Login successful for user: \(authResult?.user.email ?? "")")
-            self.navigationController?.popToRootViewController(animated: true)
         }
-        
     }
     
     @IBAction private func signUpTapped() {

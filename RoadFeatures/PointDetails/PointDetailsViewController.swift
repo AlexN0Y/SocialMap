@@ -31,8 +31,16 @@ class PointDetailsViewController: UIViewController {
             return
         }
         nameLabel.text = point.name
-        cityLabel.text = point.city ?? "None"
-        descriptionLabel.text = point.description ?? "None"
+        if let city = point.city, !city.isEmpty {
+            cityLabel.text = city
+        } else {
+            cityLabel.text = "None"
+        }
+        if let description = point.description, !description.isEmpty {
+            descriptionLabel.text = description
+        } else {
+            descriptionLabel.text = "None"
+        }
         pointLabel.text = "X: \(point.point.0) \n Y: \(point.point.1)"
         kindImage.image = UIImage(named: point.kind.rawValue)
     }
@@ -46,9 +54,17 @@ class PointDetailsViewController: UIViewController {
             return
         }
         let pointManager = PointManager.shared
-        pointManager.remove(point: point)
+        pointManager.remove(point: point) { error in
+            if let error = error {
+                print("Error removing point: \(error)")
+            } else {
+//                self.delegate?.pointWasDeleted()
+//                self.dismiss(animated: true, completion: nil)
+            }
+        }
         delegate?.pointWasDeleted()
         dismiss(animated: true, completion: nil)
+
     }
     
 }
