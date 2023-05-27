@@ -33,32 +33,44 @@ class PointManager {
             }
         }
     }
+
+// Deprecated
+//    func getAll() -> [Point] {
+//        getAllFromDatabase { (allPoints, error) in
+//            if let error = error {
+//                print("Failed to get points:", error)
+//            } else if let allPoints = allPoints {
+//                self.points = allPoints
+//            }
+//        }
+//        return points
+//    }
     
-    func getAll() -> [Point] {
-        getAllFromDatabase { (allPoints, error) in
-            if let error = error {
-                print("Failed to get points:", error)
-            } else if let allPoints = allPoints {
-                self.points = allPoints
-            }
-        }
-        return points
-    }
-    
-    func add(point: Point, completion: @escaping (Error?) -> Void) {
+    func add(point: Point, completion: @escaping (Error?, String?) -> Void) {
         firebaseManager.addDocument(collection: "points", data: point.dictionary) { [self] (documentID, error) in
             if let error = error {
-                completion(error)
+                completion(error, nil)
             } else if let documentID = documentID {
                 var updatedPointData = point.dictionary
                 updatedPointData["id"] = documentID
                 firebaseManager.setNewId(documentID: documentID, data: updatedPointData)
+                completion(nil, documentID)
             }
         }
     }
     
     func remove(point: Point, completion: @escaping (Error?) -> Void) {
         firebaseManager.removeDocument(collection: "points", documentID: point.id, completion: completion)
+    }
+    
+    func getPointByID(id: String, completion: @escaping (Point?, Error?) -> Void) {
+        firebaseManager.getDocumentById(id: id) { point in
+            if let point = point {
+                completion(point, nil)
+            } else {
+                completion(nil, NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No point found with the given ID"]))
+            }
+        }
     }
     
 }

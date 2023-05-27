@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddPointViewControllerDelegate: AnyObject {
-    func pointWasAdded()
+    func pointWasAdded(pointID: String)
 }
 
 class AddPointViewController: UIViewController {
@@ -91,16 +91,22 @@ class AddPointViewController: UIViewController {
         let description = descriptionTextView.text.isEmpty ? nil : descriptionTextView.text
 
         let point = Point(id: "Changable", name: name, description: description, city: city, kind: pickedImage, point: (location.latitude , location.longitude), owner: userId)
-        
-        pointManager.add(point: point) { error in
+//        var pointID: String?
+        pointManager.add(point: point) { error, documentID in
             if let error = error {
                 print("Failed to add point:", error)
-            } else {
-                print("Point added successfully")
+            } else if let documentID = documentID {
+                self.delegate?.pointWasAdded(pointID: documentID)
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             }
         }
-        delegate?.pointWasAdded()
-        self.navigationController?.popToRootViewController(animated: true)
+//        guard let pointID = pointID else {
+//            return
+//        }
+//        delegate?.pointWasAdded(pointID: pointID)
+//        self.navigationController?.popToRootViewController(animated: true)
     }
     
     private func isNilOrEmpty(string: String?) -> String? {

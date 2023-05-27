@@ -85,5 +85,24 @@ class FirebaseManager {
         db.collection("points").document(documentID).setData(data)
     }
     
+    func getDocumentById(id: String, completion: @escaping (Point?) -> Void) {
+        let docRef = db.collection("points").document(id)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                if let data = document.data() {
+                    let point = Point(dictionary: data)
+                    completion(point)
+                } else {
+                    completion(nil)
+                }
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
 }
+
+
 

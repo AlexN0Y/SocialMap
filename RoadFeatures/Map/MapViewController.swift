@@ -32,18 +32,21 @@ class MapViewController: UIViewController {
     }
     
     private func setAnnotations() {
-        points = pointManager.getAll()
-        guard let points = points else {
-            return
+        pointManager.getAllFromDatabase { (points, error) in
+            if let error = error {
+                print("Failed to get points:", error)
+            } else if let points = points {
+                self.points = points
+                var annotations = [MKPointAnnotation]()
+                for point in points {
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
+                    annotation.title = point.name
+                    annotations.append(annotation)
+                }
+                self.mapView.addAnnotations(annotations)
+            }
         }
-        var annotations = [MKPointAnnotation]()
-        for point in points {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
-            annotation.title = point.name
-            annotations.append(annotation)
-        }
-        mapView.addAnnotations(annotations)
     }
     
     @objc private func addLocationTapped(_ sender: UIBarButtonItem) {
@@ -99,14 +102,17 @@ extension MapViewController: LocationDelegate {
 }
 
 extension MapViewController: AddPointViewControllerDelegate {
-    func pointWasAdded() {
-        let point = pointManager.getAll().last
-        guard let point = point else {
-            return
+    func pointWasAdded(pointID: String) {
+        pointManager.getPointByID(id: pointID) { (point, error) in
+            if let error = error {
+                print("Failed to get point with id \(pointID):", error)
+            } else if let point = point {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
+                annotation.title = point.name
+                self.mapView.addAnnotation(annotation)
+            }
         }
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
-        annotation.title = point.name
-        mapView.addAnnotation(annotation)
+
     }
 }
