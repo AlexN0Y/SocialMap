@@ -19,6 +19,7 @@ class PointDetailsViewController: UIViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var pointLabel: UILabel!
     @IBOutlet private weak var kindImage: UIImageView!
+    private let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,21 +50,34 @@ class PointDetailsViewController: UIViewController {
         self.point = point
     }
     
+    private func showAlert() {
+        let alert = UIAlertController(title: "Alert", message: "You are not an owner", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
     @IBAction private func deletePoint() {
         guard let point = point else {
             return
         }
-        let pointManager = PointManager.shared
-        pointManager.remove(point: point) { error in
-            if let error = error {
-                print("Error removing point: \(error)")
-            } else {
-                print("Point successfully deleted.") // Debug log
-                self.delegate?.pointWasDeleted()
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
+        guard let userId = firebaseManager.getCurrentUser()?.uid else {
+            return
+        }
+        if point.owner == userId {
+            let pointManager = PointManager.shared
+            pointManager.remove(point: point) { error in
+                if let error = error {
+                    print("Error removing point: \(error)")
+                } else {
+                    print("Point successfully deleted.") // Debug log
+                    self.delegate?.pointWasDeleted()
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
+        } else {
+            showAlert()
         }
     }
     

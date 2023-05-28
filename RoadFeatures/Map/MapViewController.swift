@@ -12,19 +12,24 @@ class MapViewController: UIViewController {
     private let locationManager = LocationManager()
     private let pointManager = PointManager.shared
     private var points: [Point]?
+    private let firebaseManager = FirebaseManager.shared
     
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            mapView.delegate = self
+            mapView.showsUserLocation = true
+        }
+    }
     
     private enum Constant {
         static let title = "Map"
         static let addPointStoryboard = "AddPointViewController"
+        static let pointDetailsStoryboard = "PointDetailsViewController"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constant.title
-        mapView.delegate = self
-        mapView.showsUserLocation = true
         locationManager.locationDelegate = self
         let addLocationButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addLocationTapped(_:)))
         navigationItem.rightBarButtonItems = [addLocationButton]
@@ -37,11 +42,9 @@ class MapViewController: UIViewController {
                 print("Failed to get points:", error)
             } else if let points = points {
                 self.points = points
-                var annotations = [MKPointAnnotation]()
+                var annotations = [PointAnnotation]()
                 for point in points {
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
-                    annotation.title = point.name
+                    let annotation = PointAnnotation(point: point)
                     annotations.append(annotation)
                 }
                 self.mapView.addAnnotations(annotations)
@@ -83,6 +86,18 @@ class MapViewController: UIViewController {
 }
 
 extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotation = view.annotation as? PointAnnotation {
+            let pointDetailsStoryboard = UIStoryboard(name: Constant.pointDetailsStoryboard, bundle: nil)
+            if let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as? PointDetailsViewController {
+                pointDetailsViewController.selectedPoint(point: annotation.point)
+                pointDetailsViewController.delegate = self
+                present(pointDetailsViewController, animated: true, completion: nil)
+            } else {
+                fatalError("Unable to present PointDetailsViewController")
+            }
+        }
+    }
 }
 
 extension MapViewController: LocationDelegate {
@@ -107,12 +122,15 @@ extension MapViewController: AddPointViewControllerDelegate {
             if let error = error {
                 print("Failed to get point with id \(pointID):", error)
             } else if let point = point {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
-                annotation.title = point.name
+                let annotation = PointAnnotation(point: point)
                 self.mapView.addAnnotation(annotation)
             }
         }
 
+    }
+}
+
+extension MapViewController: PointDetailsViewControllerDelegate {
+    func pointWasDeleted() {
     }
 }

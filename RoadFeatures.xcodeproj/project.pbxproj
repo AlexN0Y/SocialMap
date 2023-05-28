@@ -13,6 +13,7 @@
 		DF0682772A1D562300BE72B5 /* AddPointViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */; };
 		DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0682782A1D825500BE72B5 /* PointManager.swift */; };
 		DF06827C2A2168F200BE72B5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06827B2A2168F200BE72B5 /* FirebaseManager.swift */; };
+		DF06827E2A22D8D400BE72B5 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06827D2A22D8D400BE72B5 /* PointAnnotation.swift */; };
 		DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */; };
 		DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191C29CFC09C0096E0AC /* MapViewController.swift */; };
 		DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */; };
@@ -73,6 +74,7 @@
 		DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPointViewController.storyboard; sourceTree = "<group>"; };
 		DF0682782A1D825500BE72B5 /* PointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointManager.swift; sourceTree = "<group>"; };
 		DF06827B2A2168F200BE72B5 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		DF06827D2A22D8D400BE72B5 /* PointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DF28191C29CFC09C0096E0AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				DF28191C29CFC09C0096E0AC /* MapViewController.swift */,
 				DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */,
 				DF06826C2A199A8B00BE72B5 /* LocationManager.swift */,
+				DF06827D2A22D8D400BE72B5 /* PointAnnotation.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */,
 				DF06826D2A199A8B00BE72B5 /* LocationManager.swift in Sources */,
 				DF06827C2A2168F200BE72B5 /* FirebaseManager.swift in Sources */,
+				DF06827E2A22D8D400BE72B5 /* PointAnnotation.swift in Sources */,
 				DF0682702A1BF74000BE72B5 /* Point.swift in Sources */,
 				DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */,
 				DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */,
