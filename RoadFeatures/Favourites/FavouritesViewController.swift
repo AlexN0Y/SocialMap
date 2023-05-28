@@ -40,12 +40,18 @@ class FavouritesViewController: UIViewController {
                 self.collectionView.reloadData()
             }
         }
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        points = pointManager.getAll()
-        collectionView.reloadData()
+        pointManager.getAllFromDatabase { (allPoints, error) in
+            if let error = error {
+                print("Failed to get points:", error)
+            } else if let allPoints = allPoints {
+                self.points = allPoints
+                self.collectionView.reloadData()
+            }
+        }
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -87,8 +93,14 @@ extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension FavouritesViewController: PointDetailsViewControllerDelegate {
     func pointWasDeleted() {
-        points = pointManager.getAll()
-        collectionView.reloadData()
+        pointManager.getAllFromDatabase { (allPoints, error) in
+            if let error = error {
+                print("Failed to get points:", error)
+            } else if let allPoints = allPoints {
+                self.points = allPoints
+                self.collectionView.reloadData()
+            }
+        }
     }
 }
 

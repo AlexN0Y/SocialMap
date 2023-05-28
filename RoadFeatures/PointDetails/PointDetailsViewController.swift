@@ -41,7 +41,7 @@ class PointDetailsViewController: UIViewController {
         } else {
             descriptionLabel.text = "None"
         }
-        pointLabel.text = "X: \(point.point.0) \n Y: \(point.point.1)"
+        pointLabel.text = "X: \(String(format: "%.10f", point.point.0)) \n Y: \(String(format: "%.10f", point.point.1))"
         kindImage.image = UIImage(named: point.kind.rawValue)
     }
     
@@ -58,13 +58,13 @@ class PointDetailsViewController: UIViewController {
             if let error = error {
                 print("Error removing point: \(error)")
             } else {
-//                self.delegate?.pointWasDeleted()
-//                self.dismiss(animated: true, completion: nil)
+                print("Point successfully deleted.") // Debug log
+                self.delegate?.pointWasDeleted()
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
-        delegate?.pointWasDeleted()
-        dismiss(animated: true, completion: nil)
-
     }
     
 }
