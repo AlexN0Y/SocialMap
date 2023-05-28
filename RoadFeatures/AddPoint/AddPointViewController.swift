@@ -49,6 +49,13 @@ class AddPointViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        guard let _ = firebaseManager.getCurrentUser() else {
+            showNotAuthorisedAlert()
+            return
+        }
+    }
+    
     @objc private func handleTap() {
         view.endEditing(true)
     }
@@ -67,7 +74,9 @@ class AddPointViewController: UIViewController {
     
     private func showNotAuthorisedAlert() {
         let alert = UIAlertController(title: "Alert", message: "Log in to add", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        })
         present(alert, animated: true)
     }
     
@@ -91,7 +100,6 @@ class AddPointViewController: UIViewController {
         let description = descriptionTextView.text.isEmpty ? nil : descriptionTextView.text
 
         let point = Point(id: "Changable", name: name, description: description, city: city, kind: pickedImage, point: (location.latitude , location.longitude), owner: userId)
-//        var pointID: String?
         pointManager.add(point: point) { error, documentID in
             if let error = error {
                 print("Failed to add point:", error)
@@ -102,11 +110,6 @@ class AddPointViewController: UIViewController {
                 }
             }
         }
-//        guard let pointID = pointID else {
-//            return
-//        }
-//        delegate?.pointWasAdded(pointID: pointID)
-//        self.navigationController?.popToRootViewController(animated: true)
     }
     
     private func isNilOrEmpty(string: String?) -> String? {

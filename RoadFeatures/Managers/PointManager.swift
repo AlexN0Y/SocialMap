@@ -33,18 +33,18 @@ class PointManager {
             }
         }
     }
-
-// Deprecated
-//    func getAll() -> [Point] {
-//        getAllFromDatabase { (allPoints, error) in
-//            if let error = error {
-//                print("Failed to get points:", error)
-//            } else if let allPoints = allPoints {
-//                self.points = allPoints
-//            }
-//        }
-//        return points
-//    }
+    
+    func getAllFromDatabaseForCurrentUser(userID: String, completion: @escaping ([Point]?, Error?) -> Void) {
+        firebaseManager.getDocuments(collection: "points") { (documents, error) in
+            if let error = error {
+                completion(nil, error)
+            } else if let documents = documents {
+                let points = documents.compactMap { Point(dictionary: $0) }
+                let pointsForCurrentUser = points.filter { $0.owner == userID }
+                completion(pointsForCurrentUser, nil)
+            }
+        }
+    }
     
     func add(point: Point, completion: @escaping (Error?, String?) -> Void) {
         firebaseManager.addDocument(collection: "points", data: point.dictionary) { [self] (documentID, error) in

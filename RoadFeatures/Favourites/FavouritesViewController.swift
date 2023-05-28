@@ -19,10 +19,10 @@ class FavouritesViewController: UIViewController {
     private enum Constant {
         static let title = "Favourites"
         static let pointDetailsStoryboard = "PointDetailsViewController"
-        static let addPointStoryboard = "AddPointViewController"
     }
     private let pointManager = PointManager.shared
     private var points: Array<Point>?
+    private let firebaseManager = FirebaseManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,12 @@ class FavouritesViewController: UIViewController {
         configureHierarchy()
         collectionView.isHidden = true
         loadingLabel.isHidden = false
-        pointManager.getAllFromDatabase { (allPoints, error) in
+        guard let userId = firebaseManager.getCurrentUser()?.uid else {
+            loadingLabel.text = "Log in to see your points"
+            showNotAuthorisedAlert()
+            return
+        }
+        pointManager.getAllFromDatabaseForCurrentUser(userID: userId) { (allPoints, error) in
             if let error = error {
                 print("Failed to get points:", error)
             } else if let allPoints = allPoints {
@@ -43,12 +48,29 @@ class FavouritesViewController: UIViewController {
         
     }
     
+    private func showNotAuthorisedAlert() {
+        let alert = UIAlertController(title: "Alert", message: "Log in to see your Favourites", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        pointManager.getAllFromDatabase { (allPoints, error) in
+        guard let userId = firebaseManager.getCurrentUser()?.uid else {
+            collectionView.isHidden = true
+            loadingLabel.isHidden = false
+            loadingLabel.text = "Log in to see your points"
+            showNotAuthorisedAlert()
+            return
+        }
+        
+        loadingLabel.text = "Loading..."
+        pointManager.getAllFromDatabaseForCurrentUser(userID: userId) { (allPoints, error) in
             if let error = error {
                 print("Failed to get points:", error)
             } else if let allPoints = allPoints {
                 self.points = allPoints
+                self.loadingLabel.isHidden = true
+                self.collectionView.isHidden = false
                 self.collectionView.reloadData()
             }
         }
@@ -93,7 +115,11 @@ extension FavouritesViewController: UICollectionViewDelegate, UICollectionViewDa
 
 extension FavouritesViewController: PointDetailsViewControllerDelegate {
     func pointWasDeleted() {
-        pointManager.getAllFromDatabase { (allPoints, error) in
+        guard let userId = firebaseManager.getCurrentUser()?.uid else {
+            showNotAuthorisedAlert()
+            return
+        }
+        pointManager.getAllFromDatabaseForCurrentUser(userID: userId) { (allPoints, error) in
             if let error = error {
                 print("Failed to get points:", error)
             } else if let allPoints = allPoints {
