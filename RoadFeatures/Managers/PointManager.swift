@@ -73,4 +73,19 @@ class PointManager {
         }
     }
     
+    func addFavouritePointToUser(userID: String, point: Point, completion: @escaping (Error?) -> Void) {
+        firebaseManager.addFavouritePointToUser(userId: userID, point: point, completion: completion)
+    }
+    
+    func getFavouritePointsForUser(userID: String, completion: @escaping ([Point]?, Error?) -> Void) {
+        firebaseManager.getFavouritePointsForUser(userId: userID, completion: completion)
+    }
+    
+    func removePointFromFavourites(userID: String, pointID: String, completion: @escaping (Error?) -> Void) {
+        firebaseManager.removeDocumentFromFavouritePoints(collection: "favouritePoints", userID: userID, documentID: pointID, completion: completion)
+    }
+    
+    func checkIfPointIsFavourite(userID: String, pointID: String, completion: @escaping (Bool?, Error?) -> Void) {
+        firebaseManager.checkDocumentFromFavouritePointsExists(userID: userID, documentID: pointID, completion: completion)
+    }
 }

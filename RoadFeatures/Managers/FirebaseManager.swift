@@ -102,6 +102,45 @@ class FirebaseManager {
         }
     }
     
+    func addFavouritePointToUser(userId: String, point: Point, completion: @escaping (Error?) -> Void) {
+        let userFavouritePointsCollection = db.collection("users").document(userId).collection("favouritePoints")
+        let pointData = point.dictionary
+        userFavouritePointsCollection.document(point.id).setData(pointData) { (error) in
+            completion(error)
+        }
+    }
+    
+    func getFavouritePointsForUser(userId: String, completion: @escaping ([Point]?, Error?) -> Void) {
+        let userFavouritePointsCollection = db.collection("users").document(userId).collection("favouritePoints")
+        userFavouritePointsCollection.getDocuments { (querySnapshot, error) in
+            if let error = error {
+                completion(nil, error)
+            } else if let documents = querySnapshot?.documents {
+                let points = documents.compactMap { Point(dictionary: $0.data()) }
+                completion(points, nil)
+            }
+        }
+    }
+    
+    func removeDocumentFromFavouritePoints(collection: String, userID: String, documentID: String, completion: @escaping (Error?) -> Void) {
+        db.collection("users").document(userID).collection("favouritePoints").document(documentID).delete() { error in
+            completion(error)
+        }
+    }
+    
+    func checkDocumentFromFavouritePointsExists(userID: String, documentID: String, completion: @escaping (Bool?, Error?) -> Void) {
+        let docRef = db.collection("users").document(userID).collection("favouritePoints").document(documentID)
+        
+        docRef.getDocument { (document, error) in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                let documentExists = document?.exists ?? false
+                completion(documentExists, nil)
+            }
+        }
+    }
+    
 }
 
 

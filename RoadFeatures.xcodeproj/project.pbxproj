@@ -161,6 +161,7 @@
 		DF06827A2A1FE50A00BE72B5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				DF06826C2A199A8B00BE72B5 /* LocationManager.swift */,
 				DF0682782A1D825500BE72B5 /* PointManager.swift */,
 				DF06827B2A2168F200BE72B5 /* FirebaseManager.swift */,
 			);
@@ -209,7 +210,6 @@
 			children = (
 				DF28191C29CFC09C0096E0AC /* MapViewController.swift */,
 				DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */,
-				DF06826C2A199A8B00BE72B5 /* LocationManager.swift */,
 				DF06827D2A22D8D400BE72B5 /* PointAnnotation.swift */,
 			);
 			path = Map;
