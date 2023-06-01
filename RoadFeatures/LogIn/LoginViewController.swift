@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  RoadFeatures
 //
 //  Created by Alex Gav on 21.03.2023.
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
                 loginView.topAnchor.constraint(equalTo: loginPlaceholder.topAnchor),
                 loginView.bottomAnchor.constraint(equalTo: loginPlaceholder.bottomAnchor)
             ])
-            loginView.configureLabeledTextfield(labelText: "Email")
+            loginView.configureLabeledTextfield(labelText: "Email", keyboardType: .emailAddress)
             loginView.onSave = { [weak self] text in
                 self?.userLogin = text
             }
@@ -57,6 +57,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func handleTap() {
+        view.endEditing(true)
     }
     
     private func showEmptyFieldsAlert() {

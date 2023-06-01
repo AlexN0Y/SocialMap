@@ -15,7 +15,7 @@ class AddPointViewController: UIViewController {
     weak var delegate: AddPointViewControllerDelegate?
     private let locationManager = LocationManager()
     private let pointManager = PointManager.shared
-    private var pickedImage: Point.Kind = Point.Kind.building
+    private var pickedImage: Point.Kind = Point.Kind.restaurant
     private var placeName: String?
     
     @IBOutlet private weak var nameTextfield: UITextField! {
@@ -98,18 +98,25 @@ class AddPointViewController: UIViewController {
 
         let city = isNilOrEmpty(string: cityTextfield.text)
         let description = descriptionTextView.text.isEmpty ? nil : descriptionTextView.text
-
-        let point = Point(id: "Changable", name: name, description: description, city: city, kind: pickedImage, point: (location.latitude , location.longitude), owner: userId)
+        var point = Point(id: "Changable", name: name, description: description, city: city, kind: pickedImage, point: (location.latitude , location.longitude), owner: userId)
         pointManager.add(point: point) { error, documentID in
             if let error = error {
                 print("Failed to add point:", error)
             } else if let documentID = documentID {
+                point.id = documentID
+                self.pointManager.addFavouritePointToUser(userID: userId, point: point) { error in
+                    if let error = error {
+                        print("Failed to add favourite point: \(error.localizedDescription)")
+                    } else {
+                    }
+                }
                 self.delegate?.pointWasAdded(pointID: documentID)
                 DispatchQueue.main.async {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }
+        
     }
     
     private func isNilOrEmpty(string: String?) -> String? {

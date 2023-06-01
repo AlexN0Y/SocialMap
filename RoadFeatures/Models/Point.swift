@@ -9,7 +9,7 @@ import Foundation
 
 struct Point {
     enum Kind: String, CaseIterable {
-        case building = "Building"
+        case restaurant = "Restaurant"
         case park = "Park"
         case bench = "Bench"
         case monument = "Monument"

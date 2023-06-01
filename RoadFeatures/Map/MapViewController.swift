@@ -36,6 +36,10 @@ class MapViewController: UIViewController {
         setAnnotations()
     }
     
+    private func removeAnnotations() {
+        mapView.removeAnnotations(mapView.annotations)
+    }
+    
     private func setAnnotations() {
         pointManager.getAllFromDatabase { (points, error) in
             if let error = error {
@@ -61,6 +65,8 @@ class MapViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        removeAnnotations()
+        setAnnotations()
         locationManager.checkLocationAuthorization()
     }
     
@@ -132,5 +138,7 @@ extension MapViewController: AddPointViewControllerDelegate {
 
 extension MapViewController: PointDetailsViewControllerDelegate {
     func pointWasDeleted() {
+        removeAnnotations()
+        setAnnotations()
     }
 }

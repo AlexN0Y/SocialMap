@@ -16,19 +16,19 @@ class LabeledTextfield: UIView, UITextFieldDelegate {
     }
     @IBOutlet private var titleLabel: UILabel!
     public var onSave: ((String) -> Void)?
-    
-    @IBAction func textFieldChanged() {
+    @IBAction private func textFieldChanged() {
         if let text = textField.text {
             onSave?(text)
         }
     }
     
-    public func configureLabeledTextfield(labelText: String, secureTextEntry: Bool = false) {
+    public func configureLabeledTextfield(labelText: String, secureTextEntry: Bool = false, keyboardType: UIKeyboardType = .default) {
         titleLabel.text = labelText
         self.backgroundColor = UIColor.secondarySystemBackground
         titleLabel.backgroundColor = UIColor.secondarySystemBackground
         textField.backgroundColor = UIColor.white
         textField.isSecureTextEntry = secureTextEntry
+        textField.keyboardType = keyboardType
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

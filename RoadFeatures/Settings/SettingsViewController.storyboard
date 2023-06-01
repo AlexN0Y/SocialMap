@@ -35,6 +35,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver: 0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EP8-bT-PGs">
+                                <rect key="frame" x="166.66666666666666" y="787" width="60" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="SMv-Vm-uH3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nPz-YT-EHr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -42,6 +51,8 @@
                             <constraint firstItem="JWQ-hf-HAa" firstAttribute="top" secondItem="nPz-YT-EHr" secondAttribute="top" constant="20" id="36c-e3-hJk"/>
                             <constraint firstItem="JWQ-hf-HAa" firstAttribute="leading" secondItem="nPz-YT-EHr" secondAttribute="leading" constant="30" id="H5m-a9-ZlK"/>
                             <constraint firstItem="JWQ-hf-HAa" firstAttribute="centerX" secondItem="r9e-L1-dYZ" secondAttribute="centerX" id="JnD-b3-8Be"/>
+                            <constraint firstItem="nPz-YT-EHr" firstAttribute="bottom" secondItem="EP8-bT-PGs" secondAttribute="bottom" constant="10" id="SQ7-ES-4VI"/>
+                            <constraint firstItem="EP8-bT-PGs" firstAttribute="centerX" secondItem="r9e-L1-dYZ" secondAttribute="centerX" id="Txf-C3-Io5"/>
                             <constraint firstItem="76m-IM-ACf" firstAttribute="centerY" secondItem="r9e-L1-dYZ" secondAttribute="centerY" id="Z4C-i5-RQp"/>
                             <constraint firstItem="nPz-YT-EHr" firstAttribute="trailing" secondItem="JWQ-hf-HAa" secondAttribute="trailing" constant="30" id="qMa-m2-ly3"/>
                             <constraint firstItem="76m-IM-ACf" firstAttribute="centerX" secondItem="r9e-L1-dYZ" secondAttribute="centerX" id="wiU-kl-Iwy"/>
