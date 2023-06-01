@@ -28,26 +28,29 @@ class PointDetailsViewController: UIViewController {
     @IBOutlet private weak var addRemoveButton: UIButton! {
         didSet {
             if let userID = firebaseManager.getCurrentUser()?.uid, let point = point {
-                addRemoveButton.isHidden = false
+                addRemoveButton.isHidden = true
                 pointManager.checkIfPointIsFavourite(userID: userID, pointID: point.id) { (isFavourite, error) in
-                    if let error = error {
-                        print("Error checking if point is favourite: \(error)")
-                    } else if let isFavourite = isFavourite {
-                        if isFavourite {
-                            self.addRemoveButton.setTitle("Remove from favourites", for: .normal)
-                            self.addRemoveButton.setTitleColor(.red, for: .normal)
-                            self.state = .addedToFavourites
-                        } else {
-                            self.addRemoveButton.setTitle("Add to favourites", for: .normal)
-                            self.addRemoveButton.setTitleColor(.blue, for: .normal)
-                            self.state = .notInFavourites
+                    DispatchQueue.main.async {
+                        if let error = error {
+                            print("Error checking if point is favourite: \(error)")
+                        } else if let isFavourite = isFavourite {
+                            self.addRemoveButton.isHidden = false
+                            if isFavourite {
+                                self.addRemoveButton.setTitle("Remove from favourites", for: .normal)
+                                self.addRemoveButton.setTitleColor(.red, for: .normal)
+                                self.state = .addedToFavourites
+                            } else {
+                                self.addRemoveButton.setTitle("Add to favourites", for: .normal)
+                                self.addRemoveButton.setTitleColor(.blue, for: .normal)
+                                self.state = .notInFavourites
+                            }
                         }
                     }
                 }
             } else {
                 addRemoveButton.isHidden = true
             }
- 
+            
         }
     }
     @IBOutlet private weak var deleteButton: UIButton! {
@@ -135,7 +138,7 @@ class PointDetailsViewController: UIViewController {
             }
         }
     }
-
+    
     
     private func showAlert() {
         let alert = UIAlertController(title: "Alert", message: "You are not an owner", preferredStyle: .alert)

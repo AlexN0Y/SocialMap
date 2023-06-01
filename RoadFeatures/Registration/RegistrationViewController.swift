@@ -78,19 +78,26 @@ class RegistrationViewController: UIViewController {
         view.endEditing(true)
     }
     
-    private func showAlert() {
+    private func showEmptyFieldsAlert() {
         let alert = UIAlertController(title: "Alert", message: "Fill in all the fields", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    private func showEmailAlert() {
+        let alert = UIAlertController(title: "Alert", message: "The email address is badly formatted", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
     
     @IBAction private func createUser() {
         guard let name = userName, !name.isEmpty, let email = userLogin, !email.isEmpty, let password = userPassword, !password.isEmpty else {
-            showAlert()
+            showEmptyFieldsAlert()
             return
         }
         firebaseManager.createUser(withEmail: email, password: password, userName: name) { error in
                 if let error = error {
+                    self.showEmailAlert()
                     print("Error creating user:", error.localizedDescription)
                 } else {
                     print("User created successfully")
