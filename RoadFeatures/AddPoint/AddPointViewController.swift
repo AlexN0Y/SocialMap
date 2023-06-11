@@ -34,7 +34,12 @@ class AddPointViewController: UIViewController {
             kindPickerView.dataSource = self
         }
     }
-    @IBOutlet private weak var descriptionTextView: UITextView!
+    @IBOutlet private weak var descriptionTextView: UITextView! {
+        didSet {
+            descriptionTextView.layer.borderWidth = 1.0
+            descriptionTextView.layer.borderColor = UIColor.gray.cgColor
+        }
+    }
     
     private enum Constant {
         static let title = "Add Place"
