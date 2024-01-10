@@ -8,12 +8,19 @@
 import Foundation
 
 struct Point {
+    
+    // MARK: - Enum Kind
+    
     enum Kind: String, CaseIterable {
+        
+        // MARK: - Cases
+        
         case restaurant = "Restaurant"
         case park = "Park"
         case bench = "Bench"
         case monument = "Monument"
     }
+    
     var id: String
     let name: String
     let description: String?
@@ -47,6 +54,7 @@ struct Point {
         else {
             return nil
         }
+        
         self.id = id
         self.name = name
         self.description = dictionary["description"] as? String

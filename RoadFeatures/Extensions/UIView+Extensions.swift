@@ -8,6 +8,7 @@
 import UIKit
 
 public extension UIView {
+    
     static func fromNib<T: UIView>() -> T {
         let bundle = Bundle(for: T.self)
         let nib = UINib(nibName: String(describing: T.self), bundle: bundle)

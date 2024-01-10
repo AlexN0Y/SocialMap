@@ -10,8 +10,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-    private var userLogin: String?
-    private var userPassword: String?
+    // MARK: - Private Properties
+    
     @IBOutlet private weak var passwordPlaceholder: UIView! {
         didSet {
             let passwordView: LabeledTextfield = .fromNib()
@@ -53,7 +53,12 @@ class LoginViewController: UIViewController {
         static let registrationViewControllerName = "RegistrationViewController"
     }
     
+    private var userLogin: String?
+    private var userPassword: String?
+    
     private let firebaseManager = FirebaseManager.shared
+    
+    // MARK: - ViewController Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,27 +66,14 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func handleTap() {
-        view.endEditing(true)
-    }
-    
-    private func showEmptyFieldsAlert() {
-        let alert = UIAlertController(title: "Alert", message: "Fill in all the fields", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-    
-    private func showUserDoesNotExistsAlert() {
-        let alert = UIAlertController(title: "Alert", message: "User does not exists", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
+    // MARK: - Private Methods
     
     @IBAction private func logInAction() {
         guard let userLogin, !userLogin.isEmpty, let userPassword, !userPassword.isEmpty  else {
             showEmptyFieldsAlert()
             return
         }
+        
         firebaseManager.logIn(withEmail: userLogin, password: userPassword) { authResult, error in
             if let error = error {
                 self.showUserDoesNotExistsAlert()
@@ -99,6 +91,22 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(registrationViewController, animated: true)
     }
     
+    @objc
+    private func handleTap() {
+        view.endEditing(true)
+    }
+    
+    private func showEmptyFieldsAlert() {
+        let alert = UIAlertController(title: "Alert", message: "Fill in all the fields", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    private func showUserDoesNotExistsAlert() {
+        let alert = UIAlertController(title: "Alert", message: "User does not exists", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
 }
 
 

@@ -9,10 +9,8 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
-    private let locationManager = LocationManager()
-    private let pointManager = PointManager.shared
-    private var points: [Point]?
-    private let firebaseManager = FirebaseManager.shared
+    
+    // MARK: - Private Properties
     
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
@@ -21,11 +19,19 @@ class MapViewController: UIViewController {
         }
     }
     
+    private let locationManager = LocationManager()
+    private let pointManager = PointManager.shared
+    private var points: [Point]?
+    private let firebaseManager = FirebaseManager.shared
+    
     private enum Constant {
+        
         static let title = "Map"
         static let addPointStoryboard = "AddPointViewController"
         static let pointDetailsStoryboard = "PointDetailsViewController"
     }
+    
+    // MARK: - ViewController Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,14 @@ class MapViewController: UIViewController {
         navigationItem.rightBarButtonItems = [addLocationButton]
         setAnnotations()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        removeAnnotations()
+        setAnnotations()
+        locationManager.checkLocationAuthorization()
+    }
+    
+    // MARK: - Private Methods
     
     private func removeAnnotations() {
         mapView.removeAnnotations(mapView.annotations)
@@ -56,18 +70,13 @@ class MapViewController: UIViewController {
         }
     }
     
-    @objc private func addLocationTapped(_ sender: UIBarButtonItem) {
+    @objc
+    private func addLocationTapped(_ sender: UIBarButtonItem) {
         let addPointStoryboard = UIStoryboard(name: Constant.addPointStoryboard, bundle: nil)
         let addPointViewController = addPointStoryboard.instantiateViewController(withIdentifier: String(describing: AddPointViewController.self)) as! AddPointViewController
         addPointViewController.hidesBottomBarWhenPushed = true
         addPointViewController.delegate = self
         self.navigationController?.pushViewController(addPointViewController, animated: true)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        removeAnnotations()
-        setAnnotations()
-        locationManager.checkLocationAuthorization()
     }
     
     private func showLocationServicesAlert() {
@@ -91,7 +100,10 @@ class MapViewController: UIViewController {
     
 }
 
+// MARK: - MKMapViewDelegate
+
 extension MapViewController: MKMapViewDelegate {
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let annotation = view.annotation as? PointAnnotation {
             let pointDetailsStoryboard = UIStoryboard(name: Constant.pointDetailsStoryboard, bundle: nil)
@@ -106,14 +118,23 @@ extension MapViewController: MKMapViewDelegate {
     }
 }
 
+// MARK: - LocationDelegate
+
 extension MapViewController: LocationDelegate {
+    
     func locationDidUpdate(to location: CLLocation) {
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        let region = MKCoordinateRegion(
+            center: location.coordinate,
+            latitudinalMeters: 500,
+            longitudinalMeters: 500
+        )
+        
         mapView.setRegion(region, animated: true)
         mapView.userTrackingMode = .follow
     }
     
     func locationDidFail(withError error: Error) {
+#warning("Add Alert !")
         print("didFailWithError \(error.localizedDescription)")
     }
     
@@ -122,7 +143,10 @@ extension MapViewController: LocationDelegate {
     }
 }
 
+// MARK: - AddPointViewControllerDelegate
+
 extension MapViewController: AddPointViewControllerDelegate {
+    
     func pointWasAdded(pointID: String) {
         pointManager.getPointByID(id: pointID) { (point, error) in
             if let error = error {
@@ -132,11 +156,13 @@ extension MapViewController: AddPointViewControllerDelegate {
                 self.mapView.addAnnotation(annotation)
             }
         }
-
     }
 }
 
+// MARK: - PointDetailsViewControllerDelegate
+
 extension MapViewController: PointDetailsViewControllerDelegate {
+    
     func pointWasDeleted() {
         removeAnnotations()
         setAnnotations()

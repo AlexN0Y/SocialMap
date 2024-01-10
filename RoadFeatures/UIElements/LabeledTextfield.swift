@@ -7,33 +7,52 @@
 
 import UIKit
 
-class LabeledTextfield: UIView, UITextFieldDelegate {
+class LabeledTextfield: UIView {
+    
+    // MARK: - Public Properties
+    
+    public var onSave: ((String) -> Void)?
+    
+    // MARK: - Private Properties
     
     @IBOutlet private var textField: UITextField! {
         didSet {
             textField.delegate = self
         }
     }
+    
     @IBOutlet private var titleLabel: UILabel!
-    public var onSave: ((String) -> Void)?
+    
     @IBAction private func textFieldChanged() {
         if let text = textField.text {
             onSave?(text)
         }
     }
     
-    public func configureLabeledTextfield(labelText: String, secureTextEntry: Bool = false, keyboardType: UIKeyboardType = .default) {
-        titleLabel.text = labelText
+    // MARK: - Public Methods
+    
+    public func configureLabeledTextfield(
+        labelText: String,
+        secureTextEntry: Bool = false,
+        keyboardType: UIKeyboardType = .default
+    ) {
         self.backgroundColor = UIColor.secondarySystemBackground
+        
+        titleLabel.text = labelText
         titleLabel.backgroundColor = UIColor.secondarySystemBackground
+        
         textField.backgroundColor = UIColor.white
         textField.isSecureTextEntry = secureTextEntry
         textField.keyboardType = keyboardType
     }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension LabeledTextfield: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 }
-

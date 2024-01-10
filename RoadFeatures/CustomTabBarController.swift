@@ -8,6 +8,7 @@
 import UIKit
 
 enum Storyboards {
+    
     static let favourites = "FavouritesViewController"
     static let map = "MapViewController"
     static let settings = "SettingsViewController"
@@ -49,7 +50,7 @@ class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
         let mapViewController: MapViewController = {
             let storyboard = UIStoryboard(name: Storyboards.map, bundle: nil)
             if let viewController = storyboard.instantiateViewController(withIdentifier: String(describing: MapViewController.self )) as? MapViewController {
-                viewController.tabBarItem = UITabBarItem(title: Constant.Titles.map, image: UIImage(systemName: Constant.Images.map), tag: 0)
+                viewController.tabBarItem = UITabBarItem(title: Constant.Titles.map, image: UIImage(systemName: Constant.Images.map), tag: 1)
                 return viewController
             } else {
                 fatalError("Unable to create MapViewController")

@@ -8,9 +8,10 @@
 import MapKit
 
 class PointAnnotation: NSObject, MKAnnotation {
-    var coordinate: CLLocationCoordinate2D
-    var title: String?
-    var point: Point
+    
+    let coordinate: CLLocationCoordinate2D
+    let title: String?
+    let point: Point
     
     init(point: Point) {
         self.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)

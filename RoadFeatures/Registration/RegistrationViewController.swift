@@ -9,12 +9,12 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
     
-    private var userLogin: String?
-    private var userPassword: String?
-    private var userName: String?
+    // MARK: - Private Properties
+    
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
+    
     @IBOutlet private weak var passwordPlaceholder: UIView! {
         didSet {
             let passwordView: LabeledTextfield = .fromNib()
@@ -32,6 +32,7 @@ class RegistrationViewController: UIViewController {
             }
         }
     }
+    
     @IBOutlet private weak var loginPlaceholder: UIView! {
         didSet {
             let loginView: LabeledTextfield = .fromNib()
@@ -49,6 +50,7 @@ class RegistrationViewController: UIViewController {
             }
         }
     }
+    
     @IBOutlet private weak var namePlaceholder: UIView! {
         didSet {
             let nameView: LabeledTextfield = .fromNib()
@@ -66,7 +68,14 @@ class RegistrationViewController: UIViewController {
             }
         }
     }
+    
+    private var userLogin: String?
+    private var userPassword: String?
+    private var userName: String?
+    
     private let firebaseManager = FirebaseManager.shared
+    
+    // MARK: - ViewController Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +83,10 @@ class RegistrationViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    @objc private func handleTap() {
+    // MARK: - Private Methods
+    
+    @objc 
+    private func handleTap() {
         view.endEditing(true)
     }
     
@@ -95,17 +107,13 @@ class RegistrationViewController: UIViewController {
             showEmptyFieldsAlert()
             return
         }
-        firebaseManager.createUser(withEmail: email, password: password, userName: name) { error in
-                if let error = error {
-                    self.showEmailAlert()
-                    print("Error creating user:", error.localizedDescription)
-                } else {
-                    print("User created successfully")
-                    self.navigationController?.popToRootViewController(animated: true)
-                }
+        firebaseManager.createUser(withEmail: email, password: password, userName: name) { [weak self] error in
+            if error != nil {
+                self?.showEmailAlert()
+            } else {
+                self?.navigationController?.popToRootViewController(animated: true)
             }
-        
+        }
     }
-    
 }
 
