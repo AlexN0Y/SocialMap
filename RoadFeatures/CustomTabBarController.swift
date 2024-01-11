@@ -14,7 +14,7 @@ enum Storyboards {
     static let settings = "SettingsViewController"
 }
 
-class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
+final class CustomTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     private enum Constant {
         enum Images {

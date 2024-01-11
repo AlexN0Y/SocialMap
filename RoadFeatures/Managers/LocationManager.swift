@@ -8,12 +8,13 @@
 import CoreLocation
 
 protocol LocationDelegate: AnyObject {
+    
     func locationDidUpdate(to location: CLLocation)
     func locationDidFail(withError error: Error)
     func locationServicesWereDenied()
 }
 
-class LocationManager: NSObject, CLLocationManagerDelegate {
+final class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private let locationManager = CLLocationManager()
     private var currentLocation: CLLocation?
@@ -56,5 +57,4 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func getCurrentLocationCoordinate() -> CLLocationCoordinate2D? {
         return currentLocation?.coordinate
     }
-    
 }

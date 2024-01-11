@@ -7,9 +7,11 @@
 
 import Foundation
 
-class PointManager {
-    private let firebaseManager = FirebaseManager.shared
+final class PointManager {
+    
     static let shared = PointManager()
+    
+    private let firebaseManager = FirebaseManager.shared
     private var points: [Point] = []
     
     private init() {
