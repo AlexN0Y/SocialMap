@@ -20,6 +20,9 @@
 		DF3C5BF929F299050079D1DC /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C5BF829F299050079D1DC /* FavouritesViewController.swift */; };
 		DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3C5BFB29F29A780079D1DC /* FavouritesViewController.storyboard */; };
 		DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3C5BFE29F425F20079D1DC /* SettingsViewController.storyboard */; };
+		DF451ACA2B5C3621004E1987 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF451AC92B5C3621004E1987 /* Inter-Regular.ttf */; };
+		DF451ACC2B5C3630004E1987 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF451ACB2B5C3630004E1987 /* Inter-SemiBold.ttf */; };
+		DF451ACE2B5C363C004E1987 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF451ACD2B5C363C004E1987 /* Inter-Bold.ttf */; };
 		DF5AC66C2A13E90100D1EBE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF5AC66B2A13E90100D1EBE6 /* GoogleService-Info.plist */; };
 		DF5AC66F2A13EA4500D1EBE6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DF5AC66E2A13EA4500D1EBE6 /* FirebaseAnalytics */; };
 		DF5AC6712A13EA4500D1EBE6 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = DF5AC6702A13EA4500D1EBE6 /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -48,10 +51,17 @@
 		DF5AC69F2A13EA4500D1EBE6 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF5AC69E2A13EA4500D1EBE6 /* FirebaseRemoteConfigSwift */; };
 		DF5AC6A12A13EA4500D1EBE6 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DF5AC6A02A13EA4500D1EBE6 /* FirebaseStorage */; };
 		DF5AC6A32A13EA4500D1EBE6 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = DF5AC6A22A13EA4500D1EBE6 /* FirebaseStorageCombine-Community */; };
+		DF60EF242B5B6C9700754F5F /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60EF222B5B6C9700754F5F /* SettingsCollectionViewCell.swift */; };
+		DF60EF252B5B6C9700754F5F /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF60EF232B5B6C9700754F5F /* SettingsCollectionViewCell.xib */; };
+		DF60EF282B5B6CB300754F5F /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60EF262B5B6CB300754F5F /* AccountCollectionViewCell.swift */; };
+		DF60EF292B5B6CB300754F5F /* AccountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF60EF272B5B6CB300754F5F /* AccountCollectionViewCell.xib */; };
 		DF7CD22B2A08303F00FDC621 /* LabeledTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */; };
 		DF7CD22D2A08305200FDC621 /* LabeledTextfield.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */; };
 		DF7CD2342A0833D100FDC621 /* FavouritesPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7CD2322A0833D100FDC621 /* FavouritesPostCell.xib */; };
 		DF7CD2362A0FC96900FDC621 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD2352A0FC96900FDC621 /* UIView+Extensions.swift */; };
+		DF802C482B64AF1700016199 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF802C472B64AF1700016199 /* UserDefaultsKey.swift */; };
+		DF802C4B2B64BCCA00016199 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF802C4A2B64BCCA00016199 /* NibLoadable.swift */; };
+		DF802C4D2B64BF8D00016199 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF802C4C2B64BF8D00016199 /* UICollectionView+Ext.swift */; };
 		DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */; };
 		DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */; };
 		DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */; };
@@ -65,6 +75,7 @@
 		DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */; };
 		DFCD9A3729F696BE00D7A3EF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD9A3629F696BE00D7A3EF /* UIViewController+Extension.swift */; };
 		DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */; };
+		DFD6F46D2B64A51F00F25FE3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD6F46C2B64A51F00F25FE3 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,11 +92,21 @@
 		DF3C5BF829F299050079D1DC /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		DF3C5BFB29F29A780079D1DC /* FavouritesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouritesViewController.storyboard; sourceTree = "<group>"; };
 		DF3C5BFE29F425F20079D1DC /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		DF451AC92B5C3621004E1987 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		DF451ACB2B5C3630004E1987 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		DF451ACD2B5C363C004E1987 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		DF5AC66B2A13E90100D1EBE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF60EF222B5B6C9700754F5F /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
+		DF60EF232B5B6C9700754F5F /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
+		DF60EF262B5B6CB300754F5F /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
+		DF60EF272B5B6CB300754F5F /* AccountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountCollectionViewCell.xib; sourceTree = "<group>"; };
 		DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextfield.swift; sourceTree = "<group>"; };
 		DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabeledTextfield.xib; sourceTree = "<group>"; };
 		DF7CD2322A0833D100FDC621 /* FavouritesPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesPostCell.xib; sourceTree = "<group>"; };
 		DF7CD2352A0FC96900FDC621 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		DF802C472B64AF1700016199 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		DF802C4A2B64BCCA00016199 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		DF802C4C2B64BF8D00016199 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
@@ -101,6 +122,7 @@
 		DFC9F6C529C9FF1800B8BCE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCD9A3629F696BE00D7A3EF /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		DFD6F46C2B64A51F00F25FE3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				DF06826F2A1BF74000BE72B5 /* Point.swift */,
+				DFD6F46C2B64A51F00F25FE3 /* Settings.swift */,
+				DF802C472B64AF1700016199 /* UserDefaultsKey.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +205,7 @@
 		DF3C5BFD29F425C30079D1DC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				DF60EF1F2B5B6C2700754F5F /* Cells */,
 				DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */,
 				DF3C5BFE29F425F20079D1DC /* SettingsViewController.storyboard */,
 			);
@@ -215,11 +240,56 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		DF451AC72B5C35EF004E1987 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DF451AC82B5C35F7004E1987 /* Inter */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DF451AC82B5C35F7004E1987 /* Inter */ = {
+			isa = PBXGroup;
+			children = (
+				DF451ACD2B5C363C004E1987 /* Inter-Bold.ttf */,
+				DF451ACB2B5C3630004E1987 /* Inter-SemiBold.ttf */,
+				DF451AC92B5C3621004E1987 /* Inter-Regular.ttf */,
+			);
+			path = Inter;
+			sourceTree = "<group>";
+		};
+		DF60EF1F2B5B6C2700754F5F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DF60EF212B5B6C4200754F5F /* SettingsCollectionViewCell */,
+				DF60EF202B5B6C3100754F5F /* AccountCollectionViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DF60EF202B5B6C3100754F5F /* AccountCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DF60EF262B5B6CB300754F5F /* AccountCollectionViewCell.swift */,
+				DF60EF272B5B6CB300754F5F /* AccountCollectionViewCell.xib */,
+			);
+			path = AccountCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		DF60EF212B5B6C4200754F5F /* SettingsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DF60EF222B5B6C9700754F5F /* SettingsCollectionViewCell.swift */,
+				DF60EF232B5B6C9700754F5F /* SettingsCollectionViewCell.xib */,
+			);
+			path = SettingsCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		DF7CD2292A082FDD00FDC621 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
-				DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */,
-				DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */,
+				DFF253532B5731460013920D /* LabeledTextfield */,
+				DFF253522B57313A0013920D /* TabBar */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -231,6 +301,14 @@
 				DF7CD2322A0833D100FDC621 /* FavouritesPostCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DF802C492B64BCB200016199 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DF802C4A2B64BCCA00016199 /* NibLoadable.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		DFB004EC29FF346300B2943E /* PointDetails */ = {
@@ -261,20 +339,15 @@
 		DFC9F6B629C9FF1700B8BCE6 /* RoadFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				DF802C492B64BCB200016199 /* Helpers */,
+				DF451AC72B5C35EF004E1987 /* Fonts */,
 				DF06827A2A1FE50A00BE72B5 /* Managers */,
-				DF0682712A1BF9EB00BE72B5 /* AddPoint */,
 				DF06826E2A1BF72C00BE72B5 /* Models */,
 				DF7CD2292A082FDD00FDC621 /* UIElements */,
+				DFF253512B57306F0013920D /* Screens */,
 				DFCD9A3529F6967200D7A3EF /* Extensions */,
-				DF3C5C0229F49DA50079D1DC /* Map */,
-				DF3C5C0129F49CC10079D1DC /* Registration */,
-				DF3C5C0029F49CAE0079D1DC /* LogIn */,
-				DF3C5BFD29F425C30079D1DC /* Settings */,
-				DF3C5BFA29F299820079D1DC /* Favourites */,
-				DFB004EC29FF346300B2943E /* PointDetails */,
 				DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */,
 				DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */,
-				DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */,
 				DFC9F6C029C9FF1800B8BCE6 /* Assets.xcassets */,
 				DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */,
 				DFC9F6C529C9FF1800B8BCE6 /* Info.plist */,
@@ -288,8 +361,40 @@
 			children = (
 				DFCD9A3629F696BE00D7A3EF /* UIViewController+Extension.swift */,
 				DF7CD2352A0FC96900FDC621 /* UIView+Extensions.swift */,
+				DF802C4C2B64BF8D00016199 /* UICollectionView+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DFF253512B57306F0013920D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DFB004EC29FF346300B2943E /* PointDetails */,
+				DF3C5BFA29F299820079D1DC /* Favourites */,
+				DF3C5BFD29F425C30079D1DC /* Settings */,
+				DF3C5C0029F49CAE0079D1DC /* LogIn */,
+				DF3C5C0129F49CC10079D1DC /* Registration */,
+				DF3C5C0229F49DA50079D1DC /* Map */,
+				DF0682712A1BF9EB00BE72B5 /* AddPoint */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DFF253522B57313A0013920D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		DFF253532B5731460013920D /* LabeledTextfield */ = {
+			isa = PBXGroup;
+			children = (
+				DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */,
+				DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */,
+			);
+			path = LabeledTextfield;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,14 +488,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */,
+				DF451ACE2B5C363C004E1987 /* Inter-Bold.ttf in Resources */,
+				DF451ACA2B5C3621004E1987 /* Inter-Regular.ttf in Resources */,
 				DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */,
 				DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */,
+				DF60EF252B5B6C9700754F5F /* SettingsCollectionViewCell.xib in Resources */,
+				DF60EF292B5B6CB300754F5F /* AccountCollectionViewCell.xib in Resources */,
 				DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */,
 				DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */,
 				DF7CD22D2A08305200FDC621 /* LabeledTextfield.xib in Resources */,
 				DF0682772A1D562300BE72B5 /* AddPointViewController.storyboard in Resources */,
 				DFB004EE29FF348A00B2943E /* PointDetailsViewController.storyboard in Resources */,
 				DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */,
+				DF451ACC2B5C3630004E1987 /* Inter-SemiBold.ttf in Resources */,
 				DF5AC66C2A13E90100D1EBE6 /* GoogleService-Info.plist in Resources */,
 				DF7CD2342A0833D100FDC621 /* FavouritesPostCell.xib in Resources */,
 				DFC9F6C129C9FF1800B8BCE6 /* Assets.xcassets in Resources */,
@@ -406,10 +516,15 @@
 			files = (
 				DFCD9A3729F696BE00D7A3EF /* UIViewController+Extension.swift in Sources */,
 				DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */,
+				DF60EF242B5B6C9700754F5F /* SettingsCollectionViewCell.swift in Sources */,
 				DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */,
+				DF802C4D2B64BF8D00016199 /* UICollectionView+Ext.swift in Sources */,
 				DF3C5BF929F299050079D1DC /* FavouritesViewController.swift in Sources */,
+				DF802C482B64AF1700016199 /* UserDefaultsKey.swift in Sources */,
+				DF60EF282B5B6CB300754F5F /* AccountCollectionViewCell.swift in Sources */,
 				DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */,
 				DF7CD2362A0FC96900FDC621 /* UIView+Extensions.swift in Sources */,
+				DF802C4B2B64BCCA00016199 /* NibLoadable.swift in Sources */,
 				DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */,
 				DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */,
 				DF7CD22B2A08303F00FDC621 /* LabeledTextfield.swift in Sources */,
@@ -422,6 +537,7 @@
 				DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */,
 				DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */,
 				DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */,
+				DFD6F46D2B64A51F00F25FE3 /* Settings.swift in Sources */,
 				DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
