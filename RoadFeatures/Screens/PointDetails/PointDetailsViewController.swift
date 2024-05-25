@@ -40,6 +40,7 @@ class PointDetailsViewController: UIViewController {
                 pointManager.checkIfPointIsFavourite(userID: userID, pointID: point.id) { (isFavourite, error) in
                     DispatchQueue.main.async {
                         if let error = error {
+#warning("show error popup")
                             print("Error checking if point is favourite: \(error)")
                         } else if let isFavourite = isFavourite {
                             self.addRemoveButton.isHidden = false

@@ -34,7 +34,8 @@ class LabeledTextfield: UIView {
     public func configureLabeledTextfield(
         labelText: String,
         secureTextEntry: Bool = false,
-        keyboardType: UIKeyboardType = .default
+        keyboardType: UIKeyboardType = .default,
+        placeholder: String
     ) {
         self.backgroundColor = UIColor.clear
         
@@ -42,6 +43,7 @@ class LabeledTextfield: UIView {
         
         textField.isSecureTextEntry = secureTextEntry
         textField.keyboardType = keyboardType
+        textField.placeholder = placeholder
     }
 }
 

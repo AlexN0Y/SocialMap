@@ -23,7 +23,11 @@ class LoginViewController: UIViewController {
                 passwordView.topAnchor.constraint(equalTo: passwordPlaceholder.topAnchor),
                 passwordView.bottomAnchor.constraint(equalTo: passwordPlaceholder.bottomAnchor)
             ])
-            passwordView.configureLabeledTextfield(labelText: "Password", secureTextEntry: true)
+            passwordView.configureLabeledTextfield(
+                labelText: "Password",
+                secureTextEntry: true,
+                placeholder: "***********"
+            )
             passwordView.onSave = { [weak self] text in
                 self?.userPassword = text
             }
@@ -41,7 +45,11 @@ class LoginViewController: UIViewController {
                 loginView.topAnchor.constraint(equalTo: loginPlaceholder.topAnchor),
                 loginView.bottomAnchor.constraint(equalTo: loginPlaceholder.bottomAnchor)
             ])
-            loginView.configureLabeledTextfield(labelText: "Email", keyboardType: .emailAddress)
+            loginView.configureLabeledTextfield(
+                labelText: "Email",
+                keyboardType: .emailAddress,
+                placeholder: "example@gmail.com"
+            )
             loginView.onSave = { [weak self] text in
                 self?.userLogin = text
             }
@@ -67,6 +75,11 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    
+    
+    @IBAction private func didTapRegistration() {
+        // onChangeToRegistration() add this closure
+    }
     
     @IBAction private func logInAction() {
         guard let userLogin, !userLogin.isEmpty, let userPassword, !userPassword.isEmpty  else {

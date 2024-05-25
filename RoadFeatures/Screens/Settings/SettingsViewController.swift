@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController, NibLoadable {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     private let settingsItems = Settings.allCases
+    private let firebaseManager = FirebaseManager.shared
     
     private enum Constant {
         static let title = "Settings"
@@ -20,14 +21,9 @@ class SettingsViewController: UIViewController, NibLoadable {
         static let logInViewControllerName = "LoginViewController"
     }
     
-    private enum State {
-        case loggedIn
-        case guest
+    private var isGuest: Bool {
+        firebaseManager.getCurrentUser() == nil
     }
-    
-    private var state: State = .guest
-    
-    private let firebaseManager = FirebaseManager.shared
     
     // MARK: - ViewController Lifecycle Methods
     
@@ -38,42 +34,29 @@ class SettingsViewController: UIViewController, NibLoadable {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        if let user = firebaseManager.getCurrentUser() {
-//            state = .loggedIn
-//        } else {
-//            state = .guest
-//        }
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
     
     // MARK: - Private Properties
-    
-    //    @IBAction private func logInTapped() {
-    //        switch(state) {
-    //        case .guest:
-    //            let logInStoryboard = UIStoryboard(name: Constant.logInStoryboardName, bundle: nil)
-    //            let logInViewController = logInStoryboard.instantiateViewController(withIdentifier: Constant.logInViewControllerName) as! LoginViewController
-    //            logInViewController.hidesBottomBarWhenPushed = true
-    //            self.navigationController?.pushViewController(logInViewController, animated: true)
-    //
-    //        case .loggedIn:
-    //            do {
-    //                try firebaseManager.signOut()
-    //                greetingLabel.isHidden = true
-    //                signInOutButton.setTitle("LogIn", for: .normal)
-    //                state = .guest
-    //            } catch let signOutError as NSError {
-    //                print("Error signing out: \(signOutError.localizedDescription)")
-    //            }
-    //        }
-    //    }
     
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(AccountCollectionViewCell.self)
-        
         collectionView.register(SettingsCollectionViewCell.self)
+    }
+    
+    private func onTapLogIn() {
+        let logInStoryboard = UIStoryboard(name: Constant.logInStoryboardName, bundle: nil)
+        let logInViewController = logInStoryboard.instantiateViewController(withIdentifier: Constant.logInViewControllerName) as! LoginViewController
+        logInViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(logInViewController, animated: true)
+    }
+    
+    private func onTapRegistration() {
+        
     }
 }
 
@@ -90,9 +73,16 @@ extension SettingsViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && isGuest {
             let cell: AccountCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AccountCollectionViewCell.self), for: indexPath) as! AccountCollectionViewCell
-
+            
+            cell.onTapLogIn = { [weak self] in
+                self?.onTapLogIn()
+            }
+            cell.onTapRegistration = { [weak self] in
+                self?.onTapRegistration()
+            }
+            
             return cell
         } else {
             let cell: SettingsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: SettingsCollectionViewCell.self), for: indexPath) as! SettingsCollectionViewCell
@@ -105,6 +95,24 @@ extension SettingsViewController: UICollectionViewDataSource {
     }
 }
 
+extension SettingsViewController: UICollectionViewDelegate {
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        switch indexPath.row {
+        case 0:
+            if !isGuest {
+                let viewController = ProfileViewController.instantiateFromNib()
+                navigationController?.pushViewController(viewController, animated: true)
+            }
+        default:
+            return
+        }
+    }
+}
+
 extension SettingsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(
@@ -112,7 +120,7 @@ extension SettingsViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let height: CGFloat = indexPath.row == 0 ? 312 : 56
+        let height: CGFloat = (isGuest && indexPath.row == 0) ? 312 : 56
         return CGSize(width: collectionView.frame.width, height: height)
     }
     

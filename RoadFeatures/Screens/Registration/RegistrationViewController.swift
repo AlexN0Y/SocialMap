@@ -26,7 +26,11 @@ class RegistrationViewController: UIViewController {
                 passwordView.topAnchor.constraint(equalTo: passwordPlaceholder.topAnchor),
                 passwordView.bottomAnchor.constraint(equalTo: passwordPlaceholder.bottomAnchor)
             ])
-            passwordView.configureLabeledTextfield(labelText: "Password", secureTextEntry: true)
+            passwordView.configureLabeledTextfield(
+                labelText: "Password",
+                secureTextEntry: true,
+                placeholder: "***********"
+            )
             passwordView.onSave = { [weak self] text in
                 self?.userPassword = text
             }
@@ -44,7 +48,11 @@ class RegistrationViewController: UIViewController {
                 loginView.topAnchor.constraint(equalTo: loginPlaceholder.topAnchor),
                 loginView.bottomAnchor.constraint(equalTo: loginPlaceholder.bottomAnchor)
             ])
-            loginView.configureLabeledTextfield(labelText: "Email", keyboardType: .emailAddress)
+            loginView.configureLabeledTextfield(
+                labelText: "Email",
+                keyboardType: .emailAddress,
+                placeholder: "example@gmail.com"
+            )
             loginView.onSave = { [weak self] text in
                 self?.userLogin = text
             }
@@ -62,7 +70,11 @@ class RegistrationViewController: UIViewController {
                 nameView.topAnchor.constraint(equalTo: namePlaceholder.topAnchor),
                 nameView.bottomAnchor.constraint(equalTo: namePlaceholder.bottomAnchor)
             ])
-            nameView.configureLabeledTextfield(labelText: "Name")
+            nameView.configureLabeledTextfield(
+                labelText: "Name",
+                placeholder: "Alex"
+            )
+            
             nameView.onSave = { [weak self] text in
                 self?.userName = text
             }

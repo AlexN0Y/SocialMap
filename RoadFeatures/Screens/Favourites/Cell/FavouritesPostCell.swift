@@ -29,7 +29,7 @@ class FavouritesPostCell: UICollectionViewCell {
     // MARK: - Public Methods
     
     func cellConfigurate(point: Point) {
-        descriptionLabel.backgroundColor = UIColor.white
+        descriptionLabel.backgroundColor = UIColor.clear
         nameLabel.text = point.name
         
         if let city = point.city {

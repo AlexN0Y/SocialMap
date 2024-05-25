@@ -27,3 +27,14 @@ extension NibLoadable {
         String(describing: self)
     }
 }
+
+// MARK: - NibLoadable + UIViewController
+
+extension NibLoadable where Self: UIViewController {
+    
+    static func instantiateFromNib() -> Self {
+        let bundle = Bundle(for: self)
+        return Self(nibName: nibName, bundle: bundle)
+    }
+}
+
