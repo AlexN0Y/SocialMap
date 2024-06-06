@@ -55,6 +55,7 @@ class FavouritesViewController: UIViewController {
             guard let self else { return }
             
             if let error = error {
+                HUD.present(type: .error("Error occured"))
                 print("Failed to get points:", error)
             } else if let allPoints {
                 points = allPoints
@@ -83,6 +84,7 @@ class FavouritesViewController: UIViewController {
             guard let self else { return }
             
             if let error = error {
+                HUD.present(type: .error("Error occured"))
                 print("Failed to get points:", error)
             } else if let allPoints {
                 points = allPoints
@@ -169,6 +171,7 @@ extension FavouritesViewController: PointDetailsViewControllerDelegate {
             guard let self else { return }
             
             if let error = error {
+                HUD.present(type: .error("Error occured"))
                 print("Failed to get points:", error)
             } else if let allPoints = allPoints {
                 points = allPoints

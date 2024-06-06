@@ -57,6 +57,12 @@
 		DF60EF252B5B6C9700754F5F /* SettingsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF60EF232B5B6C9700754F5F /* SettingsCollectionViewCell.xib */; };
 		DF60EF282B5B6CB300754F5F /* AccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF60EF262B5B6CB300754F5F /* AccountCollectionViewCell.swift */; };
 		DF60EF292B5B6CB300754F5F /* AccountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF60EF272B5B6CB300754F5F /* AccountCollectionViewCell.xib */; };
+		DF7062672C125C1A007C0DC9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DF7062662C125C1A007C0DC9 /* Lottie */; };
+		DF70626B2C126649007C0DC9 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70626A2C126649007C0DC9 /* HUD.swift */; };
+		DF70626D2C126655007C0DC9 /* HUDType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70626C2C126655007C0DC9 /* HUDType.swift */; };
+		DF70626F2C126661007C0DC9 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70626E2C126661007C0DC9 /* HUDView.swift */; };
+		DF7062712C1266B6007C0DC9 /* UIApplication+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7062702C1266B6007C0DC9 /* UIApplication+Ext.swift */; };
+		DF7062772C126F83007C0DC9 /* Error.json in Resources */ = {isa = PBXBuildFile; fileRef = DF7062762C126F83007C0DC9 /* Error.json */; };
 		DF7CD22B2A08303F00FDC621 /* LabeledTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */; };
 		DF7CD22D2A08305200FDC621 /* LabeledTextfield.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */; };
 		DF7CD2342A0833D100FDC621 /* FavouritesPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7CD2322A0833D100FDC621 /* FavouritesPostCell.xib */; };
@@ -107,6 +113,11 @@
 		DF60EF232B5B6C9700754F5F /* SettingsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCollectionViewCell.xib; sourceTree = "<group>"; };
 		DF60EF262B5B6CB300754F5F /* AccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF60EF272B5B6CB300754F5F /* AccountCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountCollectionViewCell.xib; sourceTree = "<group>"; };
+		DF70626A2C126649007C0DC9 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		DF70626C2C126655007C0DC9 /* HUDType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDType.swift; sourceTree = "<group>"; };
+		DF70626E2C126661007C0DC9 /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
+		DF7062702C1266B6007C0DC9 /* UIApplication+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ext.swift"; sourceTree = "<group>"; };
+		DF7062762C126F83007C0DC9 /* Error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Error.json; sourceTree = "<group>"; };
 		DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextfield.swift; sourceTree = "<group>"; };
 		DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabeledTextfield.xib; sourceTree = "<group>"; };
 		DF7CD2322A0833D100FDC621 /* FavouritesPostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouritesPostCell.xib; sourceTree = "<group>"; };
@@ -155,6 +166,7 @@
 				DF5AC69F2A13EA4500D1EBE6 /* FirebaseRemoteConfigSwift in Frameworks */,
 				DF5AC6912A13EA4500D1EBE6 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				DF5AC6832A13EA4500D1EBE6 /* FirebaseDatabaseSwift in Frameworks */,
+				DF7062672C125C1A007C0DC9 /* Lottie in Frameworks */,
 				DF5AC68D2A13EA4500D1EBE6 /* FirebaseFunctions in Frameworks */,
 				DF5AC6A32A13EA4500D1EBE6 /* FirebaseStorageCombine-Community in Frameworks */,
 				DF5AC69D2A13EA4500D1EBE6 /* FirebaseRemoteConfig in Frameworks */,
@@ -306,6 +318,24 @@
 			path = SettingsCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		DF7062682C126630007C0DC9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DF7062692C12663D007C0DC9 /* HUD */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DF7062692C12663D007C0DC9 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				DF70626A2C126649007C0DC9 /* HUD.swift */,
+				DF70626C2C126655007C0DC9 /* HUDType.swift */,
+				DF70626E2C126661007C0DC9 /* HUDView.swift */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 		DF7CD2292A082FDD00FDC621 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +399,7 @@
 		DFC9F6B629C9FF1700B8BCE6 /* RoadFeatures */ = {
 			isa = PBXGroup;
 			children = (
+				DF7062682C126630007C0DC9 /* Views */,
 				DF802C492B64BCB200016199 /* Helpers */,
 				DF451AC72B5C35EF004E1987 /* Fonts */,
 				DF06827A2A1FE50A00BE72B5 /* Managers */,
@@ -382,6 +413,7 @@
 				DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */,
 				DFC9F6C529C9FF1800B8BCE6 /* Info.plist */,
 				DF5AC66B2A13E90100D1EBE6 /* GoogleService-Info.plist */,
+				DF7062762C126F83007C0DC9 /* Error.json */,
 			);
 			path = RoadFeatures;
 			sourceTree = "<group>";
@@ -391,6 +423,7 @@
 			children = (
 				DF7CD2352A0FC96900FDC621 /* UIView+Extensions.swift */,
 				DF802C4C2B64BF8D00016199 /* UICollectionView+Ext.swift */,
+				DF7062702C1266B6007C0DC9 /* UIApplication+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +513,7 @@
 				DF5AC69E2A13EA4500D1EBE6 /* FirebaseRemoteConfigSwift */,
 				DF5AC6A02A13EA4500D1EBE6 /* FirebaseStorage */,
 				DF5AC6A22A13EA4500D1EBE6 /* FirebaseStorageCombine-Community */,
+				DF7062662C125C1A007C0DC9 /* Lottie */,
 			);
 			productName = RoadFeatures;
 			productReference = DFC9F6B429C9FF1700B8BCE6 /* RoadFeatures.app */;
@@ -511,6 +545,7 @@
 			mainGroup = DFC9F6AB29C9FF1700B8BCE6;
 			packageReferences = (
 				DF5AC66D2A13EA4500D1EBE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				DF7062652C125C1A007C0DC9 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = DFC9F6B529C9FF1700B8BCE6 /* Products */;
 			projectDirPath = "";
@@ -529,6 +564,7 @@
 				DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */,
 				DF451ACE2B5C363C004E1987 /* Inter-Bold.ttf in Resources */,
 				DF451ACA2B5C3621004E1987 /* Inter-Regular.ttf in Resources */,
+				DF7062772C126F83007C0DC9 /* Error.json in Resources */,
 				DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */,
 				DF8137FF2B7051E200CAFECC /* AccountLogInViewController.xib in Resources */,
 				DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */,
@@ -556,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF7062712C1266B6007C0DC9 /* UIApplication+Ext.swift in Sources */,
 				DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */,
 				DF60EF242B5B6C9700754F5F /* SettingsCollectionViewCell.swift in Sources */,
 				DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */,
@@ -574,6 +611,7 @@
 				DF0682742A1BFA1000BE72B5 /* AddPointViewController.swift in Sources */,
 				DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */,
 				DF06826D2A199A8B00BE72B5 /* LocationManager.swift in Sources */,
+				DF70626F2C126661007C0DC9 /* HUDView.swift in Sources */,
 				DF06827C2A2168F200BE72B5 /* FirebaseManager.swift in Sources */,
 				DF06827E2A22D8D400BE72B5 /* PointAnnotation.swift in Sources */,
 				DF0682702A1BF74000BE72B5 /* Point.swift in Sources */,
@@ -581,6 +619,8 @@
 				DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */,
 				DF8137FE2B7051E200CAFECC /* AccountLogInViewController.swift in Sources */,
 				DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */,
+				DF70626D2C126655007C0DC9 /* HUDType.swift in Sources */,
+				DF70626B2C126649007C0DC9 /* HUD.swift in Sources */,
 				DFD6F46D2B64A51F00F25FE3 /* Settings.swift in Sources */,
 				DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */,
 			);
@@ -743,6 +783,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -779,6 +820,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -815,6 +857,14 @@
 			requirement = {
 				kind = upToNextMinorVersion;
 				minimumVersion = 10.9.0;
+			};
+		};
+		DF7062652C125C1A007C0DC9 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -954,6 +1004,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DF5AC66D2A13EA4500D1EBE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		DF7062662C125C1A007C0DC9 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF7062652C125C1A007C0DC9 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -68,6 +68,7 @@ class MapViewController: UIViewController {
             guard let self else { return }
             
             if let error = error {
+                HUD.present(type: .error("Error occured"))
                 print("Failed to get points:", error)
             } else if let points {
                 self.points = points
@@ -88,11 +89,13 @@ class MapViewController: UIViewController {
             message: "Please enable location services to use this feature.",
             preferredStyle: .alert
         )
+        
         let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) in
             if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(settingsURL)
             }
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addAction(settingsAction)
@@ -100,7 +103,6 @@ class MapViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    
 }
 
 // MARK: - MKMapViewDelegate
@@ -155,6 +157,7 @@ extension MapViewController: AddPointViewControllerDelegate {
             guard let self else { return }
             
             if let error = error {
+                HUD.present(type: .error("Error occured"))
                 print("Failed to get point with id \(pointID):", error)
             } else if let point {
                 let annotation = PointAnnotation(point: point)

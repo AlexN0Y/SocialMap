@@ -45,7 +45,7 @@ class PointDetailsViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         if let error = error {
-#warning("show error popup")
+                            HUD.present(type: .error("Error occured"))
                             print("Error checking if point is favourite: \(error)")
                         } else if let isFavourite {
                             self.addRemoveButton.isHidden = false
@@ -124,6 +124,7 @@ class PointDetailsViewController: UIViewController {
         if point.owner == userId {
             pointManager.removePointFromFavourites(userID: userId, pointID: point.id){ error in
                 if let error = error {
+                    HUD.present(type: .error("Error occured"))
                     print("Error removing point: \(error)")
                 } else {
                     print("Point successfully deleted from favourites.")
@@ -132,6 +133,7 @@ class PointDetailsViewController: UIViewController {
             
             pointManager.remove(point: point) { error in
                 if let error = error {
+                    HUD.present(type: .error("Error occured"))
                     print("Error removing point: \(error)")
                 } else {
                     print("Point successfully deleted.")
@@ -176,6 +178,7 @@ class PointDetailsViewController: UIViewController {
         
         pointManager.addFavouritePointToUser(userID: userID, point: point) { error in
             if let error = error {
+                HUD.present(type: .error("Error occured"))
                 print("Failed to add favourite point: \(error.localizedDescription)")
             } else {
                 DispatchQueue.main.async {
@@ -192,6 +195,7 @@ class PointDetailsViewController: UIViewController {
         
         pointManager.removePointFromFavourites(userID: userID, pointID: point.id) { error in
             if let error = error {
+                HUD.present(type: .error("Error occured"))
                 print("Error removing point from favourites: \(error.localizedDescription)")
             } else {
                 self.delegate?.pointWasDeleted()

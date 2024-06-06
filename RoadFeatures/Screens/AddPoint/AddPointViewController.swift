@@ -115,14 +115,14 @@ class AddPointViewController: UIViewController {
             guard let self else { return }
             
             if let error = error {
-#warning("add lottie")
+                HUD.present(type: .error("Error occured"))
                 print("Failed to add point:", error)
             } else if let documentID {
                 point.id = documentID
                 pointManager.addFavouritePointToUser(userID: userId, point: point) { error in
                     guard let error else { return }
                     
-#warning("add lottie")
+                    HUD.present(type: .error("Error occured"))
                     print("Failed to add favourite point: \(error.localizedDescription)")
                 }
                 

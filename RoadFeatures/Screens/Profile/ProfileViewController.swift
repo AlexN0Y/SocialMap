@@ -25,6 +25,7 @@ final class ProfileViewController: UIViewController, NibLoadable {
             try firebaseManager.signOut()
             navigationController?.popViewController(animated: true)
         } catch let signOutError as NSError {
+            HUD.present(type: .error("Error occured"))
             print("Error signing out: \(signOutError.localizedDescription)")
         }
     }
