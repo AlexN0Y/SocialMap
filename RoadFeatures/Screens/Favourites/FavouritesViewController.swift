@@ -40,7 +40,7 @@ class FavouritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = Constant.title
+        title = Constant.title
         configureHierarchy()
         collectionView.isHidden = true
         emptyLabel.isHidden = false
@@ -56,13 +56,13 @@ class FavouritesViewController: UIViewController {
             
             if let error = error {
                 print("Failed to get points:", error)
-            } else if let allPoints = allPoints {
-                self.points = allPoints
-                self.favouritesCount = allPoints.count
-                self.emptyLabel.isHidden = true
-                self.emptyImage.isHidden = true
-                self.collectionView.isHidden = false
-                self.collectionView.reloadData()
+            } else if let allPoints {
+                points = allPoints
+                favouritesCount = allPoints.count
+                emptyLabel.isHidden = true
+                emptyImage.isHidden = true
+                collectionView.isHidden = false
+                collectionView.reloadData()
             }
         }
         updateUI()
@@ -78,15 +78,16 @@ class FavouritesViewController: UIViewController {
         }
         
         emptyLabel.text = "It's empty for now, mark your favorite places!"
+        
         pointManager.getFavouritePointsForUser(userID: userId) { [weak self] (allPoints, error) in
             guard let self else { return }
             
             if let error = error {
                 print("Failed to get points:", error)
-            } else if let allPoints = allPoints {
-                self.points = allPoints
-                self.favouritesCount = allPoints.count
-                self.collectionView.reloadData()
+            } else if let allPoints {
+                points = allPoints
+                favouritesCount = allPoints.count
+                collectionView.reloadData()
             }
         }
     }
@@ -115,7 +116,10 @@ class FavouritesViewController: UIViewController {
 
 extension FavouritesViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
 #warning("Rewrite Logic for instantinateVC")
         let pointDetailsStoryboard = UIStoryboard(name: Constant.pointDetailsStoryboard, bundle: nil)
         if let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as? PointDetailsViewController, let point = points?[indexPath.row] {
@@ -132,11 +136,17 @@ extension FavouritesViewController: UICollectionViewDelegate {
 
 extension FavouritesViewController: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         return points?.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavouritesPostCell", for: indexPath) as? FavouritesPostCell, let point = points?[indexPath.row] {
             cell.cellConfigurate(point: point)
             return cell
@@ -161,9 +171,9 @@ extension FavouritesViewController: PointDetailsViewControllerDelegate {
             if let error = error {
                 print("Failed to get points:", error)
             } else if let allPoints = allPoints {
-                self.points = allPoints
-                self.favouritesCount = allPoints.count
-                self.collectionView.reloadData()
+                points = allPoints
+                favouritesCount = allPoints.count
+                collectionView.reloadData()
             }
         }
     }

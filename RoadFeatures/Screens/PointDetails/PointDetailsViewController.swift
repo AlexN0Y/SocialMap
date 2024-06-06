@@ -35,14 +35,19 @@ class PointDetailsViewController: UIViewController {
     
     @IBOutlet private weak var addRemoveButton: UIButton! {
         didSet {
-            if let userID = firebaseManager.getCurrentUser()?.uid, let point = point {
+            if let userID = firebaseManager.getCurrentUser()?.uid, let point {
                 addRemoveButton.isHidden = true
-                pointManager.checkIfPointIsFavourite(userID: userID, pointID: point.id) { (isFavourite, error) in
+                pointManager.checkIfPointIsFavourite(
+                    userID: userID,
+                    pointID: point.id
+                ) { [weak self] (isFavourite, error) in
+                    guard let self else { return }
+                    
                     DispatchQueue.main.async {
                         if let error = error {
 #warning("show error popup")
                             print("Error checking if point is favourite: \(error)")
-                        } else if let isFavourite = isFavourite {
+                        } else if let isFavourite {
                             self.addRemoveButton.isHidden = false
                             if isFavourite {
                                 self.addRemoveButton.setTitle("Remove from favourites", for: .normal)
@@ -59,7 +64,6 @@ class PointDetailsViewController: UIViewController {
             } else {
                 addRemoveButton.isHidden = true
             }
-            
         }
     }
     

@@ -64,7 +64,13 @@ struct Point {
         self.owner = owner
     }
     
-    init(id: String, name: String, description: String?, city: String?, kind: Kind, point: (Double, Double), owner: String) {
+    init(
+        id: String, name: String,
+        description: String?,
+        city: String?, kind: Kind,
+        point: (Double, Double),
+        owner: String
+    ) {
         self.id = id
         self.name = name
         self.description = description

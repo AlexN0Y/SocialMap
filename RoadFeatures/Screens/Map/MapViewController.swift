@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = Constant.title
+        title = Constant.title
         locationManager.locationDelegate = self
         setAnnotations()
     }
@@ -64,17 +64,20 @@ class MapViewController: UIViewController {
     }
     
     private func setAnnotations() {
-        pointManager.getAllFromDatabase { (points, error) in
+        pointManager.getAllFromDatabase { [weak self] (points, error) in
+            guard let self else { return }
+            
             if let error = error {
                 print("Failed to get points:", error)
-            } else if let points = points {
+            } else if let points {
                 self.points = points
                 var annotations = [PointAnnotation]()
                 for point in points {
                     let annotation = PointAnnotation(point: point)
                     annotations.append(annotation)
                 }
-                self.mapView.addAnnotations(annotations)
+                
+                mapView.addAnnotations(annotations)
             }
         }
     }
@@ -148,12 +151,14 @@ extension MapViewController: LocationDelegate {
 extension MapViewController: AddPointViewControllerDelegate {
     
     func pointWasAdded(pointID: String) {
-        pointManager.getPointByID(id: pointID) { (point, error) in
+        pointManager.getPointByID(id: pointID) { [weak self] (point, error) in
+            guard let self else { return }
+            
             if let error = error {
                 print("Failed to get point with id \(pointID):", error)
-            } else if let point = point {
+            } else if let point {
                 let annotation = PointAnnotation(point: point)
-                self.mapView.addAnnotation(annotation)
+                mapView.addAnnotation(annotation)
             }
         }
     }

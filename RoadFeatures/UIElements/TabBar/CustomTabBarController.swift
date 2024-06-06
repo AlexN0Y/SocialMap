@@ -70,6 +70,6 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
         } ()
         let settingsNavigationController = UINavigationController(rootViewController: settingsViewController)
         
-        self.viewControllers = [favouritesNavigationController, mapNavigationController, settingsNavigationController]
+        viewControllers = [favouritesNavigationController, mapNavigationController, settingsNavigationController]
     }
 }

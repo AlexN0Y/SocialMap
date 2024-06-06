@@ -66,8 +66,13 @@ class AddPointViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = Constant.title
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        title = Constant.title
+        
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(handleTap)
+        )
+        
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -87,36 +92,46 @@ class AddPointViewController: UIViewController {
         }
         
         guard let name = nameTextfield.text, !name.isEmpty else {
-            showEmptyNameAlert()
+            presentAlert(message: String(localized: "Fill in name field"))
             return
         }
         
         guard let location = locationManager.getCurrentLocationCoordinate() else {
-            showNoLocationAlert()
+            presentAlert(message: String(localized: "Cannot find your location"))
             return
         }
 
         let city = isNilOrEmpty(string: cityTextfield.text)
         let description = descriptionTextView.text.isEmpty ? nil : descriptionTextView.text
-        var point = Point(id: "Changable", name: name, description: description, city: city, kind: pickedImage, point: (location.latitude , location.longitude), owner: userId)
-        pointManager.add(point: point) { error, documentID in
+        var point = Point(
+            id: "Changable",
+            name: name, description: description,
+            city: city, kind: pickedImage,
+            point: (location.latitude , location.longitude),
+            owner: userId
+        )
+        
+        pointManager.add(point: point) { [weak self] error, documentID in
+            guard let self else { return }
+            
             if let error = error {
+#warning("add lottie")
                 print("Failed to add point:", error)
-            } else if let documentID = documentID {
+            } else if let documentID {
                 point.id = documentID
-                self.pointManager.addFavouritePointToUser(userID: userId, point: point) { error in
-                    if let error = error {
-                        print("Failed to add favourite point: \(error.localizedDescription)")
-                    } else {
-                    }
+                pointManager.addFavouritePointToUser(userID: userId, point: point) { error in
+                    guard let error else { return }
+                    
+#warning("add lottie")
+                    print("Failed to add favourite point: \(error.localizedDescription)")
                 }
-                self.delegate?.pointWasAdded(pointID: documentID)
+                
+                delegate?.pointWasAdded(pointID: documentID)
                 DispatchQueue.main.async {
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }
-        
     }
     
     @objc 
@@ -124,23 +139,28 @@ class AddPointViewController: UIViewController {
         view.endEditing(true)
     }
     
-    private func showEmptyNameAlert() {
-        let alert = UIAlertController(title: "Alert", message: "Fill in name field", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-    
-    private func showNoLocationAlert() {
-        let alert = UIAlertController(title: "Alert", message: "Cannot find your location", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-    
     private func showNotAuthorisedAlert() {
-        let alert = UIAlertController(title: "Alert", message: "Log in to add", preferredStyle: .alert)
+        presentAlert(message: "Log in to add") { [weak self] in
+            guard let self else { return }
+        
+            navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    private func presentAlert(
+        message: String,
+        onTapOK: (() -> Void)? = nil
+    ) {
+        let alert = UIAlertController(
+            title: "Alert",
+            message: message,
+            preferredStyle: .alert
+        )
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-            self.navigationController?.popToRootViewController(animated: true)
+            onTapOK?()
         })
+        
         present(alert, animated: true)
     }
     
@@ -148,20 +168,28 @@ class AddPointViewController: UIViewController {
         guard let string = string, !string.isEmpty else {
             return nil
         }
+        
         return string
     }
-    
 }
 
 // MARK: - UIPickerViewDelegate
 
 extension AddPointViewController: UIPickerViewDelegate {
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Point.Kind.allCases[row].rawValue
+    func pickerView(
+        _ pickerView: UIPickerView,
+        titleForRow row: Int,
+        forComponent component: Int
+    ) -> String? {
+        Point.Kind.allCases[row].rawValue
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(
+        _ pickerView: UIPickerView,
+        didSelectRow row: Int, 
+        inComponent component: Int
+    ) {
         let selectedKind = Point.Kind.allCases[row]
         pickedImage = selectedKind
     }
@@ -172,17 +200,21 @@ extension AddPointViewController: UIPickerViewDelegate {
 extension AddPointViewController: UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Point.Kind.allCases.count
+    func pickerView(
+        _ pickerView: UIPickerView,
+        numberOfRowsInComponent component: Int
+    ) -> Int {
+        Point.Kind.allCases.count
     }
 }
 
 // MARK: - UITextFieldDelegate
 
 extension AddPointViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

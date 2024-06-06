@@ -87,21 +87,33 @@ class LoginViewController: UIViewController {
             return
         }
         
-        firebaseManager.logIn(withEmail: userLogin, password: userPassword) { authResult, error in
+        firebaseManager.logIn(
+            withEmail: userLogin,
+            password: userPassword
+        ) { [weak self] authResult, error in
+            guard let self else { return }
+            
             if let error = error {
-                self.showUserDoesNotExistsAlert()
+                showUserDoesNotExistsAlert()
                 print("Login failed: \(error.localizedDescription)")
             } else {
                 print("Login successful for user: \(authResult?.user.email ?? "")")
-                self.navigationController?.popToRootViewController(animated: true)
+                navigationController?.popToRootViewController(animated: true)
             }
         }
     }
     
     @IBAction private func signUpTapped() {
-        let registrationStoryboard = UIStoryboard(name: Constant.registrationStoryboardName, bundle: nil)
-        let registrationViewController = registrationStoryboard.instantiateViewController(withIdentifier: Constant.registrationViewControllerName) as! RegistrationViewController
-        self.navigationController?.pushViewController(registrationViewController, animated: true)
+        let registrationStoryboard = UIStoryboard(
+            name: Constant.registrationStoryboardName,
+            bundle: nil
+        )
+        
+        let registrationViewController = registrationStoryboard.instantiateViewController(
+            withIdentifier: Constant.registrationViewControllerName
+        ) as! RegistrationViewController
+        
+        navigationController?.pushViewController(registrationViewController, animated: true)
     }
     
     @objc

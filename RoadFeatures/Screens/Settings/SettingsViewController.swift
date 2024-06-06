@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController, NibLoadable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = Constant.title
+        title = Constant.title
         configureCollectionView()
     }
     
@@ -52,7 +52,7 @@ class SettingsViewController: UIViewController, NibLoadable {
         let logInStoryboard = UIStoryboard(name: Constant.logInStoryboardName, bundle: nil)
         let logInViewController = logInStoryboard.instantiateViewController(withIdentifier: Constant.logInViewControllerName) as! LoginViewController
         logInViewController.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(logInViewController, animated: true)
+        navigationController?.pushViewController(logInViewController, animated: true)
     }
     
     private func onTapRegistration() {

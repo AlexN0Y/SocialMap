@@ -14,7 +14,10 @@ class PointAnnotation: NSObject, MKAnnotation {
     let point: Point
     
     init(point: Point) {
-        self.coordinate = CLLocationCoordinate2D(latitude: point.point.0, longitude: point.point.1)
+        self.coordinate = CLLocationCoordinate2D(
+            latitude: point.point.0,
+            longitude: point.point.1
+        )
         self.title = point.name
         self.point = point
     }

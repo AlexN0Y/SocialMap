@@ -37,7 +37,7 @@ class LabeledTextfield: UIView {
         keyboardType: UIKeyboardType = .default,
         placeholder: String
     ) {
-        self.backgroundColor = UIColor.clear
+        backgroundColor = UIColor.clear
         
         titleLabel.text = labelText
         

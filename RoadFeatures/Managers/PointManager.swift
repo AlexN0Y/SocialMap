@@ -15,15 +15,17 @@ final class PointManager {
     private var points: [Point] = []
     
     private init() {
-        getAllFromDatabase { (allPoints, error) in
+        getAllFromDatabase { [weak self] (allPoints, error) in
+            guard let self else { return }
+            
             if let error = error {
+#warning("add lottie")
                 print("Failed to get points:", error)
-            } else if let allPoints = allPoints {
-                self.points = allPoints
+            } else if let allPoints {
+                points = allPoints
             }
         }
     }
-    
     
     func getAllFromDatabase(completion: @escaping ([Point]?, Error?) -> Void) {
         firebaseManager.getDocuments(collection: "points") { (documents, error) in
