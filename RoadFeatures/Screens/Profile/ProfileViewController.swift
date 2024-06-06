@@ -9,7 +9,16 @@ import UIKit
 
 final class ProfileViewController: UIViewController, NibLoadable {
     
+    @IBOutlet private weak var nameLabel: UILabel!
+    
     private let firebaseManager = FirebaseManager.shared
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Account"
+        guard let currentUser = firebaseManager.getCurrentUser() else { return }
+        nameLabel.text = currentUser.displayName
+    }
     
     @IBAction private func didTapSignOut() {
         do {

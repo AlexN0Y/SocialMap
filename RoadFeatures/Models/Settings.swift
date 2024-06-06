@@ -11,8 +11,6 @@ enum Settings: String, CaseIterable {
     
     case account
     case darkTheme
-    case inviteFriends
-    case supportTheAuthor
     case yourSuggestions
     case aboutAuthors
     
@@ -22,10 +20,6 @@ enum Settings: String, CaseIterable {
             "Account"
         case .darkTheme:
             "Dark theme"
-        case .inviteFriends:
-            "Invite friends"
-        case .supportTheAuthor:
-            "Support the author"
         case .yourSuggestions:
             "Your suggestions"
         case .aboutAuthors:

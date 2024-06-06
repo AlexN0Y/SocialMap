@@ -8,7 +8,7 @@
 import FirebaseAuth
 import FirebaseFirestore
 
-class FirebaseManager {
+final class FirebaseManager {
     
     static let shared = FirebaseManager()
     
@@ -16,7 +16,12 @@ class FirebaseManager {
     
     private init() {}
     
-    private func addUserToFirestore(userId: String, userName: String, userEmail: String, completion: @escaping (Error?) -> Void) {
+    private func addUserToFirestore(
+        userId: String,
+        userName: String,
+        userEmail: String,
+        completion: @escaping (Error?) -> Void
+    ) {
         let usersCollection = db.collection("users").document(userId)
         let userData: [String: Any] = [
             "name": userName,
@@ -27,18 +32,46 @@ class FirebaseManager {
         }
     }
     
-    func createUser(withEmail email: String, password: String, userName: String, completion: @escaping (Error?) -> Void) {
+    func createUser(
+        withEmail email: String,
+        password: String,
+        userName: String,
+        completion: @escaping (Error?) -> Void
+    ) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 completion(error)
             } else {
-                self.addUserToFirestore(userId: authResult?.user.uid ?? "", userName: userName, userEmail: email, completion: completion)
+                guard let authResult else { return }
+                let user = authResult.user
+                
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.displayName = userName
+                changeRequest.commitChanges { [weak self] error in
+                    if let error = error {
+                        completion(error)
+                    } else {
+                        self?.addUserToFirestore(
+                            userId: authResult.user.uid,
+                            userName: userName,
+                            userEmail: email,
+                            completion: completion
+                        )
+                    }
+                }
             }
         }
     }
     
-    func logIn(withEmail email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+    func logIn(
+        withEmail email: String,
+        password: String,
+        completion: @escaping (AuthDataResult?, Error?) -> Void
+    ) {
+        Auth.auth().signIn(
+            withEmail: email,
+            password: password
+        ) { authResult, error in
             completion(authResult, error)
         }
     }
@@ -47,7 +80,10 @@ class FirebaseManager {
         return Auth.auth().currentUser
     }
     
-    func getUserDetails(uid: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    func getUserDetails(
+        uid: String,
+        completion: @escaping ([String: Any]?, Error?) -> Void
+    ) {
         let usersCollection = db.collection("users")
         let userDocument = usersCollection.document(uid)
         userDocument.getDocument { (document, error) in
@@ -70,14 +106,22 @@ class FirebaseManager {
         }
     }
     
-    func addDocument(collection: String, data: [String: Any], completion: @escaping (String?, Error?) -> Void) {
+    func addDocument(
+        collection: String,
+        data: [String: Any],
+        completion: @escaping (String?, Error?) -> Void
+    ) {
         var ref: DocumentReference? = nil
         ref = db.collection(collection).addDocument(data: data) { error in
             completion(ref?.documentID, error)
         }
     }
     
-    func removeDocument(collection: String, documentID: String, completion: @escaping (Error?) -> Void) {
+    func removeDocument(
+        collection: String,
+        documentID: String,
+        completion: @escaping (Error?) -> Void
+    ) {
         db.collection(collection).document(documentID).delete() { error in
             completion(error)
         }
@@ -104,16 +148,29 @@ class FirebaseManager {
         }
     }
     
-    func addFavouritePointToUser(userId: String, point: Point, completion: @escaping (Error?) -> Void) {
-        let userFavouritePointsCollection = db.collection("users").document(userId).collection("favouritePoints")
+    func addFavouritePointToUser(
+        userId: String,
+        point: Point,
+        completion: @escaping (Error?) -> Void
+    ) {
+        let userFavouritePointsCollection = db.collection("users")
+            .document(userId)
+            .collection("favouritePoints")
+        
         let pointData = point.dictionary
         userFavouritePointsCollection.document(point.id).setData(pointData) { (error) in
             completion(error)
         }
     }
     
-    func getFavouritePointsForUser(userId: String, completion: @escaping ([Point]?, Error?) -> Void) {
-        let userFavouritePointsCollection = db.collection("users").document(userId).collection("favouritePoints")
+    func getFavouritePointsForUser(
+        userId: String,
+        completion: @escaping ([Point]?, Error?) -> Void
+    ) {
+        let userFavouritePointsCollection = db.collection("users")
+            .document(userId)
+            .collection("favouritePoints")
+        
         userFavouritePointsCollection.getDocuments { (querySnapshot, error) in
             if let error = error {
                 completion(nil, error)
@@ -124,14 +181,29 @@ class FirebaseManager {
         }
     }
     
-    func removeDocumentFromFavouritePoints(collection: String, userID: String, documentID: String, completion: @escaping (Error?) -> Void) {
-        db.collection("users").document(userID).collection("favouritePoints").document(documentID).delete() { error in
-            completion(error)
-        }
+    func removeDocumentFromFavouritePoints(
+        collection: String,
+        userID: String,
+        documentID: String,
+        completion: @escaping (Error?) -> Void
+    ) {
+        db.collection("users")
+            .document(userID)
+            .collection("favouritePoints")
+            .document(documentID).delete() { error in
+                completion(error)
+            }
     }
     
-    func checkDocumentFromFavouritePointsExists(userID: String, documentID: String, completion: @escaping (Bool?, Error?) -> Void) {
-        let docRef = db.collection("users").document(userID).collection("favouritePoints").document(documentID)
+    func checkDocumentFromFavouritePointsExists(
+        userID: String,
+        documentID: String,
+        completion: @escaping (Bool?, Error?) -> Void
+    ) {
+        let docRef = db.collection("users")
+            .document(userID)
+            .collection("favouritePoints")
+            .document(documentID)
         
         docRef.getDocument { (document, error) in
             if let error = error {
@@ -142,8 +214,4 @@ class FirebaseManager {
             }
         }
     }
-    
 }
-
-
-

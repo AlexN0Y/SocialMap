@@ -107,6 +107,15 @@ extension SettingsViewController: UICollectionViewDelegate {
                 let viewController = ProfileViewController.instantiateFromNib()
                 navigationController?.pushViewController(viewController, animated: true)
             }
+        case 2:
+            if let url = URL(
+                string: "https://forms.gle/UDuZo791PFxiiPAYA"
+            ) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        case 3:
+            let viewController = AboutAuthorsViewController.instantiateFromNib()
+            navigationController?.pushViewController(viewController, animated: true)
         default:
             return
         }

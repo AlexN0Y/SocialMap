@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="RoadFeatures" customModuleProvider="target">
             <connections>
+                <outlet property="nameLabel" destination="7og-PE-81l" id="lQe-Ax-rW7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,22 +21,104 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFp-K4-iHL">
-                    <rect key="frame" x="156" y="409" width="82" height="35"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFp-K4-iHL">
+                    <rect key="frame" x="16" y="404" width="361" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="f3a-cX-Q7e"/>
+                    </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Sign out">
+                        <color key="baseForegroundColor" name="delete"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="delete"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="didTapSignOut" destination="-1" eventType="touchUpInside" id="enf-er-avi"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="KJa-Jc-V2y">
+                    <rect key="frame" x="156.66666666666666" y="89" width="80" height="80"/>
+                    <color key="tintColor" name="text"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="UTk-rO-F4G"/>
+                        <constraint firstAttribute="height" constant="80" id="f19-rV-0Fx"/>
+                    </constraints>
+                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZX3-Tr-V0U">
+                    <rect key="frame" x="16" y="189" width="361" height="56"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xax-67-5Vc">
+                            <rect key="frame" x="337" y="18" width="24" height="20.333333333333329"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="RcG-O4-U2h"/>
+                                <constraint firstAttribute="height" constant="24" id="h5P-a6-4b1"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pii-Gr-MzM">
+                            <rect key="frame" x="0.0" y="18" width="42.666666666666664" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yourName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7og-PE-81l">
+                            <rect key="frame" x="250.33333333333329" y="18" width="74.666666666666657" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" name="gray1"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="Pii-Gr-MzM" firstAttribute="leading" secondItem="ZX3-Tr-V0U" secondAttribute="leading" id="CDJ-6q-nF3"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="CeM-d8-pVw"/>
+                        <constraint firstItem="Pii-Gr-MzM" firstAttribute="centerY" secondItem="ZX3-Tr-V0U" secondAttribute="centerY" id="d1g-W9-nxy"/>
+                        <constraint firstItem="7og-PE-81l" firstAttribute="centerY" secondItem="ZX3-Tr-V0U" secondAttribute="centerY" id="iXu-Vp-Hxc"/>
+                        <constraint firstAttribute="height" constant="56" id="j6U-er-WAd"/>
+                        <constraint firstItem="Xax-67-5Vc" firstAttribute="leading" secondItem="7og-PE-81l" secondAttribute="trailing" constant="12" id="lKh-zp-RrL"/>
+                        <constraint firstAttribute="trailing" secondItem="Xax-67-5Vc" secondAttribute="trailing" id="sEu-2M-Buf"/>
+                        <constraint firstItem="Xax-67-5Vc" firstAttribute="centerY" secondItem="ZX3-Tr-V0U" secondAttribute="centerY" id="tRl-8d-IBp"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aFp-K4-iHL" secondAttribute="trailing" constant="16" id="47Y-4e-7sR"/>
+                <constraint firstItem="aFp-K4-iHL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="8a6-8k-yVY"/>
+                <constraint firstItem="aFp-K4-iHL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="NPL-2O-o4b"/>
+                <constraint firstItem="KJa-Jc-V2y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QmG-w4-HKO"/>
+                <constraint firstItem="KJa-Jc-V2y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="Sw9-EY-RpB"/>
+                <constraint firstItem="ZX3-Tr-V0U" firstAttribute="top" secondItem="KJa-Jc-V2y" secondAttribute="bottom" constant="20" id="cY9-R8-uwB"/>
+                <constraint firstItem="aFp-K4-iHL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pUD-4R-j3Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZX3-Tr-V0U" secondAttribute="trailing" constant="16" id="v2Z-4m-BGP"/>
+                <constraint firstItem="ZX3-Tr-V0U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="xLI-Oa-Udc"/>
+            </constraints>
             <point key="canvasLocation" x="97" y="20"/>
         </view>
     </objects>
     <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="user" width="80" height="80"/>
+        <namedColor name="delete">
+            <color red="1" green="0.15700000524520874" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="gray1">
+            <color red="0.75300002098083496" green="0.75300002098083496" blue="0.75300002098083496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -43,7 +43,10 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
         locationDelegate?.locationDidFail(withError: error)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(
+        _ manager: CLLocationManager,
+        didUpdateLocations locations: [CLLocation]
+    ) {
         guard let location = locations.last else { return }
         currentLocation = location
         locationDelegate?.locationDidUpdate(to: location)
