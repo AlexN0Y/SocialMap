@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavouritesViewController: UIViewController {
+final class FavouritesViewController: UIViewController {
     
     // MARK: - Private Properties
     
@@ -21,19 +21,19 @@ class FavouritesViewController: UIViewController {
         }
     }
     
+    private let pointManager = PointManager.shared
+    private var points: [Point]?
+    private let firebaseManager = FirebaseManager.shared
+    private let lineSpace: CGFloat = 12
+    private let cellHeight: CGFloat = 80
+    
+    private var favouritesCount: Int = 0 {
+        didSet { updateUI() }
+    }
+    
     private enum Constant {
         static let title = "Favourites"
         static let pointDetailsStoryboard = "PointDetailsViewController"
-    }
-    
-    private let pointManager = PointManager.shared
-    private var points: Array<Point>?
-    private let firebaseManager = FirebaseManager.shared
-    
-    private var favouritesCount: Int = 0 {
-        didSet {
-            updateUI()
-        }
     }
     
     // MARK: - ViewController Lifecycle Methods
@@ -41,8 +41,7 @@ class FavouritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constant.title
-        configureHierarchy()
-        collectionView.isHidden = true
+        configureCollectionView()
         emptyLabel.isHidden = false
         emptyImage.isHidden = false
         
@@ -96,21 +95,25 @@ class FavouritesViewController: UIViewController {
     
     // MARK: - Private Methods
     
+    private func configureCollectionView() {
+        collectionView.isHidden = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.contentInset = UIEdgeInsets(
+            top: 30,
+            left: 0,
+            bottom: 30,
+            right: 0
+        )
+    }
+    
     private func updateUI() {
         let isEmptyState = favouritesCount == 0
         
         collectionView.isHidden = isEmptyState
         emptyImage.isHidden = !isEmptyState
         emptyLabel.isHidden = !isEmptyState
-    }
-    
-    private func createLayout() -> UICollectionViewLayout {
-        let config = UICollectionLayoutListConfiguration(appearance: .plain)
-        return UICollectionViewCompositionalLayout.list(using: config)
-    }
-    
-    private func configureHierarchy() {
-        collectionView.collectionViewLayout = createLayout()
     }
 }
 
@@ -122,9 +125,11 @@ extension FavouritesViewController: UICollectionViewDelegate {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath
     ) {
-#warning("Rewrite Logic for instantinateVC")
         let pointDetailsStoryboard = UIStoryboard(name: Constant.pointDetailsStoryboard, bundle: nil)
-        if let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(withIdentifier: String(describing: PointDetailsViewController.self)) as? PointDetailsViewController, let point = points?[indexPath.row] {
+        if let pointDetailsViewController = pointDetailsStoryboard.instantiateViewController(
+            withIdentifier: String(describing: PointDetailsViewController.self)) as? PointDetailsViewController,
+            let point = points?[indexPath.row]
+        {
             pointDetailsViewController.selectedPoint(point: point)
             pointDetailsViewController.delegate = self
             present(pointDetailsViewController, animated: true, completion: nil)
@@ -142,7 +147,7 @@ extension FavouritesViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        return points?.count ?? 0
+        points?.count ?? 0
     }
     
     func collectionView(
@@ -155,6 +160,30 @@ extension FavouritesViewController: UICollectionViewDataSource {
         } else {
             return UICollectionViewCell()
         }
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension FavouritesViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        CGSize(
+            width: collectionView.frame.width,
+            height: cellHeight
+        )
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    ) -> CGFloat {
+        lineSpace
     }
 }
 
@@ -181,4 +210,3 @@ extension FavouritesViewController: PointDetailsViewControllerDelegate {
         }
     }
 }
-

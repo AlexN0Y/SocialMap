@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     // MARK: - Private Properties
     

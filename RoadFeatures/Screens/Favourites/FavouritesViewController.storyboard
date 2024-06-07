@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1A-tb-RrU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l1A-tb-RrU">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n1t-z5-h6o">
-                                <rect key="frame" x="11" y="59" width="371" height="759"/>
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uND-Pk-S20">
                                     <size key="itemSize" width="362" height="156"/>
@@ -43,7 +43,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FavouritesPostCell" id="eJJ-p3-sf1" customClass="FavouritesPostCell" customModule="RoadFeatures" customModuleProvider="target">
-                                        <rect key="frame" x="4.666666666666667" y="0.0" width="362" height="156"/>
+                                        <rect key="frame" x="-0.66666666666666663" y="0.0" width="362" height="156"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tun-Ae-6In">
                                             <rect key="frame" x="0.0" y="0.0" width="362" height="156"/>
@@ -53,10 +53,6 @@
                                         <size key="customSize" width="362" height="156"/>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="l1A-tb-RrU" id="nxp-xO-HJ4"/>
-                                    <outlet property="delegate" destination="l1A-tb-RrU" id="yBT-I8-wuD"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OxY-LT-TpQ"/>
@@ -68,8 +64,8 @@
                             <constraint firstItem="OxY-LT-TpQ" firstAttribute="bottom" secondItem="n1t-z5-h6o" secondAttribute="bottom" id="C9t-2T-gsG"/>
                             <constraint firstItem="n1t-z5-h6o" firstAttribute="top" secondItem="OxY-LT-TpQ" secondAttribute="top" id="FtY-XW-O0j"/>
                             <constraint firstItem="3bh-Mr-11d" firstAttribute="centerX" secondItem="JbD-Yu-VgW" secondAttribute="centerX" id="R0Z-er-h5h"/>
-                            <constraint firstItem="n1t-z5-h6o" firstAttribute="leading" secondItem="OxY-LT-TpQ" secondAttribute="leading" constant="11" id="eLc-3R-0j6"/>
-                            <constraint firstItem="OxY-LT-TpQ" firstAttribute="trailing" secondItem="n1t-z5-h6o" secondAttribute="trailing" constant="11" id="kR9-Pw-ijk"/>
+                            <constraint firstItem="n1t-z5-h6o" firstAttribute="leading" secondItem="OxY-LT-TpQ" secondAttribute="leading" constant="16" id="eLc-3R-0j6"/>
+                            <constraint firstItem="OxY-LT-TpQ" firstAttribute="trailing" secondItem="n1t-z5-h6o" secondAttribute="trailing" constant="16" id="kR9-Pw-ijk"/>
                             <constraint firstItem="3bh-Mr-11d" firstAttribute="centerY" secondItem="JbD-Yu-VgW" secondAttribute="centerY" constant="32" id="n0e-hN-MLA"/>
                             <constraint firstItem="OxY-LT-TpQ" firstAttribute="trailing" secondItem="3bh-Mr-11d" secondAttribute="trailing" constant="84" id="pjV-Eq-lNw"/>
                             <constraint firstItem="3bh-Mr-11d" firstAttribute="leading" secondItem="OxY-LT-TpQ" secondAttribute="leading" constant="84" id="rKe-J0-HKF"/>

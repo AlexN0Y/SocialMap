@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountCollectionViewCell: UICollectionViewCell, NibLoadable {
+final class AccountCollectionViewCell: UICollectionViewCell, NibLoadable {
     
     var onTapRegistration: (() -> Void)?
     var onTapLogIn: (() -> Void)?

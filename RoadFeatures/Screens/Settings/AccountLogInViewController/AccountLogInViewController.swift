@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountLogInViewController: UIViewController, NibLoadable {
+final class AccountLogInViewController: UIViewController, NibLoadable {
     
     var onTapRegistration: (() -> Void)?
     var onTapLogIn: (() -> Void)?

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LabeledTextfield: UIView {
+final class LabeledTextfield: UIView {
     
     // MARK: - Public Properties
     

@@ -14,7 +14,7 @@ protocol AddPointViewControllerDelegate: AnyObject {
     func pointWasAdded(pointID: String)
 }
 
-class AddPointViewController: UIViewController {
+final class AddPointViewController: UIViewController {
     
     // MARK: - Private Properties
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, NibLoadable {
+final class SettingsViewController: UIViewController, NibLoadable {
     
     // MARK: - Private Properties
     

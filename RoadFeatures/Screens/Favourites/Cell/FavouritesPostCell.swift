@@ -7,29 +7,17 @@
 
 import UIKit
 
-class FavouritesPostCell: UICollectionViewCell {
+final class FavouritesPostCell: UICollectionViewCell {
     
     // MARK: - Private Properties
     
-    @IBOutlet private  var nameLabel: UILabel! {
-        didSet {
-            nameLabel.font = UIFont(name: "Helvetica-Bold", size: 19)
-        }
-    }
-    
-    @IBOutlet private  var cityLabel: UILabel! {
-        didSet {
-            cityLabel.font = UIFont(name: "Helvetica", size: 18)
-        }
-    }
-    
-    @IBOutlet private  var descriptionLabel: UILabel!
-    @IBOutlet private  var kindImage: UIImageView!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var cityLabel: UILabel!
+    @IBOutlet private var kindImage: UIImageView!
     
     // MARK: - Public Methods
     
     func cellConfigurate(point: Point) {
-        descriptionLabel.backgroundColor = UIColor.clear
         nameLabel.text = point.name
         
         if let city = point.city {
@@ -39,14 +27,6 @@ class FavouritesPostCell: UICollectionViewCell {
             cityLabel.isHidden = true
         }
         
-        if let description = point.description {
-            descriptionLabel.isHidden = false
-            descriptionLabel.text = description
-        } else {
-            descriptionLabel.isHidden = true
-        }
-        
         kindImage.image = UIImage(named: point.kind.rawValue)
     }
-    
 }

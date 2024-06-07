@@ -12,7 +12,7 @@ protocol SettingsCellDelegate: AnyObject {
     func didToggleThemeSwitch()
 }
 
-class SettingsCollectionViewCell: UICollectionViewCell, NibLoadable {
+final class SettingsCollectionViewCell: UICollectionViewCell, NibLoadable {
     
     @IBOutlet private weak var icon: UIImageView!
     @IBOutlet private weak var themeModeSwitch: UISwitch!

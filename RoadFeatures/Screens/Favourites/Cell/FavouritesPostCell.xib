@@ -1,83 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FavouritesPostCell" id="gTV-IL-0wX" customClass="FavouritesPostCell" customModule="RoadFeatures" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="352" height="203"/>
+            <rect key="frame" x="0.0" y="0.0" width="352" height="121"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="352" height="203"/>
+                <rect key="frame" x="0.0" y="0.0" width="352" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bXS-Xd-v5V">
-                        <rect key="frame" x="0.0" y="0.0" width="352" height="203"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="O6h-n5-LeY">
-                                <rect key="frame" x="8" y="8" width="268" height="187"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otr-uq-AiS">
-                                        <rect key="frame" x="0.0" y="0.0" width="268" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yy-cu-gmH">
-                                        <rect key="frame" x="0.0" y="28.333333333333336" width="268" height="20.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Lcacbcel " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2J-RB-5vf">
-                                        <rect key="frame" x="0.0" y="56.666666666666671" width="268" height="130.33333333333331"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="100" verticalHuggingPriority="100" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" image="Park" translatesAutoresizingMaskIntoConstraints="NO" id="5LU-u3-ZwX">
-                                <rect key="frame" x="284" y="8" width="60" height="187"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="900" constant="50" id="7FF-ZF-WGC"/>
-                                    <constraint firstAttribute="width" constant="60" id="QFJ-wm-9Bw"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otr-uq-AiS">
+                        <rect key="frame" x="15.999999999999996" y="13.999999999999998" width="46.666666666666657" height="20.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="Ifm-4C-Bb7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" name="inputs"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Park" translatesAutoresizingMaskIntoConstraints="NO" id="5LU-u3-ZwX">
+                        <rect key="frame" x="280" y="32.666666666666664" width="56" height="55.999999999999993"/>
+                        <color key="tintColor" name="inputs"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="56" id="7FF-ZF-WGC"/>
+                            <constraint firstAttribute="width" constant="56" id="QFJ-wm-9Bw"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapPin" translatesAutoresizingMaskIntoConstraints="NO" id="q8P-Jo-1Zv">
+                        <rect key="frame" x="16" y="91" width="16" height="16"/>
+                        <color key="tintColor" name="inputs"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="diJ-kD-wgi"/>
+                            <constraint firstAttribute="width" constant="16" id="w4P-cH-qMb"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yy-cu-gmH">
+                        <rect key="frame" x="36" y="90" width="27.333333333333329" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="210" id="3SL-Qe-tjq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" name="inputs"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="bXS-Xd-v5V" secondAttribute="bottom" id="D2h-TL-dx8"/>
-                <constraint firstItem="bXS-Xd-v5V" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JLZ-T3-l44"/>
-                <constraint firstItem="bXS-Xd-v5V" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lv5-GD-JPA"/>
-                <constraint firstAttribute="trailing" secondItem="bXS-Xd-v5V" secondAttribute="trailing" id="N7y-NF-jct"/>
+                <constraint firstItem="q8P-Jo-1Zv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="35N-HW-g4W"/>
+                <constraint firstItem="1yy-cu-gmH" firstAttribute="centerY" secondItem="q8P-Jo-1Zv" secondAttribute="centerY" id="G3A-65-4YH"/>
+                <constraint firstAttribute="trailing" secondItem="5LU-u3-ZwX" secondAttribute="trailing" constant="16" id="Gcv-Lg-wWJ"/>
+                <constraint firstItem="otr-uq-AiS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="NC3-yj-6T9"/>
+                <constraint firstItem="1yy-cu-gmH" firstAttribute="leading" secondItem="q8P-Jo-1Zv" secondAttribute="trailing" constant="4" id="O0c-HO-yaf"/>
+                <constraint firstItem="otr-uq-AiS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="WFk-y1-dzy"/>
+                <constraint firstAttribute="bottom" secondItem="q8P-Jo-1Zv" secondAttribute="bottom" constant="14" id="xB2-mg-a3M"/>
+                <constraint firstItem="5LU-u3-ZwX" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="yIg-Z4-Y6T"/>
             </constraints>
-            <size key="customSize" width="352" height="203"/>
+            <size key="customSize" width="352" height="121"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="16"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" name="text"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="cityLabel" destination="1yy-cu-gmH" id="Obi-v0-V4d"/>
-                <outlet property="descriptionLabel" destination="q2J-RB-5vf" id="kjL-mI-LY7"/>
                 <outlet property="kindImage" destination="5LU-u3-ZwX" id="clG-Fl-W6L"/>
                 <outlet property="nameLabel" destination="otr-uq-AiS" id="Jm7-Yi-mCS"/>
             </connections>
-            <point key="canvasLocation" x="178.62595419847327" y="32.04225352112676"/>
+            <point key="canvasLocation" x="178.62595419847327" y="60.91549295774648"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="Park" width="800" height="800"/>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="mapPin" width="16" height="16"/>
+        <namedColor name="inputs">
+            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

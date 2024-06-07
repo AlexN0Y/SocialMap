@@ -12,7 +12,7 @@ protocol PointDetailsViewControllerDelegate: AnyObject {
     func pointWasDeleted()
 }
 
-class PointDetailsViewController: UIViewController {
+final class PointDetailsViewController: UIViewController {
     
     // MARK: - Public Properties
 
