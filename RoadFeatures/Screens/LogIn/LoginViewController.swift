@@ -24,7 +24,7 @@ final class LoginViewController: UIViewController {
                 passwordView.bottomAnchor.constraint(equalTo: passwordPlaceholder.bottomAnchor)
             ])
             passwordView.configureLabeledTextfield(
-                labelText: "Password",
+                labelText: String(localized: "Password"),
                 secureTextEntry: true,
                 placeholder: "***********"
             )
@@ -46,7 +46,7 @@ final class LoginViewController: UIViewController {
                 loginView.bottomAnchor.constraint(equalTo: loginPlaceholder.bottomAnchor)
             ])
             loginView.configureLabeledTextfield(
-                labelText: "Email",
+                labelText: String(localized: "Email"),
                 keyboardType: .emailAddress,
                 placeholder: "example@gmail.com"
             )
@@ -122,13 +122,23 @@ final class LoginViewController: UIViewController {
     }
     
     private func showEmptyFieldsAlert() {
-        let alert = UIAlertController(title: "Alert", message: "Fill in all the fields", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: String(localized: "Alert"),
+            message: String(localized: "Fill in all the fields"),
+            preferredStyle: .alert
+        )
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
     
     private func showUserDoesNotExistsAlert() {
-        let alert = UIAlertController(title: "Alert", message: "User does not exists", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: String(localized: "Alert"),
+            message: String(localized: "User does not exists"),
+            preferredStyle: .alert
+        )
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }

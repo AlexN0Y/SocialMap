@@ -44,13 +44,38 @@
                                     <action selector="addLocationTapped" destination="nx2-bP-lse" eventType="touchUpInside" id="aEa-qK-r4F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmb-BC-32O">
+                                <rect key="frame" x="335" y="742" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="B5N-Q5-yGH"/>
+                                    <constraint firstAttribute="width" constant="44" id="WD5-Zb-RIR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                    <imageReference key="image" image="mapPin" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color systemColor="labelColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="centerMapTapped" destination="nx2-bP-lse" eventType="touchUpInside" id="pAW-Yg-r94"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YYd-7M-Hzl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NjP-Be-ncr" firstAttribute="top" secondItem="5S3-HN-zTq" secondAttribute="top" id="8n6-bd-3gh"/>
+                            <constraint firstItem="YYd-7M-Hzl" firstAttribute="trailing" secondItem="Pmb-BC-32O" secondAttribute="trailing" constant="14" id="EUX-5P-gLt"/>
                             <constraint firstItem="YYd-7M-Hzl" firstAttribute="trailing" secondItem="1VD-d8-Klm" secondAttribute="trailing" constant="14" id="JBl-s6-ktn"/>
                             <constraint firstItem="YYd-7M-Hzl" firstAttribute="bottom" secondItem="NjP-Be-ncr" secondAttribute="bottom" id="fNg-Tf-XSN"/>
+                            <constraint firstItem="YYd-7M-Hzl" firstAttribute="bottom" secondItem="Pmb-BC-32O" secondAttribute="bottom" constant="32" id="kn2-Za-zYb"/>
                             <constraint firstItem="NjP-Be-ncr" firstAttribute="trailing" secondItem="YYd-7M-Hzl" secondAttribute="trailing" id="qYH-6J-v9U"/>
                             <constraint firstItem="1VD-d8-Klm" firstAttribute="top" secondItem="YYd-7M-Hzl" secondAttribute="top" constant="32" id="tVe-ii-aMQ"/>
                             <constraint firstItem="NjP-Be-ncr" firstAttribute="leading" secondItem="YYd-7M-Hzl" secondAttribute="leading" id="zEz-YC-Haw"/>
@@ -66,6 +91,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mapPin" width="16" height="16"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -17,22 +17,22 @@ enum Settings: String, CaseIterable {
     var title: String {
         switch self {
         case .account:
-            "Account"
+            String(localized: "Account")
         case .darkTheme:
-            "Dark theme"
+            String(localized: "Dark theme")
         case .yourSuggestions:
-            "Your suggestions"
+            String(localized: "Your suggestions")
         case .aboutAuthors:
-            "About authors"
+            String(localized: "About authors")
         }
     }
     
     var icon: UIImage {
         switch self {
         case .aboutAuthors:
-            return UIImage(named: "account")!
+            UIImage(named: "account")!
         default:
-            return UIImage(named: rawValue)!
+            UIImage(named: rawValue)!
         }
     }
 }

@@ -23,9 +23,9 @@ final class CustomTabBarController: UITabBarController, UITabBarControllerDelega
             static let settings = "gear"
         }
         enum Titles {
-            static let map = "Map"
-            static let favourites = "Favourites"
-            static let settings = "Settings"
+            static let map = String(localized: "Map")
+            static let favourites = String(localized: "Favourites")
+            static let settings = String(localized: "Settings")
         }
     }
     

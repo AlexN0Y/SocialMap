@@ -26,7 +26,6 @@ final class MapViewController: UIViewController {
     
     private enum Constant {
         
-        static let title = "Map"
         static let addPointStoryboard = "AddPointViewController"
         static let pointDetailsStoryboard = "PointDetailsViewController"
     }
@@ -35,7 +34,6 @@ final class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Constant.title
         locationManager.locationDelegate = self
         setAnnotations()
     }
@@ -50,13 +48,28 @@ final class MapViewController: UIViewController {
     // MARK: - Private Methods
     
     @IBAction private func addLocationTapped() {
+        guard let _ = firebaseManager.getCurrentUser() else {
+            showNotAuthorisedAlert()
+            return
+        }
+        
         let addPointStoryboard = UIStoryboard(name: Constant.addPointStoryboard, bundle: nil)
         let addPointViewController = addPointStoryboard.instantiateViewController(withIdentifier: String(describing: AddPointViewController.self)) as! AddPointViewController
         addPointViewController.hidesBottomBarWhenPushed = true
         addPointViewController.delegate = self
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         navigationController?.pushViewController(addPointViewController, animated: true)
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    @IBAction private func centerMapTapped() {
+        guard let location = locationManager.getCurrentLocationCoordinate() else { return }
+        let region = MKCoordinateRegion(
+            center: location,
+            latitudinalMeters: 300,
+            longitudinalMeters: 300
+        )
+        
+        mapView.setRegion(region, animated: true)
     }
     
     private func removeAnnotations() {
@@ -68,7 +81,7 @@ final class MapViewController: UIViewController {
             guard let self else { return }
             
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Failed to get points:", error)
             } else if let points {
                 self.points = points
@@ -85,23 +98,47 @@ final class MapViewController: UIViewController {
     
     private func showLocationServicesAlert() {
         let alert = UIAlertController(
-            title: "Location Services Disabled",
-            message: "Please enable location services to use this feature.",
+            title: String(localized: "Location Services Disabled"),
+            message: String(localized: "Please enable location services to use this feature."),
             preferredStyle: .alert
         )
         
-        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) in
+        let settingsAction = UIAlertAction(
+            title: String(localized: "Settings"),
+            style: .default
+        ) { (_) in
             if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(settingsURL)
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(
+            title: String(localized: "Cancel"),
+            style: .cancel, handler: nil
+        )
         
         alert.addAction(settingsAction)
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    private func showNotAuthorisedAlert() {
+        presentAlert(message: String(localized: "Log in to add"))
+    }
+    
+    private func presentAlert(
+        message: String
+    ) {
+        let alert = UIAlertController(
+            title: String(localized: "Alert"),
+            message: message,
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        present(alert, animated: true)
     }
 }
 
@@ -127,19 +164,9 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: LocationDelegate {
     
-    func locationDidUpdate(to location: CLLocation) {
-        let region = MKCoordinateRegion(
-            center: location.coordinate,
-            latitudinalMeters: 500,
-            longitudinalMeters: 500
-        )
-        
-        mapView.setRegion(region, animated: true)
-        mapView.userTrackingMode = .follow
-    }
+    func locationDidUpdate(to location: CLLocation) {}
     
     func locationDidFail(withError error: Error) {
-#warning("Add Alert !")
         print("didFailWithError \(error.localizedDescription)")
     }
     
@@ -157,7 +184,7 @@ extension MapViewController: AddPointViewControllerDelegate {
             guard let self else { return }
             
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Failed to get point with id \(pointID):", error)
             } else if let point {
                 let annotation = PointAnnotation(point: point)

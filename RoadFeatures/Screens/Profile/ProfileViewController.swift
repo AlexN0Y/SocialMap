@@ -15,7 +15,7 @@ final class ProfileViewController: UIViewController, NibLoadable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Account"
+        title = String(localized: "Account")
         guard let currentUser = firebaseManager.getCurrentUser() else { return }
         nameLabel.text = currentUser.displayName
     }

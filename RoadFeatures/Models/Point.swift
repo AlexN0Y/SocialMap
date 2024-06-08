@@ -16,9 +16,40 @@ struct Point {
         // MARK: - Cases
         
         case restaurant = "Restaurant"
+        case cafe = "Cafe"
         case park = "Park"
         case bench = "Bench"
+        case club = "Club"
+        case shoppingCentre = "Shopping centre"
+        case store = "Store"
+        case hotel = "Hotel"
+        case pharmacy = "Pharmacy"
         case monument = "Monument"
+        
+        var title: String {
+            switch self {
+            case .restaurant:
+                String(localized: "Restaurant")
+            case .cafe:
+                String(localized: "Cafe")
+            case .park:
+                String(localized: "Park")
+            case .bench:
+                String(localized: "Bench")
+            case .club:
+                String(localized: "Club")
+            case .shoppingCentre:
+                String(localized: "Shopping centre")
+            case .store:
+                String(localized: "Store")
+            case .hotel:
+                String(localized: "Hotel")
+            case .pharmacy:
+                String(localized: "Pharmacy")
+            case .monument:
+                String(localized: "Monument")
+            }
+        }
     }
     
     var id: String
@@ -30,7 +61,7 @@ struct Point {
     let owner: String
     
     var dictionary: [String: Any] {
-        return [
+        [
             "id": id,
             "name": name,
             "description": description ?? "",

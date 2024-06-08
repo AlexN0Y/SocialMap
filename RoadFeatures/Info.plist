@@ -8,9 +8,6 @@
 		<string>Inter-SemiBold.ttf</string>
 		<string>Inter-Regular.ttf</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app lets you keep track of interesting places. It needs access to the GPS
-coordinates for your location.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

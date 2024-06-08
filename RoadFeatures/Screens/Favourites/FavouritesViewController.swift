@@ -32,7 +32,7 @@ final class FavouritesViewController: UIViewController {
     }
     
     private enum Constant {
-        static let title = "Favourites"
+        static let title = String(localized: "Favourites")
         static let pointDetailsStoryboard = "PointDetailsViewController"
     }
     
@@ -46,7 +46,7 @@ final class FavouritesViewController: UIViewController {
         emptyImage.isHidden = false
         
         guard let userId = firebaseManager.getCurrentUser()?.uid else {
-            emptyLabel.text = "Nothing here? Login to see your favourites!"
+            emptyLabel.text = String(localized: "Nothing here? Login to see your favourites!")
             return
         }
         
@@ -54,7 +54,7 @@ final class FavouritesViewController: UIViewController {
             guard let self else { return }
             
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Failed to get points:", error)
             } else if let allPoints {
                 points = allPoints
@@ -73,17 +73,17 @@ final class FavouritesViewController: UIViewController {
             collectionView.isHidden = true
             emptyImage.isHidden = false
             emptyLabel.isHidden = false
-            emptyLabel.text = "Nothing here? Login to see your favourites!"
+            emptyLabel.text = String(localized: "Nothing here? Login to see your favourites!")
             return
         }
         
-        emptyLabel.text = "It's empty for now, mark your favorite places!"
+        emptyLabel.text = String(localized: "It's empty for now, mark your favorite places!")
         
         pointManager.getFavouritePointsForUser(userID: userId) { [weak self] (allPoints, error) in
             guard let self else { return }
             
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Failed to get points:", error)
             } else if let allPoints {
                 points = allPoints
@@ -200,7 +200,7 @@ extension FavouritesViewController: PointDetailsViewControllerDelegate {
             guard let self else { return }
             
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Failed to get points:", error)
             } else if let allPoints = allPoints {
                 points = allPoints

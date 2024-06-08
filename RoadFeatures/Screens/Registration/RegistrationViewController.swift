@@ -27,7 +27,7 @@ final class RegistrationViewController: UIViewController {
                 passwordView.bottomAnchor.constraint(equalTo: passwordPlaceholder.bottomAnchor)
             ])
             passwordView.configureLabeledTextfield(
-                labelText: "Password",
+                labelText: String(localized: "Password"),
                 secureTextEntry: true,
                 placeholder: "***********"
             )
@@ -49,7 +49,7 @@ final class RegistrationViewController: UIViewController {
                 loginView.bottomAnchor.constraint(equalTo: loginPlaceholder.bottomAnchor)
             ])
             loginView.configureLabeledTextfield(
-                labelText: "Email",
+                labelText: String(localized: "Email"),
                 keyboardType: .emailAddress,
                 placeholder: "example@gmail.com"
             )
@@ -71,7 +71,7 @@ final class RegistrationViewController: UIViewController {
                 nameView.bottomAnchor.constraint(equalTo: namePlaceholder.bottomAnchor)
             ])
             nameView.configureLabeledTextfield(
-                labelText: "Name",
+                labelText: String(localized: "Name"),
                 placeholder: "Alex"
             )
             
@@ -103,13 +103,22 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func showEmptyFieldsAlert() {
-        let alert = UIAlertController(title: "Alert", message: "Fill in all the fields", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: String(localized: "Alert"),
+            message: String(localized: "Fill in all the fields"),
+            preferredStyle: .alert
+        )
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
     
     private func showEmailAlert() {
-        let alert = UIAlertController(title: "Alert", message: "The email address is badly formatted", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: String(localized: "Alert"),
+            message: String(localized: "The email address is badly formatted"),
+            preferredStyle: .alert
+        )
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }

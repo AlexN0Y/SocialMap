@@ -30,7 +30,9 @@ final class SettingsCollectionViewCell: UICollectionViewCell, NibLoadable {
         if type == .darkTheme {
             chevronImage.isHidden = true
             themeModeSwitch.isHidden = false
-            themeModeSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsKey.isDarkModeEnabled.rawValue)
+            themeModeSwitch.isOn = UserDefaults.standard.bool(
+                forKey: UserDefaultsKey.isDarkModeEnabled.rawValue
+            )
         }
     }
     

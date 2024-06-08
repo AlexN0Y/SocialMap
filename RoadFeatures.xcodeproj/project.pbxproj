@@ -87,6 +87,7 @@
 		DFD3AE422C0223EC0085918D /* AboutAuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3AE402C0223EC0085918D /* AboutAuthorsViewController.swift */; };
 		DFD3AE432C0223EC0085918D /* AboutAuthorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD3AE412C0223EC0085918D /* AboutAuthorsViewController.xib */; };
 		DFD6F46D2B64A51F00F25FE3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD6F46C2B64A51F00F25FE3 /* Settings.swift */; };
+		DFEC94DB2C13D35B009912AB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFEC94DA2C13D35B009912AB /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +145,8 @@
 		DFD3AE402C0223EC0085918D /* AboutAuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorsViewController.swift; sourceTree = "<group>"; };
 		DFD3AE412C0223EC0085918D /* AboutAuthorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutAuthorsViewController.xib; sourceTree = "<group>"; };
 		DFD6F46C2B64A51F00F25FE3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		DFEC94D92C13D321009912AB /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DFEC94DA2C13D35B009912AB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +417,7 @@
 				DFC9F6C529C9FF1800B8BCE6 /* Info.plist */,
 				DF5AC66B2A13E90100D1EBE6 /* GoogleService-Info.plist */,
 				DF7062762C126F83007C0DC9 /* Error.json */,
+				DFEC94DA2C13D35B009912AB /* Localizable.xcstrings */,
 			);
 			path = RoadFeatures;
 			sourceTree = "<group>";
@@ -541,6 +545,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = DFC9F6AB29C9FF1700B8BCE6;
 			packageReferences = (
@@ -577,6 +582,7 @@
 				DFB004EE29FF348A00B2943E /* PointDetailsViewController.storyboard in Resources */,
 				DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */,
 				DF451ACC2B5C3630004E1987 /* Inter-SemiBold.ttf in Resources */,
+				DFEC94DB2C13D35B009912AB /* Localizable.xcstrings in Resources */,
 				DF5AC66C2A13E90100D1EBE6 /* GoogleService-Info.plist in Resources */,
 				DF7CD2342A0833D100FDC621 /* FavouritesPostCell.xib in Resources */,
 				DFC9F6C129C9FF1800B8BCE6 /* Assets.xcassets in Resources */,
@@ -633,6 +639,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DFC9F6C329C9FF1800B8BCE6 /* Base */,
+				DFEC94D92C13D321009912AB /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -644,6 +651,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -690,7 +698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -704,6 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -744,7 +753,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -766,8 +775,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RoadFeatures/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SocialMap;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS\ncoordinates for your location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = MapViewController;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -777,6 +787,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlexN0Y.RoadFeatures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -804,7 +815,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = SocialMap;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app lets you keep track of interesting places. It needs access to the GPS\ncoordinates for your location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = MapViewController;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -814,6 +825,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AlexN0Y.RoadFeatures1;
 				PRODUCT_NAME = "$(TARGET_NAME)";

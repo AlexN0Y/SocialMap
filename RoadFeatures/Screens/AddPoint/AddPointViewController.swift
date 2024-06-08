@@ -37,25 +37,16 @@ final class AddPointViewController: UIViewController {
         }
     }
     
-    @IBOutlet private weak var descriptionTextView: UITextView! {
-        didSet {
-            descriptionTextView.layer.borderWidth = 1.0
-            descriptionTextView.layer.borderColor = UIColor.gray.cgColor
-        }
-    }
+    @IBOutlet private weak var descriptionTextView: UITextView!
     
     private enum Constant {
-        static let title = "Add Place"
+        static let title = String(localized: "Add Place")
     }
     
     private let locationManager = LocationManager()
-    
     private let pointManager = PointManager.shared
-    
     private var pickedImage: Point.Kind = Point.Kind.restaurant
-    
     private var placeName: String?
-    
     private let firebaseManager = FirebaseManager.shared
     
     // MARK: - Public Properties
@@ -76,13 +67,6 @@ final class AddPointViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        guard let _ = firebaseManager.getCurrentUser() else {
-            showNotAuthorisedAlert()
-            return
-        }
-    }
-    
     // MARK: - Private Methods
     
     @IBAction private func addButtonTapped() {
@@ -92,7 +76,7 @@ final class AddPointViewController: UIViewController {
         }
         
         guard let name = nameTextfield.text, !name.isEmpty else {
-            presentAlert(message: String(localized: "Fill in name field"))
+            presentAlert(message:String(localized: "Fill in name field"))
             return
         }
         
@@ -111,18 +95,19 @@ final class AddPointViewController: UIViewController {
             owner: userId
         )
         
+        // check the logic, maybe i can add custom documentid
         pointManager.add(point: point) { [weak self] error, documentID in
             guard let self else { return }
             
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Failed to add point:", error)
             } else if let documentID {
                 point.id = documentID
                 pointManager.addFavouritePointToUser(userID: userId, point: point) { error in
                     guard let error else { return }
                     
-                    HUD.present(type: .error("Error occured"))
+                    HUD.present(type: .error(String(localized: "Error occured")))
                     print("Failed to add favourite point: \(error.localizedDescription)")
                 }
                 
@@ -140,7 +125,7 @@ final class AddPointViewController: UIViewController {
     }
     
     private func showNotAuthorisedAlert() {
-        presentAlert(message: "Log in to add") { [weak self] in
+        presentAlert(message: String(localized: "Log in to add")) { [weak self] in
             guard let self else { return }
         
             navigationController?.popToRootViewController(animated: true)
@@ -152,7 +137,7 @@ final class AddPointViewController: UIViewController {
         onTapOK: (() -> Void)? = nil
     ) {
         let alert = UIAlertController(
-            title: "Alert",
+            title: String(localized: "Alert"),
             message: message,
             preferredStyle: .alert
         )

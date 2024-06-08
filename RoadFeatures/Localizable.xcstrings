@@ -1,0 +1,396 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "About authors" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про авторів"
+          }
+        }
+      }
+    },
+    "About Authors" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про Авторів"
+          }
+        }
+      }
+    },
+    "Account" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Акаунт"
+          }
+        }
+      }
+    },
+    "Add Place" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати місце"
+          }
+        }
+      }
+    },
+    "Add to favourites" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати до улюблених"
+          }
+        }
+      }
+    },
+    "Alert" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Попередження"
+          }
+        }
+      }
+    },
+    "Bench" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лавка"
+          }
+        }
+      }
+    },
+    "Cafe" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кав'ярня"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скасувати"
+          }
+        }
+      }
+    },
+    "Cannot find your location" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдається знайти ваше місцезнаходження"
+          }
+        }
+      }
+    },
+    "Club" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клуб"
+          }
+        }
+      }
+    },
+    "Dark theme" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чорна тема"
+          }
+        }
+      }
+    },
+    "Details" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подробиці"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошта"
+          }
+        }
+      }
+    },
+    "Error occured" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сталася помилка."
+          }
+        }
+      }
+    },
+    "Favourites" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Улюблене"
+          }
+        }
+      }
+    },
+    "Fill in all the fields" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповніть всі поля"
+          }
+        }
+      }
+    },
+    "Fill in name field" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповніть поле Ім'я"
+          }
+        }
+      }
+    },
+    "Hotel" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готель"
+          }
+        }
+      }
+    },
+    "It's empty for now, mark your favorite places!" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поки що тут порожньо, відмічайте улюблені місця!"
+          }
+        }
+      }
+    },
+    "Location Services Disabled" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Служби визначення місцезнаходження Вимкнено"
+          }
+        }
+      }
+    },
+    "Log in to add" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Авторизуйтесь, щоб додати"
+          }
+        }
+      }
+    },
+    "Map" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мапа"
+          }
+        }
+      }
+    },
+    "Monument" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пам'ятник"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ім'я"
+          }
+        }
+      }
+    },
+    "Nothing here? Login to see your favourites!" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нічого не знайшли? Увійдіть, щоб переглянути улюблені!"
+          }
+        }
+      }
+    },
+    "Park" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Парк"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
+        }
+      }
+    },
+    "Pharmacy" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аптека"
+          }
+        }
+      }
+    },
+    "Please enable location services to use this feature." : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Будь ласка, увімкніть служби визначення місцезнаходження, щоб використовувати цю функцію."
+          }
+        }
+      }
+    },
+    "Remove from favourites" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити з улюблених"
+          }
+        }
+      }
+    },
+    "Restaurant" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ресторан"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
+          }
+        }
+      }
+    },
+    "Shopping centre" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Торгівельний центр"
+          }
+        }
+      }
+    },
+    "Store" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Магазин"
+          }
+        }
+      }
+    },
+    "The email address is badly formatted" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Адреса електронної пошти неправильно відформатована"
+          }
+        }
+      }
+    },
+    "User does not exists" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Користувача не існує"
+          }
+        }
+      }
+    },
+    "You are not an owner" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ви не власник"
+          }
+        }
+      }
+    },
+    "Your suggestions" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваші пропозиції"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

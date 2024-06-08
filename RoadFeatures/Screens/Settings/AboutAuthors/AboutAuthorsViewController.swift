@@ -11,7 +11,7 @@ final class AboutAuthorsViewController: UIViewController, NibLoadable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "About Authors"
+        title = String(localized: "About Authors")
     }
     
     @IBAction private func didTapDeveloper(_ sender: Any) {

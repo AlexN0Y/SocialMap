@@ -16,7 +16,7 @@ final class SettingsViewController: UIViewController, NibLoadable {
     private let firebaseManager = FirebaseManager.shared
     
     private enum Constant {
-        static let title = "Settings"
+        static let title = String(localized: "Settings")
         static let logInStoryboardName = "LogIn"
         static let logInViewControllerName = "LoginViewController"
     }
@@ -147,7 +147,10 @@ extension SettingsViewController: SettingsCellDelegate {
     func didToggleThemeSwitch() {
         guard let windowScene = view.window?.windowScene else { return }
         
-        var isDarkModeEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKey.isDarkModeEnabled.rawValue)
+        var isDarkModeEnabled = UserDefaults.standard.bool(
+            forKey: UserDefaultsKey.isDarkModeEnabled.rawValue
+        )
+        
         isDarkModeEnabled.toggle()
         UserDefaults.standard.set(isDarkModeEnabled, forKey: UserDefaultsKey.isDarkModeEnabled.rawValue)
         

@@ -58,6 +58,6 @@ final class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func getCurrentLocationCoordinate() -> CLLocationCoordinate2D? {
-        return currentLocation?.coordinate
+        currentLocation?.coordinate
     }
 }

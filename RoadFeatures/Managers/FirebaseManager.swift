@@ -77,7 +77,7 @@ final class FirebaseManager {
     }
     
     func getCurrentUser() -> User? {
-        return Auth.auth().currentUser
+        Auth.auth().currentUser
     }
     
     func getUserDetails(

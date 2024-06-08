@@ -15,7 +15,7 @@ protocol PointDetailsViewControllerDelegate: AnyObject {
 final class PointDetailsViewController: UIViewController {
     
     // MARK: - Public Properties
-
+    
     weak var delegate: PointDetailsViewControllerDelegate?
     
     // MARK: - Private Properties
@@ -25,13 +25,6 @@ final class PointDetailsViewController: UIViewController {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var pointLabel: UILabel!
     @IBOutlet private weak var kindImage: UIImageView!
-    
-    @IBOutlet private weak var handleView: UIView!{
-        didSet {
-            handleView.layer.cornerRadius = 5
-            handleView.backgroundColor = .gray
-        }
-    }
     
     @IBOutlet private weak var addRemoveButton: UIButton! {
         didSet {
@@ -45,16 +38,16 @@ final class PointDetailsViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         if let error = error {
-                            HUD.present(type: .error("Error occured"))
+                            HUD.present(type: .error(String(localized: "Error occured")))
                             print("Error checking if point is favourite: \(error)")
                         } else if let isFavourite {
                             self.addRemoveButton.isHidden = false
                             if isFavourite {
-                                self.addRemoveButton.setTitle("Remove from favourites", for: .normal)
+                                self.addRemoveButton.setTitle(String(localized: "Remove from favourites"), for: .normal)
                                 self.addRemoveButton.setTitleColor(.red, for: .normal)
                                 self.state = .addedToFavourites
                             } else {
-                                self.addRemoveButton.setTitle("Add to favourites", for: .normal)
+                                self.addRemoveButton.setTitle(String(localized: "Add to favourites"), for: .normal)
                                 self.addRemoveButton.setTitleColor(.blue, for: .normal)
                                 self.state = .notInFavourites
                             }
@@ -91,7 +84,7 @@ final class PointDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Details"
+        self.title = String(localized: "Details")
         setOutlets()
     }
     
@@ -121,30 +114,31 @@ final class PointDetailsViewController: UIViewController {
             return
         }
         
-        if point.owner == userId {
-            pointManager.removePointFromFavourites(userID: userId, pointID: point.id){ error in
-                if let error = error {
-                    HUD.present(type: .error("Error occured"))
-                    print("Error removing point: \(error)")
-                } else {
-                    print("Point successfully deleted from favourites.")
-                }
-            }
-            
-            pointManager.remove(point: point) { error in
-                if let error = error {
-                    HUD.present(type: .error("Error occured"))
-                    print("Error removing point: \(error)")
-                } else {
-                    print("Point successfully deleted.")
-                    self.delegate?.pointWasDeleted()
-                    DispatchQueue.main.async {
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                }
-            }
-        } else {
+        guard point.owner == userId else {
             showAlert()
+            return
+        }
+        
+        pointManager.removePointFromFavourites(userID: userId, pointID: point.id){ error in
+            if let error = error {
+                HUD.present(type: .error(String(localized: "Error occured")))
+                print("Error removing point: \(error)")
+            } else {
+                print("Point successfully deleted from favourites.")
+            }
+        }
+        
+        pointManager.remove(point: point) { error in
+            if let error = error {
+                HUD.present(type: .error(String(localized: "Error occured")))
+                print("Error removing point: \(error)")
+            } else {
+                print("Point successfully deleted.")
+                self.delegate?.pointWasDeleted()
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
         }
     }
     
@@ -178,7 +172,7 @@ final class PointDetailsViewController: UIViewController {
         
         pointManager.addFavouritePointToUser(userID: userID, point: point) { error in
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Failed to add favourite point: \(error.localizedDescription)")
             } else {
                 DispatchQueue.main.async {
@@ -189,13 +183,16 @@ final class PointDetailsViewController: UIViewController {
     }
     
     private func removeFromFavourites() {
-        guard let userID = firebaseManager.getCurrentUser()?.uid, let point = point else {
+        guard 
+            let userID = firebaseManager.getCurrentUser()?.uid,
+            let point = point
+        else {
             return
         }
         
         pointManager.removePointFromFavourites(userID: userID, pointID: point.id) { error in
             if let error = error {
-                HUD.present(type: .error("Error occured"))
+                HUD.present(type: .error(String(localized: "Error occured")))
                 print("Error removing point from favourites: \(error.localizedDescription)")
             } else {
                 self.delegate?.pointWasDeleted()
@@ -207,7 +204,12 @@ final class PointDetailsViewController: UIViewController {
     }
     
     private func showAlert() {
-        let alert = UIAlertController(title: "Alert", message: "You are not an owner", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: String(localized: "Alert"),
+            message: String(localized: "You are not an owner"),
+            preferredStyle: .alert
+        )
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
