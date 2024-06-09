@@ -1,0 +1,114 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "dbB-4X-54A.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Continue\"; ObjectID = \"dbB-4X-54A\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Continue"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продовжити"
+          }
+        }
+      }
+    },
+    "dbB-4X-54A.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"dbB-4X-54A\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "dvd-bv-dWX.title" : {
+      "comment" : "Class = \"UIBarButtonItem\"; title = \"Log In\"; ObjectID = \"dvd-bv-dWX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Log In"
+          }
+        }
+      }
+    },
+    "Qh4-2n-tVw.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Don’t have an account?\"; ObjectID = \"Qh4-2n-tVw\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Don’t have an account?"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не маєте облікового запису?"
+          }
+        }
+      }
+    },
+    "UsS-W0-Ydq.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Registration\"; ObjectID = \"UsS-W0-Ydq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Registration"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Реєстрація"
+          }
+        }
+      }
+    },
+    "UsS-W0-Ydq.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"UsS-W0-Ydq\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "VA6-OK-Yh9.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Login\"; ObjectID = \"VA6-OK-Yh9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Login"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увійдіть в систему"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

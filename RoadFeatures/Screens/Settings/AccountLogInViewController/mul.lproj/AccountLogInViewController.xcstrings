@@ -1,0 +1,102 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "ffU-GB-QbT.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Registration\"; ObjectID = \"ffU-GB-QbT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Registration"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Реєстрація"
+          }
+        }
+      }
+    },
+    "ffU-GB-QbT.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"ffU-GB-QbT\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "FTw-F4-d0a.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Log in to your account\"; ObjectID = \"FTw-F4-d0a\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Log in to your account"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увійдіть до свого акаунту"
+          }
+        }
+      }
+    },
+    "Kza-EL-xcu.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Login or register for additional features\"; ObjectID = \"Kza-EL-xcu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Login or register for additional features"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "щоб отримати додаткові функції"
+          }
+        }
+      }
+    },
+    "m1M-RT-6M9.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Log In\"; ObjectID = \"m1M-RT-6M9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Log In"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увійдіть в систему"
+          }
+        }
+      }
+    },
+    "m1M-RT-6M9.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"m1M-RT-6M9\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

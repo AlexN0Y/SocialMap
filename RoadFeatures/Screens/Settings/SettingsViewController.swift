@@ -16,9 +16,12 @@ final class SettingsViewController: UIViewController, NibLoadable {
     private let firebaseManager = FirebaseManager.shared
     
     private enum Constant {
+        
         static let title = String(localized: "Settings")
         static let logInStoryboardName = "LogIn"
         static let logInViewControllerName = "LoginViewController"
+        static let registrationStoryboardName = "Registration"
+        static let registrationViewControllerName = "RegistrationViewController"
     }
     
     private var isGuest: Bool {
@@ -50,13 +53,26 @@ final class SettingsViewController: UIViewController, NibLoadable {
     
     private func onTapLogIn() {
         let logInStoryboard = UIStoryboard(name: Constant.logInStoryboardName, bundle: nil)
-        let logInViewController = logInStoryboard.instantiateViewController(withIdentifier: Constant.logInViewControllerName) as! LoginViewController
+        let logInViewController = logInStoryboard.instantiateViewController(
+            withIdentifier: Constant.logInViewControllerName
+        ) as! LoginViewController
+        
         logInViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(logInViewController, animated: true)
     }
     
     private func onTapRegistration() {
+        let registrationStoryboard = UIStoryboard(
+            name: Constant.registrationStoryboardName,
+            bundle: nil
+        )
         
+        let registrationViewController = registrationStoryboard.instantiateViewController(
+            withIdentifier: Constant.registrationViewControllerName
+        ) as! RegistrationViewController
+        
+        registrationViewController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(registrationViewController, animated: true)
     }
 }
 

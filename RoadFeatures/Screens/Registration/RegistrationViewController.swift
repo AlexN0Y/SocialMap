@@ -9,6 +9,8 @@ import UIKit
 
 final class RegistrationViewController: UIViewController {
     
+    var fromLogin = false
+    
     // MARK: - Private Properties
     
     @IBOutlet private weak var nameField: UITextField!
@@ -28,7 +30,7 @@ final class RegistrationViewController: UIViewController {
             ])
             passwordView.configureLabeledTextfield(
                 labelText: String(localized: "Password"),
-                secureTextEntry: true,
+                textFieldType: .password,
                 placeholder: "***********"
             )
             passwordView.onSave = { [weak self] text in
@@ -50,6 +52,7 @@ final class RegistrationViewController: UIViewController {
             ])
             loginView.configureLabeledTextfield(
                 labelText: String(localized: "Email"),
+                textFieldType: .email,
                 keyboardType: .emailAddress,
                 placeholder: "example@gmail.com"
             )
@@ -71,7 +74,7 @@ final class RegistrationViewController: UIViewController {
                 nameView.bottomAnchor.constraint(equalTo: namePlaceholder.bottomAnchor)
             ])
             nameView.configureLabeledTextfield(
-                labelText: String(localized: "Name"),
+                labelText: String(localized: "Enter your name"),
                 placeholder: "Alex"
             )
             
@@ -79,6 +82,12 @@ final class RegistrationViewController: UIViewController {
                 self?.userName = text
             }
         }
+    }
+    
+    private enum Constant {
+        
+        static let loginStoryboardName = "LogIn"
+        static let loginViewControllerName = "LoginViewController"
     }
     
     private var userLogin: String?
@@ -134,6 +143,25 @@ final class RegistrationViewController: UIViewController {
             } else {
                 self?.navigationController?.popToRootViewController(animated: true)
             }
+        }
+    }
+    
+    @IBAction private func logInTapped() {
+        if fromLogin {
+            navigationController?.popViewController(animated: true)
+        } else {
+            let loginStoryboard = UIStoryboard(
+                name: Constant.loginStoryboardName,
+                bundle: nil
+            )
+            
+            let loginViewController = loginStoryboard.instantiateViewController(
+                withIdentifier: Constant.loginViewControllerName
+            ) as! LoginViewController
+            
+            loginViewController.fromRegistration = true
+            
+            navigationController?.pushViewController(loginViewController, animated: true)
         }
     }
 }

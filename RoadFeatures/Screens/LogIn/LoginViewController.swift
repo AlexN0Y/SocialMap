@@ -10,6 +10,8 @@ import FirebaseAuth
 
 final class LoginViewController: UIViewController {
     
+    var fromRegistration = false
+    
     // MARK: - Private Properties
     
     @IBOutlet private weak var passwordPlaceholder: UIView! {
@@ -25,7 +27,7 @@ final class LoginViewController: UIViewController {
             ])
             passwordView.configureLabeledTextfield(
                 labelText: String(localized: "Password"),
-                secureTextEntry: true,
+                textFieldType: .password,
                 placeholder: "***********"
             )
             passwordView.onSave = { [weak self] text in
@@ -47,6 +49,7 @@ final class LoginViewController: UIViewController {
             ])
             loginView.configureLabeledTextfield(
                 labelText: String(localized: "Email"),
+                textFieldType: .email,
                 keyboardType: .emailAddress,
                 placeholder: "example@gmail.com"
             )
@@ -57,6 +60,7 @@ final class LoginViewController: UIViewController {
     }
     
     private enum Constant {
+        
         static let registrationStoryboardName = "Registration"
         static let registrationViewControllerName = "RegistrationViewController"
     }
@@ -78,7 +82,22 @@ final class LoginViewController: UIViewController {
     
     
     @IBAction private func didTapRegistration() {
-        // onChangeToRegistration() add this closure
+        if fromRegistration {
+            navigationController?.popViewController(animated: true)
+        } else {
+            let registrationStoryboard = UIStoryboard(
+                name: Constant.registrationStoryboardName,
+                bundle: nil
+            )
+            
+            let registrationViewController = registrationStoryboard.instantiateViewController(
+                withIdentifier: Constant.registrationViewControllerName
+            ) as! RegistrationViewController
+            
+            registrationViewController.fromLogin = true
+            
+            navigationController?.pushViewController(registrationViewController, animated: true)
+        }
     }
     
     @IBAction private func logInAction() {
@@ -101,19 +120,6 @@ final class LoginViewController: UIViewController {
                 navigationController?.popToRootViewController(animated: true)
             }
         }
-    }
-    
-    @IBAction private func signUpTapped() {
-        let registrationStoryboard = UIStoryboard(
-            name: Constant.registrationStoryboardName,
-            bundle: nil
-        )
-        
-        let registrationViewController = registrationStoryboard.instantiateViewController(
-            withIdentifier: Constant.registrationViewControllerName
-        ) as! RegistrationViewController
-        
-        navigationController?.pushViewController(registrationViewController, animated: true)
     }
     
     @objc
@@ -143,5 +149,3 @@ final class LoginViewController: UIViewController {
         present(alert, animated: true)
     }
 }
-
-

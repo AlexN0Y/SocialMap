@@ -22,18 +22,13 @@ final class LabeledTextfield: UIView {
     }
     
     @IBOutlet private var titleLabel: UILabel!
-    
-    @IBAction private func textFieldChanged() {
-        if let text = textField.text {
-            onSave?(text)
-        }
-    }
+    private var textFieldType = TextFieldType.text
     
     // MARK: - Public Methods
     
     public func configureLabeledTextfield(
         labelText: String,
-        secureTextEntry: Bool = false,
+        textFieldType: TextFieldType = .text,
         keyboardType: UIKeyboardType = .default,
         placeholder: String
     ) {
@@ -41,9 +36,53 @@ final class LabeledTextfield: UIView {
         
         titleLabel.text = labelText
         
-        textField.isSecureTextEntry = secureTextEntry
+        textField.isSecureTextEntry = textFieldType == .password
         textField.keyboardType = keyboardType
         textField.placeholder = placeholder
+        self.textFieldType = textFieldType
+    }
+    
+    // MARK: - Private Methods
+    
+    @IBAction private func textFieldChanged() {
+        guard let text = textField.text else { return }
+        
+        switch textFieldType {
+        case .password:
+            onSave?(text) // just for now
+            if isValidPassword(text) {
+                //onSave?(text)
+                textField.layer.borderColor = UIColor(named: "accentBlue")!.cgColor
+            } else {
+                textField.layer.borderColor = UIColor.red.cgColor
+            }
+        case .email:
+            if isValidEmail(text) {
+                onSave?(text)
+                textField.layer.borderColor = UIColor(named: "accentBlue")!.cgColor
+            } else {
+                textField.layer.borderColor = UIColor.red.cgColor
+            }
+        case .text:
+            if text.count >= 3 {
+                onSave?(text)
+                textField.layer.borderColor = UIColor(named: "accentBlue")!.cgColor
+            } else {
+                textField.layer.borderColor = UIColor.red.cgColor
+            }
+        }
+    }
+    
+    private func isValidEmail(_ email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailTest.evaluate(with: email)
+    }
+
+    private func isValidPassword(_ password: String) -> Bool {
+        let passwordRegex = "(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passwordTest.evaluate(with: password)
     }
 }
 

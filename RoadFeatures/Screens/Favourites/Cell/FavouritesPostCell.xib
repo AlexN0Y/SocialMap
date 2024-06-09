@@ -24,12 +24,12 @@
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="230" id="Ifm-4C-Bb7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                        <color key="textColor" name="inputs"/>
+                        <color key="textColor" name="text"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Park" translatesAutoresizingMaskIntoConstraints="NO" id="5LU-u3-ZwX">
                         <rect key="frame" x="280" y="32.666666666666664" width="56" height="55.999999999999993"/>
-                        <color key="tintColor" name="inputs"/>
+                        <color key="tintColor" name="text"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="56" id="7FF-ZF-WGC"/>
                             <constraint firstAttribute="width" constant="56" id="QFJ-wm-9Bw"/>
@@ -37,7 +37,7 @@
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapPin" translatesAutoresizingMaskIntoConstraints="NO" id="q8P-Jo-1Zv">
                         <rect key="frame" x="16" y="91" width="16" height="16"/>
-                        <color key="tintColor" name="inputs"/>
+                        <color key="tintColor" name="text"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="diJ-kD-wgi"/>
                             <constraint firstAttribute="width" constant="16" id="w4P-cH-qMb"/>
@@ -49,7 +49,7 @@
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="210" id="3SL-Qe-tjq"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" name="inputs"/>
+                        <color key="textColor" name="text"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -74,7 +74,7 @@
                     <real key="value" value="1"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                    <color key="value" name="text"/>
+                    <color key="value" name="inputs"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
@@ -89,10 +89,10 @@
         <image name="Park" width="800" height="800"/>
         <image name="mapPin" width="16" height="16"/>
         <namedColor name="inputs">
-            <color red="0.12941176470588237" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="text">
-            <color red="0.16899999976158142" green="0.16899999976158142" blue="0.16899999976158142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

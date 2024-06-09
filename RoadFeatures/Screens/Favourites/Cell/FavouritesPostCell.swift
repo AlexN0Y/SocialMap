@@ -17,6 +17,12 @@ final class FavouritesPostCell: UICollectionViewCell {
     
     // MARK: - Public Methods
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            layer.borderColor = UIColor(named: "inputs")!.cgColor
+        }
+    }
+    
     func cellConfigurate(point: Point) {
         nameLabel.text = point.name
         

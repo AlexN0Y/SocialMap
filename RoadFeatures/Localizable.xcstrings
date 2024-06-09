@@ -42,6 +42,7 @@
       }
     },
     "Add to favourites" : {
+      "extractionState" : "stale",
       "localizations" : {
         "uk" : {
           "stringUnit" : {
@@ -137,6 +138,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Пошта"
+          }
+        }
+      }
+    },
+    "Enter your name" : {
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть своє ім'я"
           }
         }
       }
@@ -241,16 +252,6 @@
         }
       }
     },
-    "Name" : {
-      "localizations" : {
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ім'я"
-          }
-        }
-      }
-    },
     "Nothing here? Login to see your favourites!" : {
       "localizations" : {
         "uk" : {
@@ -302,6 +303,7 @@
       }
     },
     "Remove from favourites" : {
+      "extractionState" : "stale",
       "localizations" : {
         "uk" : {
           "stringUnit" : {

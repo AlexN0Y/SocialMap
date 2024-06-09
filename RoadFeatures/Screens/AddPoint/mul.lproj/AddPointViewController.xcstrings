@@ -1,0 +1,114 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "22J-cG-F6t.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Description\"; ObjectID = \"22J-cG-F6t\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Description"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Опис"
+          }
+        }
+      }
+    },
+    "bjd-iw-uor.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"City\"; ObjectID = \"bjd-iw-uor\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "City"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Місто"
+          }
+        }
+      }
+    },
+    "fR8-4r-U45.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Add place\"; ObjectID = \"fR8-4r-U45\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Add place"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати місце"
+          }
+        }
+      }
+    },
+    "fR8-4r-U45.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"fR8-4r-U45\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "iYm-kM-cll.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Name\"; ObjectID = \"iYm-kM-cll\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Name"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва"
+          }
+        }
+      }
+    },
+    "qIm-Uu-edm.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"Uzhhorod\"; ObjectID = \"qIm-Uu-edm\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Uzhhorod"
+          }
+        }
+      }
+    },
+    "ubT-m3-WhI.placeholder" : {
+      "comment" : "Class = \"UITextField\"; placeholder = \"Rotaty Park\"; ObjectID = \"ubT-m3-WhI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rotaty Park"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

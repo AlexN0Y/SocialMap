@@ -1,0 +1,90 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "6pU-sp-550.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"6pU-sp-550\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "BL3-3b-F81.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"NameLabel\"; ObjectID = \"BL3-3b-F81\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "NameLabel"
+          }
+        }
+      }
+    },
+    "CnO-xe-ukI.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"DescriptionLabel\"; ObjectID = \"CnO-xe-ukI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "DescriptionLabel"
+          }
+        }
+      }
+    },
+    "kOT-UT-xkI.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Delete place\"; ObjectID = \"kOT-UT-xkI\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Delete place"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити місце"
+          }
+        }
+      }
+    },
+    "N60-4g-8J4.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"CityLabel\"; ObjectID = \"N60-4g-8J4\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "CityLabel"
+          }
+        }
+      }
+    },
+    "tcO-0T-b4Q.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"About place:\"; ObjectID = \"tcO-0T-b4Q\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About place:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про місце:"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

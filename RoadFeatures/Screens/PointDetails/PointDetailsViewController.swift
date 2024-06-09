@@ -23,41 +23,10 @@ final class PointDetailsViewController: UIViewController {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var cityLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
-    @IBOutlet private weak var pointLabel: UILabel!
     @IBOutlet private weak var kindImage: UIImageView!
     
     @IBOutlet private weak var addRemoveButton: UIButton! {
-        didSet {
-            if let userID = firebaseManager.getCurrentUser()?.uid, let point {
-                addRemoveButton.isHidden = true
-                pointManager.checkIfPointIsFavourite(
-                    userID: userID,
-                    pointID: point.id
-                ) { [weak self] (isFavourite, error) in
-                    guard let self else { return }
-                    
-                    DispatchQueue.main.async {
-                        if let error = error {
-                            HUD.present(type: .error(String(localized: "Error occured")))
-                            print("Error checking if point is favourite: \(error)")
-                        } else if let isFavourite {
-                            self.addRemoveButton.isHidden = false
-                            if isFavourite {
-                                self.addRemoveButton.setTitle(String(localized: "Remove from favourites"), for: .normal)
-                                self.addRemoveButton.setTitleColor(.red, for: .normal)
-                                self.state = .addedToFavourites
-                            } else {
-                                self.addRemoveButton.setTitle(String(localized: "Add to favourites"), for: .normal)
-                                self.addRemoveButton.setTitleColor(.blue, for: .normal)
-                                self.state = .notInFavourites
-                            }
-                        }
-                    }
-                }
-            } else {
-                addRemoveButton.isHidden = true
-            }
-        }
+        didSet { updateFavoriteButton() }
     }
     
     @IBOutlet private weak var deleteButton: UIButton! {
@@ -161,7 +130,6 @@ final class PointDetailsViewController: UIViewController {
             descriptionLabel.text = "None"
         }
         
-        pointLabel.text = "X: \(String(format: "%.10f", point.point.0)) \n Y: \(String(format: "%.10f", point.point.1))"
         kindImage.image = UIImage(named: point.kind.rawValue)
     }
     
@@ -212,5 +180,36 @@ final class PointDetailsViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
+    }
+    
+    private func updateFavoriteButton() {
+        guard let userID = firebaseManager.getCurrentUser()?.uid, let point = point else {
+            addRemoveButton.isHidden = true
+            return
+        }
+        
+        addRemoveButton.setTitle("", for: .normal)
+        addRemoveButton.isHidden = false
+        pointManager.checkIfPointIsFavourite(
+            userID: userID,
+            pointID: point.id
+        ) { [weak self] (isFavourite, error) in
+            guard let self = self else { return }
+
+            DispatchQueue.main.async {
+                if let error = error {
+                    HUD.present(type: .error(String(localized: "Error occured")))
+                    print("Error checking if point is favourite: \(error)")
+                } else {
+                    self.updateButtonAppearance(isFavourite: isFavourite ?? false)
+                }
+            }
+        }
+    }
+    
+    private func updateButtonAppearance(isFavourite: Bool) {
+        let imageName = isFavourite ? "star.fill" : "star"
+        addRemoveButton.setImage(UIImage(systemName: imageName), for: .normal)
+        state = isFavourite ? .addedToFavourites : .notInFavourites
     }
 }

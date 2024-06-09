@@ -40,12 +40,13 @@ final class AddPointViewController: UIViewController {
     @IBOutlet private weak var descriptionTextView: UITextView!
     
     private enum Constant {
+        
         static let title = String(localized: "Add Place")
     }
     
     private let locationManager = LocationManager()
     private let pointManager = PointManager.shared
-    private var pickedImage: Point.Kind = Point.Kind.restaurant
+    private var pickedKind: Point.Kind = Point.Kind.restaurant
     private var placeName: String?
     private let firebaseManager = FirebaseManager.shared
     
@@ -90,7 +91,7 @@ final class AddPointViewController: UIViewController {
         var point = Point(
             id: "Changable",
             name: name, description: description,
-            city: city, kind: pickedImage,
+            city: city, kind: pickedKind,
             point: (location.latitude , location.longitude),
             owner: userId
         )
@@ -167,7 +168,7 @@ extension AddPointViewController: UIPickerViewDelegate {
         titleForRow row: Int,
         forComponent component: Int
     ) -> String? {
-        Point.Kind.allCases[row].rawValue
+        Point.Kind.allCases[row].title
     }
     
     func pickerView(
@@ -176,7 +177,7 @@ extension AddPointViewController: UIPickerViewDelegate {
         inComponent component: Int
     ) {
         let selectedKind = Point.Kind.allCases[row]
-        pickedImage = selectedKind
+        pickedKind = selectedKind
     }
 }
 

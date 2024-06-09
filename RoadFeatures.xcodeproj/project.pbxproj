@@ -3,19 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		DF06826D2A199A8B00BE72B5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06826C2A199A8B00BE72B5 /* LocationManager.swift */; };
 		DF0682702A1BF74000BE72B5 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06826F2A1BF74000BE72B5 /* Point.swift */; };
 		DF0682742A1BFA1000BE72B5 /* AddPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0682722A1BFA1000BE72B5 /* AddPointViewController.swift */; };
-		DF0682772A1D562300BE72B5 /* AddPointViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */; };
 		DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0682782A1D825500BE72B5 /* PointManager.swift */; };
 		DF06827C2A2168F200BE72B5 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06827B2A2168F200BE72B5 /* FirebaseManager.swift */; };
 		DF06827E2A22D8D400BE72B5 /* PointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF06827D2A22D8D400BE72B5 /* PointAnnotation.swift */; };
 		DF26C6CA2BFD336500D7DCB2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF26C6C82BFD336500D7DCB2 /* ProfileViewController.swift */; };
-		DF26C6CB2BFD336500D7DCB2 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF26C6C92BFD336500D7DCB2 /* ProfileViewController.xib */; };
 		DF28191B29CFC0200096E0AC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */; };
 		DF28191D29CFC09C0096E0AC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28191C29CFC09C0096E0AC /* MapViewController.swift */; };
 		DF3C5BF729F298FA0079D1DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */; };
@@ -71,12 +69,8 @@
 		DF802C4B2B64BCCA00016199 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF802C4A2B64BCCA00016199 /* NibLoadable.swift */; };
 		DF802C4D2B64BF8D00016199 /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF802C4C2B64BF8D00016199 /* UICollectionView+Ext.swift */; };
 		DF8137FE2B7051E200CAFECC /* AccountLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8137FC2B7051E200CAFECC /* AccountLogInViewController.swift */; };
-		DF8137FF2B7051E200CAFECC /* AccountLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8137FD2B7051E200CAFECC /* AccountLogInViewController.xib */; };
 		DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */; };
-		DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */; };
-		DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */; };
 		DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB004E929FED03400B2943E /* FavouritesPostCell.swift */; };
-		DFB004EE29FF348A00B2943E /* PointDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFB004ED29FF348A00B2943E /* PointDetailsViewController.storyboard */; };
 		DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */; };
 		DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */; };
 		DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */; };
@@ -85,21 +79,26 @@
 		DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */; };
 		DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */; };
 		DFD3AE422C0223EC0085918D /* AboutAuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD3AE402C0223EC0085918D /* AboutAuthorsViewController.swift */; };
-		DFD3AE432C0223EC0085918D /* AboutAuthorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD3AE412C0223EC0085918D /* AboutAuthorsViewController.xib */; };
 		DFD6F46D2B64A51F00F25FE3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD6F46C2B64A51F00F25FE3 /* Settings.swift */; };
 		DFEC94DB2C13D35B009912AB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DFEC94DA2C13D35B009912AB /* Localizable.xcstrings */; };
+		DFF0856E2C15C87100891E6C /* TextFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0856D2C15C87100891E6C /* TextFieldType.swift */; };
+		DFF085712C165BDF00891E6C /* AddPointViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF085702C165BDF00891E6C /* AddPointViewController.storyboard */; };
+		DFF085752C165C5300891E6C /* AboutAuthorsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF085742C165C5300891E6C /* AboutAuthorsViewController.xib */; };
+		DFF085792C165C6800891E6C /* AccountLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF085782C165C6800891E6C /* AccountLogInViewController.xib */; };
+		DFF0857D2C165E8C00891E6C /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF0857C2C165E8C00891E6C /* LogIn.storyboard */; };
+		DFF085812C16604B00891E6C /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF085802C16604B00891E6C /* Registration.storyboard */; };
+		DFF085852C1662C700891E6C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF085842C1662C700891E6C /* ProfileViewController.xib */; };
+		DFF085892C166A4200891E6C /* PointDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF085882C166A4200891E6C /* PointDetailsViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF06826C2A199A8B00BE72B5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		DF06826F2A1BF74000BE72B5 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		DF0682722A1BFA1000BE72B5 /* AddPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPointViewController.swift; sourceTree = "<group>"; };
-		DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPointViewController.storyboard; sourceTree = "<group>"; };
 		DF0682782A1D825500BE72B5 /* PointManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointManager.swift; sourceTree = "<group>"; };
 		DF06827B2A2168F200BE72B5 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DF06827D2A22D8D400BE72B5 /* PointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotation.swift; sourceTree = "<group>"; };
 		DF26C6C82BFD336500D7DCB2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		DF26C6C92BFD336500D7DCB2 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		DF28191C29CFC09C0096E0AC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DF3C5BF629F298FA0079D1DC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -127,12 +126,8 @@
 		DF802C4A2B64BCCA00016199 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		DF802C4C2B64BF8D00016199 /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		DF8137FC2B7051E200CAFECC /* AccountLogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLogInViewController.swift; sourceTree = "<group>"; };
-		DF8137FD2B7051E200CAFECC /* AccountLogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountLogInViewController.xib; sourceTree = "<group>"; };
 		DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
-		DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
-		DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogIn.storyboard; sourceTree = "<group>"; };
 		DFB004E929FED03400B2943E /* FavouritesPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesPostCell.swift; sourceTree = "<group>"; };
-		DFB004ED29FF348A00B2943E /* PointDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointDetailsViewController.storyboard; sourceTree = "<group>"; };
 		DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailsViewController.swift; sourceTree = "<group>"; };
 		DFC9F6B429C9FF1700B8BCE6 /* RoadFeatures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadFeatures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,10 +138,24 @@
 		DFC9F6C529C9FF1800B8BCE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCD9A3829FA990700D7A3EF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		DFD3AE402C0223EC0085918D /* AboutAuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAuthorsViewController.swift; sourceTree = "<group>"; };
-		DFD3AE412C0223EC0085918D /* AboutAuthorsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutAuthorsViewController.xib; sourceTree = "<group>"; };
 		DFD6F46C2B64A51F00F25FE3 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		DFEC94D92C13D321009912AB /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DFEC94DA2C13D35B009912AB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		DFF0856D2C15C87100891E6C /* TextFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldType.swift; sourceTree = "<group>"; };
+		DFF0856F2C165BDF00891E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddPointViewController.storyboard; sourceTree = "<group>"; };
+		DFF085722C165BDF00891E6C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/AddPointViewController.xcstrings; sourceTree = "<group>"; };
+		DFF085732C165C5300891E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutAuthorsViewController.xib; sourceTree = "<group>"; };
+		DFF085762C165C5300891E6C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/AboutAuthorsViewController.xcstrings; sourceTree = "<group>"; };
+		DFF085772C165C6800891E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AccountLogInViewController.xib; sourceTree = "<group>"; };
+		DFF0857A2C165C6800891E6C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/AccountLogInViewController.xcstrings; sourceTree = "<group>"; };
+		DFF0857B2C165E8C00891E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
+		DFF0857E2C165E8C00891E6C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/LogIn.xcstrings; sourceTree = "<group>"; };
+		DFF0857F2C16604B00891E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Registration.storyboard; sourceTree = "<group>"; };
+		DFF085822C16604B00891E6C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Registration.xcstrings; sourceTree = "<group>"; };
+		DFF085832C1662C700891E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ProfileViewController.xib; sourceTree = "<group>"; };
+		DFF085862C1662C700891E6C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/ProfileViewController.xcstrings; sourceTree = "<group>"; };
+		DFF085872C166A4200891E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PointDetailsViewController.storyboard; sourceTree = "<group>"; };
+		DFF0858A2C166A4200891E6C /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/PointDetailsViewController.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				DF0682722A1BFA1000BE72B5 /* AddPointViewController.swift */,
-				DF0682762A1D562300BE72B5 /* AddPointViewController.storyboard */,
+				DFF085702C165BDF00891E6C /* AddPointViewController.storyboard */,
 			);
 			path = AddPoint;
 			sourceTree = "<group>";
@@ -221,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				DF26C6C82BFD336500D7DCB2 /* ProfileViewController.swift */,
-				DF26C6C92BFD336500D7DCB2 /* ProfileViewController.xib */,
+				DFF085842C1662C700891E6C /* ProfileViewController.xib */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -252,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */,
-				DF8A6BA429F4A4E8006C4646 /* LogIn.storyboard */,
+				DFF0857C2C165E8C00891E6C /* LogIn.storyboard */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -261,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				DF28191A29CFC0200096E0AC /* RegistrationViewController.swift */,
-				DF8A6BA229F4A4B2006C4646 /* Registration.storyboard */,
+				DFF085802C16604B00891E6C /* Registration.storyboard */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -369,7 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				DF8137FC2B7051E200CAFECC /* AccountLogInViewController.swift */,
-				DF8137FD2B7051E200CAFECC /* AccountLogInViewController.xib */,
+				DFF085782C165C6800891E6C /* AccountLogInViewController.xib */,
 			);
 			path = AccountLogInViewController;
 			sourceTree = "<group>";
@@ -378,7 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */,
-				DFB004ED29FF348A00B2943E /* PointDetailsViewController.storyboard */,
+				DFF085882C166A4200891E6C /* PointDetailsViewController.storyboard */,
 			);
 			path = PointDetails;
 			sourceTree = "<group>";
@@ -436,7 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				DFD3AE402C0223EC0085918D /* AboutAuthorsViewController.swift */,
-				DFD3AE412C0223EC0085918D /* AboutAuthorsViewController.xib */,
+				DFF085742C165C5300891E6C /* AboutAuthorsViewController.xib */,
 			);
 			path = AboutAuthors;
 			sourceTree = "<group>";
@@ -469,6 +478,7 @@
 			children = (
 				DF7CD22A2A08303F00FDC621 /* LabeledTextfield.swift */,
 				DF7CD22C2A08305200FDC621 /* LabeledTextfield.xib */,
+				DFF0856D2C15C87100891E6C /* TextFieldType.swift */,
 			);
 			path = LabeledTextfield;
 			sourceTree = "<group>";
@@ -566,28 +576,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF8A6BA529F4A4E8006C4646 /* LogIn.storyboard in Resources */,
+				DFF0857D2C165E8C00891E6C /* LogIn.storyboard in Resources */,
 				DF451ACE2B5C363C004E1987 /* Inter-Bold.ttf in Resources */,
 				DF451ACA2B5C3621004E1987 /* Inter-Regular.ttf in Resources */,
 				DF7062772C126F83007C0DC9 /* Error.json in Resources */,
 				DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */,
-				DF8137FF2B7051E200CAFECC /* AccountLogInViewController.xib in Resources */,
+				DFF085792C165C6800891E6C /* AccountLogInViewController.xib in Resources */,
 				DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */,
 				DF60EF252B5B6C9700754F5F /* SettingsCollectionViewCell.xib in Resources */,
 				DF60EF292B5B6CB300754F5F /* AccountCollectionViewCell.xib in Resources */,
 				DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */,
-				DF8A6BA329F4A4B2006C4646 /* Registration.storyboard in Resources */,
+				DFF085812C16604B00891E6C /* Registration.storyboard in Resources */,
 				DF7CD22D2A08305200FDC621 /* LabeledTextfield.xib in Resources */,
-				DF0682772A1D562300BE72B5 /* AddPointViewController.storyboard in Resources */,
-				DFB004EE29FF348A00B2943E /* PointDetailsViewController.storyboard in Resources */,
+				DFF085712C165BDF00891E6C /* AddPointViewController.storyboard in Resources */,
+				DFF085892C166A4200891E6C /* PointDetailsViewController.storyboard in Resources */,
 				DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */,
 				DF451ACC2B5C3630004E1987 /* Inter-SemiBold.ttf in Resources */,
 				DFEC94DB2C13D35B009912AB /* Localizable.xcstrings in Resources */,
 				DF5AC66C2A13E90100D1EBE6 /* GoogleService-Info.plist in Resources */,
 				DF7CD2342A0833D100FDC621 /* FavouritesPostCell.xib in Resources */,
 				DFC9F6C129C9FF1800B8BCE6 /* Assets.xcassets in Resources */,
-				DF26C6CB2BFD336500D7DCB2 /* ProfileViewController.xib in Resources */,
-				DFD3AE432C0223EC0085918D /* AboutAuthorsViewController.xib in Resources */,
+				DFF085852C1662C700891E6C /* ProfileViewController.xib in Resources */,
+				DFF085752C165C5300891E6C /* AboutAuthorsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +633,7 @@
 				DF0682702A1BF74000BE72B5 /* Point.swift in Sources */,
 				DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */,
 				DF0682792A1D825500BE72B5 /* PointManager.swift in Sources */,
+				DFF0856E2C15C87100891E6C /* TextFieldType.swift in Sources */,
 				DF8137FE2B7051E200CAFECC /* AccountLogInViewController.swift in Sources */,
 				DFCD9A3929FA990700D7A3EF /* CustomTabBarController.swift in Sources */,
 				DF70626D2C126655007C0DC9 /* HUDType.swift in Sources */,
@@ -642,6 +653,69 @@
 				DFEC94D92C13D321009912AB /* uk */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DFF085702C165BDF00891E6C /* AddPointViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF0856F2C165BDF00891E6C /* Base */,
+				DFF085722C165BDF00891E6C /* mul */,
+			);
+			name = AddPointViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		DFF085742C165C5300891E6C /* AboutAuthorsViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF085732C165C5300891E6C /* Base */,
+				DFF085762C165C5300891E6C /* mul */,
+			);
+			name = AboutAuthorsViewController.xib;
+			sourceTree = "<group>";
+		};
+		DFF085782C165C6800891E6C /* AccountLogInViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF085772C165C6800891E6C /* Base */,
+				DFF0857A2C165C6800891E6C /* mul */,
+			);
+			name = AccountLogInViewController.xib;
+			sourceTree = "<group>";
+		};
+		DFF0857C2C165E8C00891E6C /* LogIn.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF0857B2C165E8C00891E6C /* Base */,
+				DFF0857E2C165E8C00891E6C /* mul */,
+			);
+			name = LogIn.storyboard;
+			sourceTree = "<group>";
+		};
+		DFF085802C16604B00891E6C /* Registration.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF0857F2C16604B00891E6C /* Base */,
+				DFF085822C16604B00891E6C /* mul */,
+			);
+			name = Registration.storyboard;
+			sourceTree = "<group>";
+		};
+		DFF085842C1662C700891E6C /* ProfileViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF085832C1662C700891E6C /* Base */,
+				DFF085862C1662C700891E6C /* mul */,
+			);
+			name = ProfileViewController.xib;
+			sourceTree = "<group>";
+		};
+		DFF085882C166A4200891E6C /* PointDetailsViewController.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFF085872C166A4200891E6C /* Base */,
+				DFF0858A2C166A4200891E6C /* mul */,
+			);
+			name = PointDetailsViewController.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

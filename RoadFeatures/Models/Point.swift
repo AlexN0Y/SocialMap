@@ -20,7 +20,7 @@ struct Point {
         case park = "Park"
         case bench = "Bench"
         case club = "Club"
-        case shoppingCentre = "Shopping centre"
+        case shoppingCentre = "ShoppingCentre"
         case store = "Store"
         case hotel = "Hotel"
         case pharmacy = "Pharmacy"

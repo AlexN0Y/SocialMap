@@ -1,0 +1,36 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Fxu-yh-HqK.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Developer\"; ObjectID = \"Fxu-yh-HqK\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Developer"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розробник"
+          }
+        }
+      }
+    },
+    "SAx-H7-zyU.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"@nelomany\"; ObjectID = \"SAx-H7-zyU\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "@nelomany"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

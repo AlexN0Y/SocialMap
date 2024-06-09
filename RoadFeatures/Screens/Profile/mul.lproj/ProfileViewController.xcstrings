@@ -1,0 +1,66 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "7og-PE-81l.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"yourName\"; ObjectID = \"7og-PE-81l\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "yourName"
+          }
+        }
+      }
+    },
+    "aFp-K4-iHL.configuration.title" : {
+      "comment" : "Class = \"UIButton\"; configuration.title = \"Sign out\"; ObjectID = \"aFp-K4-iHL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sign out"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихід з системи"
+          }
+        }
+      }
+    },
+    "aFp-K4-iHL.normalTitle" : {
+      "comment" : "Class = \"UIButton\"; normalTitle = \"Button\"; ObjectID = \"aFp-K4-iHL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Button"
+          }
+        }
+      }
+    },
+    "Pii-Gr-MzM.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Name\"; ObjectID = \"Pii-Gr-MzM\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Name"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ім'я"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
