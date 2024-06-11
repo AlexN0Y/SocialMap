@@ -31,6 +31,24 @@
         }
       }
     },
+    "2vZ-Lb-1rt.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Must be at least 8 characters\"; ObjectID = \"2vZ-Lb-1rt\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Must be at least 8 characters"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Має бути щонайменше 8 символів"
+          }
+        }
+      }
+    },
     "H2W-cc-qGk.text" : {
       "comment" : "Class = \"UILabel\"; text = \"Registration\"; ObjectID = \"H2W-cc-qGk\";",
       "extractionState" : "extracted_with_value",
@@ -45,6 +63,60 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Реєстрація"
+          }
+        }
+      }
+    },
+    "hj8-5N-B2J.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"One digit\"; ObjectID = \"hj8-5N-B2J\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "One digit"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Одну цифру"
+          }
+        }
+      }
+    },
+    "kWW-lh-e5L.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"One uppercase letter\"; ObjectID = \"kWW-lh-e5L\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "One uppercase letter"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Одну велику літеру"
+          }
+        }
+      }
+    },
+    "qZY-Hp-q7m.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"One lowercase letter\"; ObjectID = \"qZY-Hp-q7m\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "One lowercase letter"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Одну малу літеру"
           }
         }
       }
@@ -75,6 +147,24 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Button"
+          }
+        }
+      }
+    },
+    "W02-gX-FnC.text" : {
+      "comment" : "Class = \"UILabel\"; text = \"Password must have:\"; ObjectID = \"W02-gX-FnC\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Password must have:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль має містити:"
           }
         }
       }

@@ -105,17 +105,20 @@ final class LoginViewController: UIViewController {
             showEmptyFieldsAlert()
             return
         }
+        HUD.present(type: .loader)
         
         firebaseManager.logIn(
             withEmail: userLogin,
             password: userPassword
         ) { [weak self] authResult, error in
             guard let self else { return }
+            HUD.dismiss()
             
             if let error = error {
                 showUserDoesNotExistsAlert()
                 print("Login failed: \(error.localizedDescription)")
             } else {
+                HUD.present(type: .success(String(localized: "Successful login")))
                 print("Login successful for user: \(authResult?.user.email ?? "")")
                 navigationController?.popToRootViewController(animated: true)
             }

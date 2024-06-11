@@ -13,7 +13,7 @@ final class HUDView: UIView {
     // MARK: - Private Static Properties
     
     private static let containerDelay: TimeInterval = 0.15
-    private static let autoDismissDelay: TimeInterval = 1.1
+    private static let autoDismissDelay: TimeInterval = 1.3
     
     // MARK: - Private Properties
     
@@ -32,7 +32,7 @@ final class HUDView: UIView {
     
     private lazy var animationView: LottieAnimationView = {
         let view = LottieAnimationView(name: type.title)
-        view.loopMode = .playOnce
+        view.loopMode = type.isLoader ? .loop : .playOnce
         return view
     }()
     
@@ -43,7 +43,8 @@ final class HUDView: UIView {
         label.text = type.message
         label.textAlignment = .center
         label.minimumScaleFactor = 0.5
-        label.numberOfLines = 1
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 2
         return label
     }()
     
@@ -134,7 +135,7 @@ final class HUDView: UIView {
         NSLayoutConstraint.activate([
             containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
             containerView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            containerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.48)
+            containerView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.49)
         ])
         
         // Animation View
@@ -161,6 +162,10 @@ final class HUDView: UIView {
     }
     
     private func dismissIfNeeded() {
+        guard type.isAutoDismissable else {
+            return
+        }
+        
         DispatchQueue.main.asyncAfter(
             deadline: .now() + Self.autoDismissDelay
         ) { [weak self] in
@@ -188,6 +193,10 @@ final class HUDView: UIView {
     }
     
     private func configureTapGestureIfNeeded() {
+        guard type.shouldDismissOnTap else {
+            return
+        }
+        
         let tapGesture = UITapGestureRecognizer(
             target: self,
             action: #selector(didTapView)

@@ -38,6 +38,10 @@ enum HUD {
         }
     }
     
+    static func dismiss() {
+        dismiss(withDuration: 1)
+    }
+    
     static func dismiss(
         withDuration duration: TimeInterval,
         completion: (() -> Void)? = nil

@@ -72,6 +72,8 @@
 		DF8A6BA129F49E8A006C4646 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */; };
 		DFB004EA29FED03400B2943E /* FavouritesPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB004E929FED03400B2943E /* FavouritesPostCell.swift */; };
 		DFB004F029FF34B000B2943E /* PointDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */; };
+		DFC6BF9D2C187698006AA548 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = DFC6BF9C2C187698006AA548 /* Loader.json */; };
+		DFC6BF9F2C187879006AA548 /* Success.json in Resources */ = {isa = PBXBuildFile; fileRef = DFC6BF9E2C187879006AA548 /* Success.json */; };
 		DFC9F6B829C9FF1700B8BCE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */; };
 		DFC9F6BA29C9FF1700B8BCE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */; };
 		DFC9F6BC29C9FF1700B8BCE6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC9F6BB29C9FF1700B8BCE6 /* LoginViewController.swift */; };
@@ -129,6 +131,8 @@
 		DF8A6BA029F49E8A006C4646 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		DFB004E929FED03400B2943E /* FavouritesPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesPostCell.swift; sourceTree = "<group>"; };
 		DFB004EF29FF34B000B2943E /* PointDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointDetailsViewController.swift; sourceTree = "<group>"; };
+		DFC6BF9C2C187698006AA548 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
+		DFC6BF9E2C187879006AA548 /* Success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Success.json; sourceTree = "<group>"; };
 		DFC9F6B429C9FF1700B8BCE6 /* RoadFeatures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadFeatures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC9F6B729C9FF1700B8BCE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC9F6B929C9FF1700B8BCE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 				DFC9F6C229C9FF1800B8BCE6 /* LaunchScreen.storyboard */,
 				DFC9F6C529C9FF1800B8BCE6 /* Info.plist */,
 				DF5AC66B2A13E90100D1EBE6 /* GoogleService-Info.plist */,
+				DFC6BF9E2C187879006AA548 /* Success.json */,
+				DFC6BF9C2C187698006AA548 /* Loader.json */,
 				DF7062762C126F83007C0DC9 /* Error.json */,
 				DFEC94DA2C13D35B009912AB /* Localizable.xcstrings */,
 			);
@@ -580,6 +586,7 @@
 				DF451ACE2B5C363C004E1987 /* Inter-Bold.ttf in Resources */,
 				DF451ACA2B5C3621004E1987 /* Inter-Regular.ttf in Resources */,
 				DF7062772C126F83007C0DC9 /* Error.json in Resources */,
+				DFC6BF9F2C187879006AA548 /* Success.json in Resources */,
 				DFC9F6C429C9FF1800B8BCE6 /* LaunchScreen.storyboard in Resources */,
 				DFF085792C165C6800891E6C /* AccountLogInViewController.xib in Resources */,
 				DF3C5BFC29F29A780079D1DC /* FavouritesViewController.storyboard in Resources */,
@@ -589,6 +596,7 @@
 				DFF085812C16604B00891E6C /* Registration.storyboard in Resources */,
 				DF7CD22D2A08305200FDC621 /* LabeledTextfield.xib in Resources */,
 				DFF085712C165BDF00891E6C /* AddPointViewController.storyboard in Resources */,
+				DFC6BF9D2C187698006AA548 /* Loader.json in Resources */,
 				DFF085892C166A4200891E6C /* PointDetailsViewController.storyboard in Resources */,
 				DF3C5BFF29F425F20079D1DC /* SettingsViewController.storyboard in Resources */,
 				DF451ACC2B5C3630004E1987 /* Inter-SemiBold.ttf in Resources */,

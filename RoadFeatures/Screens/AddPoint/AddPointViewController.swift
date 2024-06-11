@@ -76,7 +76,7 @@ final class AddPointViewController: UIViewController {
             return
         }
         
-        guard let name = nameTextfield.text, !name.isEmpty else {
+        guard let name = nameTextfield.text, name.count > 3 else {
             presentAlert(message:String(localized: "Fill in name field"))
             return
         }

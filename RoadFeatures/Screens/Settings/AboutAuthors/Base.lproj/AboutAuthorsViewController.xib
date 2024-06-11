@@ -59,6 +59,7 @@
                         <constraint firstItem="XGI-VW-ULr" firstAttribute="leading" secondItem="SAx-H7-zyU" secondAttribute="trailing" constant="12" id="epl-NW-ydX"/>
                         <constraint firstItem="SAx-H7-zyU" firstAttribute="centerY" secondItem="S6m-i0-bLZ" secondAttribute="centerY" id="ev0-km-9VV"/>
                         <constraint firstItem="XGI-VW-ULr" firstAttribute="centerY" secondItem="S6m-i0-bLZ" secondAttribute="centerY" id="hpb-72-ihU"/>
+                        <constraint firstItem="SAx-H7-zyU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fxu-yh-HqK" secondAttribute="trailing" constant="8" symbolic="YES" id="jOr-jq-gg5"/>
                         <constraint firstAttribute="height" constant="56" id="ue1-v5-hZr"/>
                         <constraint firstAttribute="trailing" secondItem="XGI-VW-ULr" secondAttribute="trailing" id="xBG-rM-eka"/>
                         <constraint firstItem="FRd-FT-oXz" firstAttribute="centerY" secondItem="S6m-i0-bLZ" secondAttribute="centerY" id="yoh-XL-ohZ"/>

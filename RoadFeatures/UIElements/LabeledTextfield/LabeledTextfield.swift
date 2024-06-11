@@ -49,9 +49,8 @@ final class LabeledTextfield: UIView {
         
         switch textFieldType {
         case .password:
-            onSave?(text) // just for now
             if isValidPassword(text) {
-                //onSave?(text)
+                onSave?(text)
                 textField.layer.borderColor = UIColor(named: "accentBlue")!.cgColor
             } else {
                 textField.layer.borderColor = UIColor.red.cgColor

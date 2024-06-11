@@ -106,7 +106,49 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    @objc 
+    @IBAction private func createUser() {
+        guard let name = userName, !name.isEmpty, let email = userLogin, !email.isEmpty, let password = userPassword, !password.isEmpty else {
+            showEmptyFieldsAlert()
+            return
+        }
+        HUD.present(type: .loader)
+        
+        firebaseManager.createUser(
+            withEmail: email,
+            password: password,
+            userName: name
+        ) { [weak self] error in
+            HUD.dismiss()
+            
+            if let _ = error {
+                HUD.present(type: .error(String(localized: "Error occured")))
+            } else {
+                HUD.present(type: .success(String(localized: "Registration successful")))
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+    }
+    
+    @IBAction private func logInTapped() {
+        if fromLogin {
+            navigationController?.popViewController(animated: true)
+        } else {
+            let loginStoryboard = UIStoryboard(
+                name: Constant.loginStoryboardName,
+                bundle: nil
+            )
+            
+            let loginViewController = loginStoryboard.instantiateViewController(
+                withIdentifier: Constant.loginViewControllerName
+            ) as! LoginViewController
+            
+            loginViewController.fromRegistration = true
+            
+            navigationController?.pushViewController(loginViewController, animated: true)
+        }
+    }
+    
+    @objc
     private func handleTap() {
         view.endEditing(true)
     }
@@ -130,39 +172,6 @@ final class RegistrationViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
-    }
-    
-    @IBAction private func createUser() {
-        guard let name = userName, !name.isEmpty, let email = userLogin, !email.isEmpty, let password = userPassword, !password.isEmpty else {
-            showEmptyFieldsAlert()
-            return
-        }
-        firebaseManager.createUser(withEmail: email, password: password, userName: name) { [weak self] error in
-            if error != nil {
-                self?.showEmailAlert()
-            } else {
-                self?.navigationController?.popToRootViewController(animated: true)
-            }
-        }
-    }
-    
-    @IBAction private func logInTapped() {
-        if fromLogin {
-            navigationController?.popViewController(animated: true)
-        } else {
-            let loginStoryboard = UIStoryboard(
-                name: Constant.loginStoryboardName,
-                bundle: nil
-            )
-            
-            let loginViewController = loginStoryboard.instantiateViewController(
-                withIdentifier: Constant.loginViewControllerName
-            ) as! LoginViewController
-            
-            loginViewController.fromRegistration = true
-            
-            navigationController?.pushViewController(loginViewController, animated: true)
-        }
     }
 }
 
