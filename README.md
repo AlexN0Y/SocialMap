@@ -24,7 +24,7 @@ If you want to run the project, create your own firestore database and add the m
       <img src="https://github.com/user-attachments/assets/2936f826-5bd3-4107-a6dc-da1017489108" width="250" alt="Info"/><br/>
       **Place Info**
     </td>
-    <td colspan="2" align="center">
+    <td align="center">
       <img src="https://github.com/user-attachments/assets/66d62868-92a1-453f-a1d5-fe959af95fc9" width="250" alt="Success"/><br/>
       **Success Lottie**
     </td>
