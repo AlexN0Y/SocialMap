@@ -26,7 +26,11 @@ If you want to run the project, create your own firestore database and add the m
     </td>
     <td colspan="2" align="center">
       <img src="https://github.com/user-attachments/assets/66d62868-92a1-453f-a1d5-fe959af95fc9" width="250" alt="Success"/><br/>
-      **Add Place Success**
+      **Success Lottie**
     </td>
   </tr>
 </table>
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
